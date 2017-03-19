@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html>
+<title>W3.CSS Template</title>
+<!-- https://www.w3schools.com/w3css/tryw3css_templates_portfolio.htm  -->
+<!-- &#9776;(E) &laquo;(<<) &raquo;(>>) -->
+
+<meta charset="UTF-8">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/3/w3.css">
+<style>
+
+/* whyNot
+body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
+*/
+#icon{background-color: black; color: gold; font-size: 16px;text-decoration:none;}
+
+body{
+	margin:0;
+	font-family:Verdana,sans-serif;
+	font-size:15px;
+	line-height:1.5;
+}
+
+
+
+
+</style>
+<body class="w3-light-grey w3-content" style="max-width:1600px">
+
+
+ <!-- Header -->
+   <header id="portfolio" class="w3-main" style="margin-left:120px">
+    <a href="#"><img src="mini00.jpg" style="width:65px;"
+     	class="w3-circle w3-right w3-margin w3-hide-large w3-hover-opacity"></a>
+    <span class="w3-button w3-hide-large w3-xxlarge w3-hover-text-grey" onclick="w3_open()" id="icon">&#9776;1</span>
+        <div class="w3-container">
+       	<h1><b>Header</b></h1>
+   		<div class="w3-section w3-bottombar w3-padding-16">
+      <button class="w3-button w3-black">&#9776;3</button>
+      <button class="w3-button w3-white">&#9776;3</button>
+      <button class="w3-button w3-white w3-hide-small">&#9776;3</button>
+      <button class="w3-button w3-white w3-hide-small">&#9776;3</button>
+   		</div>
+    </div>
+  </header>
+<!-- Sidebar/menu -->
+<nav class="w3-sidebar w3-collapse w3-white w3-animate-left" style="z-index:3;width:120px;" id="mySidebar"><br>
+  <div class="w3-container">
+    <a href="#" onclick="w3_close()" class="w3-hide-large w3-right w3-padding w3-hover-grey" title="close menu1" id="icon">
+    	&#9776;2
+    </a>
+    <img src="mini01.jpg" style="width:100%;" class="w3-round"><br><br>
+    <h4 class="w3-padding-0"><b>상위제목</b></h4>
+   </div>
+  <div class="w3-bar-block">
+	<ul>
+		<li>메뉴1</li>	
+		<li>메뉴2</li>	
+		<li>메뉴3</li>	
+		<li>메뉴4</li>	
+		<li>메뉴5</li>	
+	</ul>
+  </div>
+</nav>
+
+<!-- Overlay effect when opening sidebar on small screens -->
+<div class="w3-overlay w3-hide-large w3-animate-opacity" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
+
+<!-- !PAGE CONTENT! -->
+  
+<div class="w3-main" style="margin-left:120px">  
+  <!-- First Photo Grid-->
+  <div class="w3-row-padding">
+    <div class="w3-third w3-container w3-margin-bottom">
+      <img src="mini02.jpg" alt="Norway" style="width:100%" class="w3-hover-opacity">
+      <div class="w3-container w3-white">
+        <p><b>애국가1절</b></p>
+        <p>동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라 만세.</p>
+        <p>무궁화 삼천리 화려강산 대한 사람 대한으로 길이 보전하세.</p>
+      </div>
+    </div>
+    <div class="w3-third w3-container w3-margin-bottom">
+      <img src="mini03.jpg" alt="Norway" style="width:100%" class="w3-hover-opacity">
+      <div class="w3-container w3-white">
+        <p><b>애국가2절</b></p>
+        <p>남산 위에 저 소나무 철갑을 두른 듯 바람 서리 불변함은 우리 기상일세.</p>
+        <p>무궁화 삼천리 화려강산 대한 사람 대한으로 길이 보전하세.</p>
+      </div>
+    </div>
+    <div class="w3-third w3-container">
+      <img src="mini04.jpg" alt="Norway" style="width:100%" class="w3-hover-opacity">
+      <div class="w3-container w3-white">
+        <p><b>애국가3절</b></p>
+        <p>가을 하늘 공활한데 높고 구름 없이 밝은 달은 우리 가슴 일퍈 단심일세.</p>
+        <p>무궁화 삼천리 화려강산 대한 사람 대한으로 길이 보전하세.</p>
+      </div>
+    </div>
+    <div class="w3-third w3-container">
+      <img src="mini08.jpg" alt="Norway" style="width:100%" class="w3-hover-opacity">
+      <div class="w3-container w3-white">
+        <p><b>애국가4절</b></p>
+        <p>이 기상과 이 맘으로 충성을 다하여 괴로우나 즐거우나 나라 사랑하세.</p>
+        <p>무궁화 삼천리 화려강산 대한 사람 대한으로 길이 보전하세.</p>
+      </div>
+    </div>
+    <div class="w3-third w3-container w3-margin-bottom">
+      <img src="mini09.jpg" alt="Norway" style="width:100%" class="w3-hover-opacity">
+      <div class="w3-container w3-white">
+        <p><b>테스트1</b></p>
+        <p>Praesent tincidunt sed tellus ut rutrum. Sed vitae justo condimentum,
+         porta lectus vitae, ultricies congue gravida diam non fringilla.</p>
+      </div>
+    </div>
+    <div class="w3-third w3-container w3-margin-bottom">
+      <img src="mini10.png" alt="Norway" style="width:100%" class="w3-hover-opacity">
+      <div class="w3-container w3-white">
+        <p><b>테스트2</b></p>
+        <p>Praesent tincidunt sed tellus ut rutrum. Sed vitae justo condimentum,
+         porta lectus vitae, ultricies congue gravida diam non fringilla.</p>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Second Photo Grid-->
+  <div class="w3-row-padding">
+    <div class="w3-third w3-container w3-margin-bottom">
+      <img src="mini05.jpg" alt="Norway" style="width:100%" class="w3-hover-opacity">
+      <div class="w3-container w3-white">
+        <p><b>Lorem Ipsum</b></p>
+        <p>Praesent tincidunt sed tellus ut rutrum. Sed vitae justo condimentum,
+         porta lectus vitae, ultricies congue gravida diam non fringilla.</p>
+      </div>
+    </div>
+    <div class="w3-third w3-container w3-margin-bottom">
+      <img src="mini06.jpg" alt="Norway" style="width:100%" class="w3-hover-opacity">
+      <div class="w3-container w3-white">
+        <p><b>Lorem Ipsum</b></p>
+        <p>Praesent tincidunt sed tellus ut rutrum. Sed vitae justo condimentum,
+         porta lectus vitae, ultricies congue gravida diam non fringilla.</p>
+      </div>
+    </div>
+    <div class="w3-third w3-container">
+      <img src="mini07.jpg" alt="Norway" style="width:100%" class="w3-hover-opacity">
+      <div class="w3-container w3-white">
+        <p><b>Lorem Ipsum</b></p>
+        <p>Praesent tincidunt sed tellus ut rutrum. Sed vitae justo condimentum,
+         porta lectus vitae, ultricies congue gravida diam non fringilla.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Pagination -->
+  <div class="w3-center w3-padding-32">
+    <div class="w3-bar">
+      <a href="#" class="w3-bar-item w3-button w3-hover-black">&laquo;</a>
+      <a href="#" class="w3-bar-item w3-black w3-button">1</a>
+      <a href="#" class="w3-bar-item w3-button w3-hover-black">2</a>
+      <a href="#" class="w3-bar-item w3-button w3-hover-black">3</a>
+      <a href="#" class="w3-bar-item w3-button w3-hover-black">4</a>
+      <a href="#" class="w3-bar-item w3-button w3-hover-black">&raquo;</a>
+    </div>
+  </div>
+
+
+
+
+
+
+
+
+
+<!-- whyNot 쓸만한 것들 
+
+  <!-- Images of Me --
+  <div class="w3-row-padding w3-padding-16" id="about">
+    <div class="w3-col m6">
+      <img src="mini21.jpg" alt="Me" style="width:100%">
+    </div>
+    <div class="w3-col m6">
+      <img src="mini22.jpg" alt="Me" style="width:100%">
+    </div>
+    <div class="w3-col m6">
+      <img src="mini23.jpg" alt="Me" style="width:100%">
+    </div>
+    <div class="w3-col m6">
+      <img src="mini24.jpg" alt="Me" style="width:100%">
+    </div>
+  </div>
+
+  <div class="w3-container w3-padding-large" style="margin-bottom:32px">
+    <h4><b>About Me</b></h4>
+    <p>Just me, myself and I, exploring the universe of unknownment.
+     I have a heart of love and an interest of lorem ipsum and mauris neque quam blog.
+      I want to share my world with you. Praesent tincidunt sed tellus ut rutrum.
+       Sed vitae justo condimentum, porta lectus vitae, ultricies congue gravida diam non fringilla.
+        Praesent tincidunt sed tellus ut rutrum. Sed vitae justo condimentum, porta lectus vitae,
+         ultricies congue gravida diam non fringilla.</p>
+    <hr>
+    
+    <h4>쓸만한 그림</h4>
+    <!-- Progress bars / Skills --
+    <p>점수1</p>
+    <div class="w3-grey">
+      <div class="w3-container w3-dark-grey w3-padding w3-center" style="width:95%">95%</div>
+    </div>
+    <p>점수2</p>
+    <div class="w3-grey">
+      <div class="w3-container w3-dark-grey w3-padding w3-center" style="width:85%">85%</div>
+    </div>
+    <p>점수3</p>
+    <div class="w3-grey">
+      <div class="w3-container w3-dark-grey w3-padding w3-center" style="width:80%">80%</div>
+    </div>
+    <p>
+      <button class="w3-button w3-dark-grey w3-padding-large w3-margin-top w3-margin-bottom">
+        <sapn id="icon">&#9776;3</sapn>
+      </button>
+    </p>
+    <hr>
+    
+    <h4>How much I charge</h4>
+    <!-- Pricing Tables --
+    <div class="w3-row-padding" style="margin:0 -16px">
+      <div class="w3-third w3-margin-bottom">
+        <ul class="w3-ul w3-border w3-white w3-center w3-opacity w3-hover-opacity-off">
+          <li class="w3-black w3-xlarge w3-padding-32">Basic</li>
+          <li class="w3-padding-16">Web Design</li>
+          <li class="w3-padding-16">Photography</li>
+          <li class="w3-padding-16">1GB Storage</li>
+          <li class="w3-padding-16">Mail Support</li>
+          <li class="w3-padding-16">
+            <h2>$ 10</h2>
+            <span class="w3-opacity">per month</span>
+          </li>
+          <li class="w3-light-grey w3-padding-24">
+            <button class="w3-button w3-teal w3-padding-large w3-hover-black">Sign Up</button>
+          </li>
+        </ul>
+      </div>
+      
+      <div class="w3-third w3-margin-bottom">
+        <ul class="w3-ul w3-border w3-white w3-center w3-opacity w3-hover-opacity-off">
+          <li class="w3-teal w3-xlarge w3-padding-32">Pro</li>
+          <li class="w3-padding-16">Web Design</li>
+          <li class="w3-padding-16">Photography</li>
+          <li class="w3-padding-16">50GB Storage</li>
+          <li class="w3-padding-16">Endless Support</li>
+          <li class="w3-padding-16">
+            <h2>$ 25</h2>
+            <span class="w3-opacity">per month</span>
+          </li>
+          <li class="w3-light-grey w3-padding-24">
+            <button class="w3-button w3-teal w3-padding-large w3-hover-black">Sign Up</button>
+          </li>
+        </ul>
+      </div>
+      
+      <div class="w3-third">
+        <ul class="w3-ul w3-border w3-white w3-center w3-opacity w3-hover-opacity-off">
+          <li class="w3-black w3-xlarge w3-padding-32">Premium</li>
+          <li class="w3-padding-16">Web Design</li>
+          <li class="w3-padding-16">Photography</li>
+          <li class="w3-padding-16">Unlimited Storage</li>
+          <li class="w3-padding-16">Endless Support</li>
+          <li class="w3-padding-16">
+            <h2>$ 25</h2>
+            <span class="w3-opacity">per month</span>
+          </li>
+          <li class="w3-light-grey w3-padding-24">
+            <button class="w3-button w3-teal w3-padding-large w3-hover-black">Sign Up</button>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  
+ 
+  
+  <!-- Contact Section --
+  <div class="w3-container w3-padding-large w3-grey">
+    <h4 id="contact"><b>Contact Me</b></h4>
+    <div class="w3-row-padding w3-center w3-padding-24" style="margin:0 -16px">
+      <div class="w3-third w3-dark-grey">
+        <p><i class="fa fa-envelope w3-xxlarge w3-text-light-grey"></i></p>
+        <p>email@email.com</p>
+      </div>
+      <div class="w3-third w3-teal">
+        <p><i class="fa fa-map-marker w3-xxlarge w3-text-light-grey"></i></p>
+        <p>Chicago, US</p>
+      </div>
+      <div class="w3-third w3-dark-grey">
+        <p><i class="fa fa-phone w3-xxlarge w3-text-light-grey"></i></p>
+        <p>512312311</p>
+      </div>
+    </div>
+    <hr class="w3-opacity">
+    <form action="/action_page.php" target="_blank">
+      <div class="w3-group">
+        <label>Name</label>
+        <input class="w3-input w3-border" type="text" name="Name" required>
+      </div>
+      <div class="w3-group">
+        <label>Email</label>
+        <input class="w3-input w3-border" type="text" name="Email" required>
+      </div>
+      <div class="w3-group">
+        <label>Message</label>
+        <input class="w3-input w3-border" type="text" name="Message" required>
+      </div>
+      <button type="submit" class="w3-button w3-black w3-padding-large w3-margin-bottom"><i class="fa fa-paper-plane w3-margin-right"></i>Send Message</button>
+    </form>
+  </div>
+  
+  
+  
+   -->
+
+<!-- End page content -->
+
+  <!-- Footer -->
+  <footer class="w3-container w3-padding-32 w3-dark-grey">
+  <div class="w3-row-padding">
+    <div class="w3-third">
+      <h3>FOOTER</h3>
+      <p>Praesent tincidunt sed tellus ut rutrum. Sed vitae justo condimentum, porta lectus vitae, ultricies congue gravida diam non fringilla.</p>
+      <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank">w3.css</a></p>
+    </div>
+  
+    <div class="w3-third">
+      <h3>BLOG POSTS</h3>
+      <ul class="w3-ul w3-hoverable">
+        <li class="w3-padding-16">
+          <img src="mini99.jpg" class="w3-left w3-margin-right" style="width:50px">
+          <span class="w3-large">현아99</span><br>
+          <span>제목1111</span>
+        </li>
+        <li class="w3-padding-16">
+          <img src="mini98.jpg" class="w3-left w3-margin-right" style="width:50px">
+          <span class="w3-large">현아98</span><br>
+          <span>제목2222</span>
+        </li>
+        <li class="w3-padding-16">
+          <img src="mini97.jpg" class="w3-left w3-margin-right" style="width:50px">
+          <span class="w3-large">현아97</span><br>
+          <span>제목3333</span>
+        </li>
+        <li class="w3-padding-16">
+          <img src="mini96.jpg" class="w3-left w3-margin-right" style="width:50px">
+          <span class="w3-large">현아96</span><br>
+          <span>제목4444</span>
+        </li> 
+      </ul>
+    </div>
+    
+    
+
+    <div class="w3-third">
+      <h3>POPULAR TAGS</h3>
+      <p>
+        <span class="w3-tag w3-black w3-margin-bottom">Travel</span>
+        <span class="w3-tag w3-grey w3-small w3-margin-bottom">New York</span>
+        <span class="w3-tag w3-grey w3-small w3-margin-bottom">London</span>
+        <span class="w3-tag w3-grey w3-small w3-margin-bottom">IKEA</span>
+        <span class="w3-tag w3-grey w3-small w3-margin-bottom">NORWAY</span>
+        <span class="w3-tag w3-grey w3-small w3-margin-bottom">DIY</span>
+        <span class="w3-tag w3-grey w3-small w3-margin-bottom">Ideas</span>
+        <span class="w3-tag w3-grey w3-small w3-margin-bottom">Baby</span>
+        <span class="w3-tag w3-grey w3-small w3-margin-bottom">Family</span>
+        <span class="w3-tag w3-grey w3-small w3-margin-bottom">News</span>
+        <span class="w3-tag w3-grey w3-small w3-margin-bottom">Clothing</span>
+        <span class="w3-tag w3-grey w3-small w3-margin-bottom">Shopping</span>
+        <span class="w3-tag w3-grey w3-small w3-margin-bottom">Sports</span>
+        <span class="w3-tag w3-grey w3-small w3-margin-bottom">Games</span>
+      </p>
+    </div>
+
+  </div>
+  </footer>
+  
+  <div class="w3-black w3-center w3-padding-24">
+  	Powered by
+  	<a href="https://www.w3schools.com/w3css/default.asp" title="W3.CSS" target="_blank" class="w3-hover-opacity">
+  	w3.css
+  	</a>
+  </div>
+
+</div>
+
+<script>
+// Script to open and close sidebar
+function w3_open() {
+    document.getElementById("mySidebar").style.display = "block";
+    document.getElementById("myOverlay").style.display = "block";
+}
+ 
+function w3_close() {
+    document.getElementById("mySidebar").style.display = "none";
+    document.getElementById("myOverlay").style.display = "none";
+}
+</script>
+
+</body>
+</html>

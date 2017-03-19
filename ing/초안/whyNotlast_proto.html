@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>개힘들다</title>
+<style type="text/css">
+
+</style>
+<style type="text/css">
+body{
+	max-width: 1600px;
+	margin:auto;
+	background-color: black;
+	color:white;
+}
+nav{	
+	display:block;
+	height:100%;
+	position:fixed;
+	overflow:auto;
+	background-color: #990000;
+	z-index:3;
+	width:300px;
+	-webkit-animation:animateleft 0.4s;
+	animation:animateleft 0.4s;
+}
+header{
+	display:block;
+	margin-left:300px;
+	transition:margin-left .4s;
+	background-color:#993333;
+}
+section{
+	display:block;
+	margin-left:300px;
+	transition:margin-left .4s;
+	background-color:maroon;
+}
+footer{
+	display:block;
+	margin-left:300px;
+	transition:margin-left .4s;
+	background-color:#4d0000;
+}
+.ctoContain{padding:0.01em 16px;}
+.ctoContain:after,
+.ctoContain:before{content:"";display:table;clear:both;}
+
+@media (min-width:993px){
+	nav{display:block!important;}
+}
+@media (max-width:992px){
+	nav{display:none;}
+	header,
+	section,
+	footer{margin-left:0!important;margin-right:0!important;}
+}
+
+</style>
+
+</head>
+<body>
+<nav>
+	<h1>whyNot</h1>
+
+
+</nav>
+<header id="ctoCto">
+	<div class="ctoContain">
+		<h1>whyNot</h1>
+	</div>
+</header>
+<section>
+	<div class="ctoContain">
+		<h1>whyNot</h1>
+	</div>
+	
+</section>
+<footer>
+	<div class="ctoContain">
+		<h1>whyNot</h1>
+	</div>
+</footer>
+
+
+</body>
+</html>
