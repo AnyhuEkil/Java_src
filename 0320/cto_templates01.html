@@ -2,10 +2,103 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>홈페이지 메인 템플릿</title>
 
+<!-- 메타태그(뷰포트) : 다양한 기기에서 일정한 화면을 보기 위한 메타태그.
+	 https://www.w3schools.com/css/css_rwd_viewport.asp -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>홈페이지 기본 폼</title>
 <style type="text/css">
+
+/* 	box-sizing 을 하는 이유 : 초기 지정된 상자 크기를 유지하기 위함. 아래 사이트 참조.
+	https://www.paulirish.com/2012/box-sizing-border-box-ftw/ */
+html{box-sizing:border-box}
+*,
+*:before,
+*:after{box-sizing:inherit} 
+/*  각 브라우저 및 기기는 각각의 css특성값(초기값)을 갖고 있기 때문에, 초기화 작업이 필요하다.
+	http://rwdb.kr/%EC%BD%94%EB%94%A9%ED%95%84%EC%88%98css-reset%EB%AA%A8%EC%9D%8C/  
+	하지만 대세는 노멀라이징이라는 듯.. 그래서 아래꺼 그대로 긁어옴.
+	(1차 프로젝트는 w3의 폼을 따라가고 추후 적용 하는것 추천.)*/
+/* Extract from normalize.css by Nicolas Gallagher and Jonathan Neal git.io/normalize */
+html{-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}
+body{margin:0}
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+main,
+menu,
+nav,
+section,
+summary{display:block}
+audio,
+canvas,
+progress,
+video{display:inline-block}
+progress{vertical-align:baseline}
+audio:not([controls]){display:none;height:0}
+[hidden],
+template{display:none}
+a{background-color:transparent;-webkit-text-decoration-skip:objects}
+a:active,
+a:hover{outline-width:0}
+abbr[title]{border-bottom:none;text-decoration:underline;text-decoration:underline dotted}
+dfn{font-style:italic}
+mark{background:#ff0;color:#000}
+small{font-size:80%}
+sub,
+sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}
+sub{bottom:-0.25em}
+sup{top:-0.5em}
+figure{margin:1em 40px}
+img{border-style:none}
+svg:not(:root){overflow:hidden}
+code,
+kbd,
+pre,
+samp{font-family:monospace,monospace;font-size:1em}
+hr{box-sizing:content-box;height:0;overflow:visible}
+button,
+input,
+select,
+textarea{font:inherit;margin:0}
+optgroup{font-weight:bold}
+button,
+input{overflow:visible}
+button,
+select{text-transform:none}
+button,html [type=button],[type=reset],[type=submit]{-webkit-appearance:button}
+button::-moz-focus-inner,
+ [type=button]::-moz-focus-inner,
+  [type=reset]::-moz-focus-inner,
+   [type=submit]::-moz-focus-inner{border-style:none;padding:0}
+button:-moz-focusring,
+ [type=button]:-moz-focusring,
+  [type=reset]:-moz-focusring,
+   [type=submit]:-moz-focusring{outline:1px dotted ButtonText}
+fieldset{border:1px solid #c0c0c0;margin:0 2px;padding:.35em .625em .75em}
+legend{color:inherit;display:table;max-width:100%;padding:0;white-space:normal}
+textarea{overflow:auto}
+[type=checkbox],
+[type=radio]{padding:0}
+[type=number]::-webkit-inner-spin-button,
+[type=number]::-webkit-outer-spin-button{height:auto}
+[type=search]{-webkit-appearance:textfield;outline-offset:-2px}
+[type=search]::-webkit-search-cancel-button,
+[type=search]::-webkit-search-decoration{-webkit-appearance:none}
+::-webkit-input-placeholder{color:inherit;opacity:0.54}
+::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}
+/* End extract */
+
+
+/**/
+
 </style>
+
+
 
 <script type="text/javascript">
 </script>
