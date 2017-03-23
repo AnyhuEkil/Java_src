@@ -29,6 +29,8 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
 .ctoContainer{padding:0}
 .ctoContainer:after,
 .ctoContainer:before{content:"";display:table;clear:both;}
+.ctoTeamlink{padding:10px; margin:20px 0px; border-style: outset;background-color: grey;}
+
 
 .ctoTop,
 .ctoBottom{position:fixed;width:100%;z-index:1}
@@ -42,24 +44,23 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
 .ctoTextcenter{text-align:center;}
 
 .ctoButton{
-	font:normal;color:gold;text-decoration:none;text-align:center;
-	background-color:black;margin:0;padding:8px 16px;border:none;outline:0;
+	font:normal;color:black;text-decoration:none;text-align:center;font-size:40px;
+	background-color:transparent;text-shadow:white; margin:0;padding:0;border:none;outline:0;
 	display:inline-block;overflow:hidden;vertical-align:middle;cursor:pointer;
-	user-select:none;white-space:nowrap;-webkit-touch-callout:none;-webkit-user-select:none;
-	-khtml-user-select:none;-moz-user-select:none;-ms-user-select:none;
+	user-select:none;white-space:nowrap;
 }
 
-.ctoButton:hover{color:red;background-color:white;}
+.ctoButton:hover{color:red;font-weight:bold;}
 .ctoButton:disabled{cursor:not-allowed;opacity:0.3}
 
 .ctoDivsection{float:left;width:99.99999%;padding:0 5px;margin-bottom:16px;}
 
 .ctoOpacity,
-.ctoHoveropacity:hover{opacity:0.60;-webkit-backface-visibility:hidden;}
+.ctoHoveropacity:hover{opacity:0.60;-webkit-backface-visibility:hidden; z-index: 2}
 
 #ctoNavoverlay{
 	position:fixed;display:none;width:100%;height:100%;top:0;left:0;right:0;bottom:0;background-color:rgba(0,0,0,0.5);
-	z-index:11;-webkit-animation:opac 0.8s;animation:opac 0.8s;}
+	z-index:10;-webkit-animation:opac 0.8s;animation:opac 0.8s;}
 	
 #ctoMusic,
 #closeBtnmenu1{font-size:20px;padding:2px;float:right;}
@@ -95,23 +96,20 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
 
 
 
-/*이름 줘야됨
 
- input:focus{background-color: rgb(200,200,200); font-weight: bold;}
- */
+#loginId:focus,
+#loginPswd:FOCUS
+{background-color: rgb(111,111,200); font-weight: bold;}
 
- a:link{text-decoration: none;}
- a:hover{text-decoration: none; background-color: lime;}
+*:link{text-decoration: none;}
 
- #loginOk{border: thin solid silver; align: center; width: 300px; height: 50px;
- 			background-image: url('sample_loginTable.jpg'); background-size: 100% 100%;
- 			border-radius: 20px 20px 20px 20px; display:none; }                  /*~~님 환영합니다 div 설정 어떻게 설정해야할지 미정*/
-#welcome{text-align: center ; padding:12.5px ; }
+#loginOk{align:center;display:inline-block;}         /*~~님 환영합니다 div 설정 어떻게 설정해야할지 미정*/
+#welcome{text-align: center ;}
 
 
 
 
-
+*{border: 1px dashed black;}
 
 
 
@@ -219,39 +217,81 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
 </script>
 
 
+<script>
+/*
+var x = document.getElementById("nononononoonoonooononno"); 
+function ctoMusicplay() { 
+    x.play(); 
+} 
+function ctoMusicpause() { 
+    x.pause(); 
+} 
+*/
+
+var slideIndex = 1;
+showDivs(slideIndex);
+
+function plusDivs(n) {
+  showDivs(slideIndex += n);
+}
+
+function showDivs(n) {
+  var i;
+  var x = document.getElementsByClassName("mySlides");
+  if (n > x.length) {slideIndex = 1}    
+  if (n < 1) {slideIndex = x.length}
+  for (i = 0; i < x.length; i++) {
+     x[i].style.display = "none";  
+  }
+  x[slideIndex-1].style.display = "block";  
+}
+</script>
+
 
 
 
 
 
 </head>
-<body class="ctoContainer" style="background-color:lightgrey; max-width: 1600px;
-	 width:100%; background-color: grey; margin: auto;">
-	<header class="ctoContainer" style="float:left; background-color:darkred;  display:block;
-		 height: 50px; z-index: 10; top:0; position:fixed; width: 100%; max-width:1600px">
-		<div class="ctoContainer" style="background-color:red; display:inline-block; ">
-			<a href="#" onclick="ctoMenuclose()" title="CloseMenu1" id="closeBtnmenu1"
-				class="ctoButton ctoWlargehide">&#9776;2</a>
-		</div>
-		<div class="ctoContainer" style="background-color:red; display:inline-block; ">
-			<a href="#" class="ctoButton" style="float:left;">음악♪</a>
+<body class="ctoContainer" style="background-color:lightgrey; width:100%; background-color: grey; margin: auto;">
+	<header class="ctoContainer" style="float:left; background-color:#262626;  display:block; vertical-align:middle;
+		 			height: 60px; z-index: 11; top:-3px; position:fixed; width: 100%; text-align: center; padding-top: 5px;
+	 			padding-bottom: 20px;">
+		<div class="ctoContainer" style="display:inline-block; float: left;">
+			<a class="ctoButton ctoWlargehide" onclick="ctoNavbtnopen()" id="navBtnmenu1">&#9776;1</a>
+		</div> 
+		<div class="ctoContainer" style="display:inline-block; float: left;">
+			<audio id="ctoMusic" src="Avrillavinge_Sk8erBoi.mp3" autoplay></audio>
+			<button onclick="document.getElementById('ctoMusic').play()" class="ctoButton">&#160;♪&#160;</button>
+			<button onclick="document.getElementById('ctoMusic').pause()" class="ctoButton">&#160;■&#160;</button>
 		</div>
 		<div class="ctoContainer" style="background-color:lightred;
-			display:inline-block;width:50%;text-align:center; margin: auto;">
+			display:inline-block;">
 			<a href="#" class="ctoButton">메인화면</a>
 		</div>
-		<div class="ctoContainer" style="background-color:white; display:inline-block;">
-			<span>로그인</span>
-			<span>(숨김)로그인화면버튼</span>
-			<span>회원가입</span>
-			<span>(숨김)회원가입화면버튼</span>
+		<div class="ctoContainer" style="display:inline-block ; float:right;">
+			<span style="display: none;">(숨김)로긴버튼</span>
+			<span style="display: none;">(숨김)가입버튼</span>
+			<div id="putlogin" style=" float:right; display:inline-block;">
+				<a>ID:<input type = "text" id = "loginId" placeholder = "아이디 입력" /></a>
+				<a>PASS:<input type = "password" id ="loginPswd" placeholder = "비밀번호 입력" /></a>
+				<a><input type = "submit" id = "loginBtn" value = login onclick = "loginButton()"/></a>
+				<br/>
+				<a href = "#" onclick = "signPopUp();" style="float: left; margin-left: 20px;"><b>회원가입!</b></a>
+				<a href = "#" onclick = "remindPswd();" style="float: right; margin-right: 20px;"><b>비밀번호 찾기</b></a>
+			</div>
+			<div id="loginOk" style="display:none;">
+	 			<p id = "welcome" style="color: black; font-size: 20px"></p> 	
+ 			</div>
 		</div>
+		<hr>
 	</header>
-	<nav class="ctoContainer" style="background-color:orange;
-	 width: 300px; float: left; position:fixed; top:50px; z-index: 12;">
+	<nav id="ctoSidemenu" class="ctoContainer" style="background-color:orange;
+	 width: 180px; float: left; position:fixed; top:55px; z-index: 12; min-height: 95%">
 		<div class="ctoContainer" style="background-color: fuchsia;display:block; width: 100%">
 			<span>홈화면</span>
-			<span>숨긴닫기화면</span>
+			<a href="#" onclick="ctoMenuclose()" title="CloseMenu1" id="navBtnmenu1"
+				class="ctoButton ctoWlargehide">&#9776;2</a>
 		</div>	
 		<div class="ctoContainer" style="background-color:olive;display:block; width:100%;">
 			<p>팀원페이지</p>
@@ -269,16 +309,65 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
 	</nav>
 <div class="ctoWlargehide" id="ctoNavoverlay" title="closeBtnmenu2" onclick="ctoMenuclose()">
 </div>
-	<section class="ctoContainer" style="background-color:navy; margin-top: 50px; margin-left:300px; with:100%;">
-		<p>iframe걸기</p>
+	<section class="ctoContainer" style="background-color:navy; margin-top: 55px; margin-left:180px; with:100%;">
 		<article class="ctoContainer" style="background-color:blue;">
 			<p>기본 메인화면</p>
-			<div class="ctoContainer ctoD" style="display: inline-block;width: 33%">팀소개</div>
-			<div class="ctoContainer ctoD" style="display: inline-block;width: 33%">링크1</div>
-			<div class="ctoContainer ctoD" style="display: inline-block;width: 33%">링크2</div>
-			<div class="ctoContainer ctoD" style="display: inline-block;width: 33%">링크3</div>
-			<div class="ctoContainer ctoD" style="display: inline-block;width: 33%">링크4</div>
-			<div class="ctoContainer ctoD" style="display: inline-block;width: 33%">링크5</div>
+			<div class="ctoContainer ctoDivsection" style="display: inline-block;">
+				<div class="ctoContainer ctoTeamlink">
+					<a href="#"><img src="mini00.jpg" alt="ABOUT TEAM" style="width:100%" class="ctoHoveropacity"></a>
+					<div class="ctoContain">
+						<p><b>애국가1절</b></p>
+						<p>동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라 만세.</p>
+					</div>
+				</div>
+			</div>
+			<div class="ctoContainer ctoDivsection" style="display: inline-block;">
+				<div class="ctoContainer ctoTeamlink">
+					<img src="mini00.jpg" alt="ABOUT TEAM" style="width:100%" class="w3-hover-opacity">
+					<div class="ctoContain">
+						<p><b>애국가1절</b></p>
+						<p>동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라 만세.</p>
+					</div>
+				</div>
+			</div>
+			<div class="ctoContainer ctoDivsection" style="display: inline-block;">
+				<div class="ctoContainer ctoTeamlink">
+					<img src="mini00.jpg" alt="ABOUT TEAM" style="width:100%" class="w3-hover-opacity">
+					<div class="ctoContain">
+						<p><b>애국가1절</b></p>
+						<p>동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라 만세.</p>
+					</div>
+				</div>
+			</div>
+		</article>
+		<article class="ctoContainer" style="background-color:blue;">
+			<div class="ctoContainer ctoDivsection" style="display: inline-block;">
+				<div class="ctoContainer ctoTeamlink">
+					<img src="mini00.jpg" alt="ABOUT TEAM" style="width:100%" class="w3-hover-opacity">
+					<div class="ctoContain">
+						<p><b>애국가1절</b></p>
+						<p>동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라 만세.</p>
+					</div>
+				</div>
+			</div>
+			<div class="ctoContainer ctoDivsection" style="display: inline-block;">
+				<div class="ctoContainer ctoTeamlink">
+					<img src="mini00.jpg" alt="ABOUT TEAM" style="width:100%" class="w3-hover-opacity">
+					<div class="ctoContain">
+						<p><b>애국가1절</b></p>
+						<p>동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라 만세.</p>
+					</div>
+				</div>
+			</div>
+			<div class="ctoContainer ctoDivsection" style="display: inline-block;">
+				<div class="ctoContainer ctoTeamlink">
+					<img src="mini00.jpg" alt="ABOUT TEAM" style="width:100%" class="w3-hover-opacity">
+					<div class="ctoContain">
+						<p><b>애국가1절</b></p>
+						<p>동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라 만세.</p>
+					</div>
+				</div>
+			</div>
 		</article>
 <!-- 이페이지는 숨김
 		<article>링크1</article>e
@@ -288,10 +377,11 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
 		<article>링크5</article>
  -->
 	</section>
-	<footer class="ctoContainer" style="background-color:green; margin-left: 300px">
+	<footer class="ctoContainer" style="background-color:green; margin-left: 180px; height:150px;">
 		<div>간단한 소개</div>
 	</footer>
-
+	
+	  
 			
 </body>
 </html>
