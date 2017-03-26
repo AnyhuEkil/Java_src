@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial scale=1.0">
+<link rel="stylesheet" href="css/normalize.css">
+<title>♪</title>
+
+<style type="text/css">
+/* 패딩, 마진에 상관없이 초기 블럭크기 유지하기(하위 항목의 크기때문에 원래 지정햇던 상자의 크기가 변하는 것을 방지함.) */
+html{box-sizing:border-box}
+*,
+*:before,
+*:after{box-sizing:inherit}
+
+/* 블럭 위치 크기 확인  코드*/
+*{border: 1px dashed red;}
+
+html,body{margin:0;padding:0;min-height:100%;overflow:auto;}
+
+.whyContainer{padding:0.01px 10px}
+.whyContainer:AFTER,
+.whyContainer:BEFORE
+{content:"";display:table;clear:both}
+
+#whyHeader{width:100%;display:block;z-index:15;position:fixed;top:0}
+
+.whyAniopac{position:relative;animation:Aniopac 3s;-moz-animation:Aniopac 3s;-webkit-animation:Aniopac 3s;}
+@keyframes Aniopac{0%{opacity:0}100%{opacity:1}}
+
+
+/* 온클릭 안됨.;;ㅠ
+#whyHello00:onclick{position:relative;animation:Hello00click 5s;-moz-animation:Hello00click 5s;
+	-webkit-animation:Hello00click 5s;}
+@keyframes Hello00click{0%{opacity:1}100%{opacity:0}}
+@webkit-keyframes Hello00click{0%{opacity:1}100%{opacity:0}}
+*/
+
+#whyHello01{animation:Hello01 2s;-moz-animation:Hello01 2s;
+	-webkit-animation:Hello01 2s;}
+@keyframes Hello01{0%{opacity:0}100%{opacity:1}}
+@webkit-keyframes Hello01{0%{opacity:0}100%{opacity:1}}
+
+
+
+
+</style>
+
+<script type="text/javascript">
+
+
+function whyNavon() {
+	document.getElementById("whyNavmenu").style.display="block";
+	document.getElementById('whyBtnnavon').style.display="none";
+}
+
+//닫힘 작동안함 왜??
+function whyNavoff() {
+	document.getElementById('whyNavmenu').style.display='none';
+	document.getElementById('whyBtnnavon').style.display='block';
+}
+
+function whyAllnone() {
+	document.getElementById('whyHello00').style.display='none';
+	document.getElementById('whyHello01').style.display='none';
+	document.getElementById('whyHelloa01').style.display='none';
+	document.getElementById('whyHellob01').style.display='none';
+	document.getElementById('whyHellob02').style.display='none';
+	document.getElementById('whyHelloc01').style.display='none';
+}
+
+
+function whyLowing(){        
+	var whyCorrect = 0;          
+	for(var lowQnum = 1; lowQnum <= 5; lowQnum++){
+		var whyLowradios = document.getElementsByName('whyLowquiz'+lowQnum);
+		for(var j = 0; j < whyLowradios.length; j++) {
+			var radio = whyLowradios[j];
+			if(radio.value == "correct" && radio.checked) {
+				whyCorrect++;
+			}
+		}
+	}                   
+  alert("점수는: " + whyCorrect*20);
+}
+
+</script>
+</head>
+<body>
+<header id="whyHeader">
+	<div style="width:15%;float:left;text-align:left;display:inline-block;">
+		<div id="whyBtnnavon"
+			style="width:60px;height:60px;float:left;z-index:10;padding:10px;
+			font-size:30px;text-align:center;background-color:white"
+			onclick="whyNavon()">
+		&#9776;
+		</div>
+	</div>
+	<div style="width:55%;float:left;text-align:center;display:inline-block;">
+		<br>
+	</div>
+	<div style="width:30%;float:left;text-align:right;display:inline-block;
+			z-index:10;">
+		<img style="height:38px;margin:10px;" alt="HelLoW" src="HELLO_88.png">
+	</div>
+</header>
+
+<nav style="width:150.1px;display:inline-block;position:fixed;z-index:11;top:0;color:white;display:none"
+	class="whyContainer" id="whyNavmenu">
+	<div onclick="whyNavoff()"
+		style="width:60px;height:60px;float:left;display:block;z-index:11;padding:10px;
+			font-size:30px;text-align:center;background-color:black">
+		&#9776;
+	</div>
+	<div style="width:150.1px;float:left;display:block;">
+		<div style="60px;height:60px;font-size:40px"
+			onclick="whyAllnone(),document.getElementById('whyHello00').style.display='block',
+				location.href='#whyHello00'">
+		HOME
+		</div>
+	</div>
+	<div style="width:150.1px;float:left;display:block;">
+		<div style="60px;height:60px;font-size:40px"
+			onclick="whyAllnone(),document.getElementById('whyHelloa01').style.display='block',
+				location.href='#whyHelloa01'">
+		HelL
+		</div>
+	</div>
+	<div style="width:150.1px;float:left;display:block;">
+		<div style="60px;height:60px;font-size:40px"
+			onclick="whyAllnone(),document.getElementById('whyHellob01').style.display='block',
+				location.href='#whyHellob01'">
+		LoW
+		</div>	
+	</div>
+	<div style="width:150.1px;float:left;display:block;">
+		<div style="60px;height:60px;font-size:40px"
+			onclick="whyAllnone(),document.getElementById('whyHelloc01').style.display='block',
+				location.href='#whyHelloc01'">
+		SCORE
+		</div>	
+	</div>
+	<div style="width:150.1px;float:left;display:block;">음악/on</div>
+	<div style="width:150.1px;float:left;display:block;">음악/off</div>
+</nav>
+<div style="display:none;">5 over ray</div>
+<section style="width:100%;diplay:block;">
+	<!-- hello home black// 온클릭-display, 마우스 기다림 표시 -->
+	<article style="width:100%;height:100vh;display:block;text-align:center;
+					background-color:#1f1f1f;color:white;
+					z-index:1;position:absolute;"
+			id="whyHello00"
+			 	onclick="whyAllnone(),document.getElementById('whyHello01').style.display='block'">
+		<div style="width:70%;margin-top:20vh;display:inline-block;">
+			<img id="mainBox" style="max-width:100%;display:inline-block;" alt="HelLoW" src="HELLO_00.png">
+		</div>
+		<div></div>
+		<div style="margin-top:10vh; margin-bottom:10vh;hetght:30vh;display:block;text-align:center;">
+			<div style="max-width:70%; font-size:10vmin;display:inline-block;" class="whyAniopac">
+				<a style="color:#fffcdb;display:inline-block;">Welcome</a>
+				<a style="color:gold;display:inline-block;">"whyNot"</a>
+				<a style="color:#fffcdb;display:inline-block;">Page</a>
+			</div>		
+		</div>
+		<div></div>
+	</article>
+<!-- white버전 시작 -->
+	<article style="width:100%;height:100vh;text-align:center;
+					background-color:#fffcdb;color:#1f1f1f;display:none;
+					z-index:2;position:absolute;"
+			id="whyHello01">
+		<div style="width:70%;margin-top:20vh;display:inline-block;z-index:1;">
+			<img style="max-width:100%;display:inline-block;" alt="HelLoW" src="HELLO_01.png">
+		</div>
+		<div style="display:inline-block;z-index:1;position:absolute;"
+			id="whyImga00">
+			<img style="max-width:100%;display:inline-block;" alt="HelLoW" src="HELLO_b00.png">
+		</div>
+		<div style="display:inline-block;z-index:1;position:absolute;"
+			id="whyImgb00">
+			<img style="max-width:100%;display:inline-block;" alt="HelLoW" src="HELLO_a00.png">
+		</div>
+		<div>
+			<div>z1 hello home white//</div>
+			<div>z1 hell on</div>
+			<div>z1 low on</div>
+		</div>
+		<div>하단 40%차지(컨트롤)
+			<div onmouseover="document.getElementById('whyImga00').style.z-index='3'"
+				onmouseout="document.getElementById('whyImga00').style.z-index='0'"
+				onclick="document.getElementById('whyHelloa01').style.display='block',
+					document.getElementById('whyHello00').style.display='none'">
+				z1 hell //호버, 온클릭
+			<br><br><br><br>
+			</div>
+			<br><br><br><br>
+			<div onmouseover="document.getElementById('whyImgb00').style.z-index='3'"
+				onmouseout="document.getElementById('whyImgb00').style.z-index='0'"
+				onclick="document.getElementById('whyHellob01').style.display='block',
+					document.getElementById('whyHello00').style.display='none'">
+				z1 low on//호버, 온클릭
+			<br><br><br><br>
+			</div>
+		</div>
+	</article>
+<!-- 호버시 화면변화:마우스 오버로 바로 img변화 가능하면 없어도될 페이지.;ㅠ 
+	<article style="width:100%;height:100vh;text-align:center;
+					background-color:#fffcdb;color:#1f1f1f;display:none;
+					z-index:3;position:absolute;"
+			id="whyHelloa00">
+
+		<div>
+			<div>z1 hello home white//</div>
+			<div>z1 hell on</div>
+			<div>z1 low on</div>
+		</div>
+		<div>하단 40%차지(컨트롤)
+			<div onmouseover="document.getElementById('whyHelloa00').style.z-index='3'"
+				onmouseout="document.getElementById('whyHelloa00').style.z-index='1'"
+				onclick="document.getElementById('whyHelloa01').style.display='block',
+					document.getElementById('whyHello00').style.display='none'">
+				z1 hell //호버, 온클릭
+			<br><br><br><br>
+			</div>
+			<br><br><br><br>
+			<div onmouseover="document.getElementById('whyHellob00').style.z-index='3'"
+				onmouseout="document.getElementById('whyHellob00').style.z-index='1'"
+				onclick="document.getElementById('whyHellob01').style.display='block',
+					document.getElementById('whyHello00').style.display='none'">
+				z1 low on//호버, 온클릭
+			<br><br><br><br>
+			</div>
+		</div>
+	</article>
+	<article style="width:100%;height:100vh;text-align:center;
+					background-color:#fffcdb;color:#1f1f1f;display:none;
+					z-index:3;position:absolute;"
+			id="whyHellob00">
+		<div>
+			<div>z1 hello home white//</div>
+			<div>z1 hell on</div>
+			<div>z1 low on</div>
+		</div>
+		<div>하단 40%차지(컨트롤)
+			<div onmouseover="document.getElementById('whyHelloa00').style.display='block'"
+				onmouseout="document.getElementById('whyHelloa00').style.display='none'"
+				onclick="document.getElementById('whyHelloa01').style.display='block',
+					document.getElementById('whyHello00').style.display='none'">
+				z1 hell //호버, 온클릭
+			<br><br><br><br>
+			</div>
+			<br><br><br><br>
+			<div onmouseover="document.getElementById('whyHellob00').style.display='block'"
+				onmouseout="document.getElementById('whyHellob00').style.display='none'"
+				onclick=" document.getElementById('whyHellob01').style.display='block'">
+				z1 low on//호버, 온클릭
+			<br><br><br><br>
+			</div>
+		</div>
+	</article>
+-->
+ <!-- 
+		<div style="ad 70%; margin-top:3vh;margin-bottom:2vh;display:inline-block;">
+			<img style="max-height:10vh;display:inline-block;" alt="HelLoW"
+			 src="HELLO_a01.png">
+		</div>
+ -->
+ <!-- hell페이지 -->
+	<article style="width:100%;height:100vh;text-align:center;
+					background-color:#fffcdb;color:#1f1f1f;display:none;
+					z-index:3;position:absolute;"
+			id="whyHelloa01">
+		<div style="margin-top:70px;display:inline-block;">
+			<embed src="https://www.w3schools.com/html/exercise.asp?filename=exercise_form_attributes4"
+				style="width:85vw;height:80vh;">
+		</div>
+	</article>	
+<!-- low페이지 -->
+ 	<article style="width:100%;height:100vh;text-align:center;
+					background-color:#fffcdb;color:#1f1f1f;display:none;
+					z-index:4;position:absolute;"
+			id="whyHellob01">
+		<div>
+			<div class="question">문제1</div>
+				<input id="answer" type="radio" name="whyLowquiz1" value="wrong">답1<br>
+				<input id="answer" type="radio" name="whyLowquiz1" value="wrong">답2<br>
+				<input id="answer" type="radio" name="whyLowquiz1" value="correct">답3<hr>
+			<div class="question">문제2</div>
+				<input id="answer" type="radio" name="whyLowquiz2" value="wrong">답1<br>
+				<input id="answer" type="radio" name="whyLowquiz2" value="wrong">답2<br>
+				<input id="answer" type="radio" name="whyLowquiz2" value="correct">답3<hr>
+			<div class="question">문제3</div>
+				<input id="answer" type="radio" name="whyLowquiz3" value="wrong">답1<br>
+				<input id="answer" type="radio" name="whyLowquiz3" value="wrong">답2<br>
+				<input id="answer" type="radio" name="whyLowquiz3" value="correct" >답3<hr>
+			<div class="question">문제4</div>
+				<input id="answer" type="radio" name="whyLowquiz4" value="wrong">답1<br>
+				<input id="answer" type="radio" name="whyLowquiz4" value="wrong">답2<br>
+				<input id="answer" type="radio" name="whyLowquiz4" value="correct" >답3<hr>
+			<div class="question">문제5</div>
+				<input id="answer" type="radio" name="whyLowquiz5" value="wrong">답1<br>
+				<input id="answer" type="radio" name="whyLowquiz5" value="wrong">답2<br>
+				<input id="answer" type="radio" name="whyLowquiz5" value="correct" >답3<hr>
+			<button class="submit" onclick="whyLowing();" type="submit">다음문제(정답확인)</button>
+		</div>
+		<div>다음페이지</div>
+	</article>
+	<article style="width:100%;height:100vh;text-align:center;
+					background-color:#fffcdb;color:#1f1f1f;display:none;
+					z-index:4;position:absolute;"
+			id="whyHellob02">
+		<div>결과보기</div>
+	</article>
+	<article style="width:100%;height:100vh;text-align:center;
+					background-color:#fffcdb;color:#1f1f1f;display:none;
+					z-index:4;position:absolute;"
+			id="whyHelloc01">
+		<div>결과창
+			<div>Hell - 아직 지원되지 않습니다.</div>
+			<div>Low결과
+				<div>""님의 점수는</div>
+				<div>##점입니다.</div>
+				<div>분발해주세요,등등</div>	
+			</div>	
+		</div>
+	</article>
+</section>
+
+</body>
+</html>
