@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="css/normalize.css">
 <title>♪</title>
 
@@ -23,8 +23,7 @@ html,body{margin:0;padding:0;min-height:100%;overflow:auto;}
 .whyContainer:BEFORE
 {content:"";display:table;clear:both}
 
-#whyHeader{width:100%;display:block;z-index:15;position:fixed;top:0}
-
+#whyHeader{width:100%;display:block;z-index:10;position:fixed;top:0;background-color:#fffcdb}
 .whyAniopac{position:relative;animation:Aniopac 3s;-moz-animation:Aniopac 3s;-webkit-animation:Aniopac 3s;}
 @keyframes Aniopac{0%{opacity:0}100%{opacity:1}}
 
@@ -44,8 +43,10 @@ html,body{margin:0;padding:0;min-height:100%;overflow:auto;}
 @keyframes Hello01{0%{opacity:0}100%{opacity:1}}
 @webkit-keyframes Hello01{0%{opacity:0}100%{opacity:1}}
 
-
-
+.whyCol3{float:left;display:inline-block;height:300px;}
+@media (max-width:601px){.whyCol3{width:99.99999%}}
+@media (min-width:601px){.whyCol3{width:49.99999%}}
+@media (min-width:993px){.whyCol3{width:33.33333%}}
 
 </style>
 
@@ -53,14 +54,14 @@ html,body{margin:0;padding:0;min-height:100%;overflow:auto;}
 
 
 function whyNavon() {
-	document.getElementById("whyNavmenu").style.display="block";
-	document.getElementById('whyBtnnavon').style.display="none";
+	document.getElementById("whyNavmenu").style.display="inline-block";
+	document.getElementById("whyBtnnavon").style.display="none";
 }
 
 //닫힘 작동안함 왜??
 function whyNavoff() {
-	document.getElementById('whyNavmenu').style.display='none';
-	document.getElementById('whyBtnnavon').style.display='block';
+	document.getElementById("whyNavmenu").style.display="none";
+	document.getElementById("whyBtnnavon").style.display="inline-block";
 }
 
 function whyAllnone() {
@@ -83,8 +84,8 @@ function whyLowing(){
 				whyCorrect++;
 			}
 		}
-	}                   
-  alert("점수는: " + whyCorrect*20);
+	}
+  alert("점수 :"+whyCorrect*10);
 }
 
 </script>
@@ -95,7 +96,7 @@ function whyLowing(){
 	<div style="width:15%;float:left;text-align:left;display:inline-block;">
 		<div id="whyBtnnavon"
 			style="width:60px;height:60px;float:left;z-index:10;padding:10px;
-			font-size:30px;text-align:center;background-color:white"
+			font-size:30px;text-align:center;background-color:#fffcdb"
 			onclick="whyNavon()">
 		&#9776;
 		</div>
@@ -109,11 +110,11 @@ function whyLowing(){
 	</div>
 </header>
 <!-- 네비화면 -->
-<nav style="width:150.1px;display:inline-block;position:fixed;z-index:11;top:0;color:white;display:none"
-	class="whyContainer" id="whyNavmenu">
-	<div onclick="whyNavoff()"
-		style="width:60px;height:60px;float:left;display:block;z-index:11;padding:10px;
-			font-size:30px;text-align:center;background-color:black">
+<nav style="width:150.1px;position:fixed;z-index:11;top:0;color:white;display:none"
+	id="whyNavmenu">
+	<div style="width:60px;height:60px;float:left;display:block;padding:10px;
+			font-size:30px;text-align:center;background-color:black"
+			onclick="whyNavoff()">
 		&#9776;
 	</div>
 	<div style="width:150.1px;float:left;display:block;">
@@ -142,20 +143,24 @@ function whyLowing(){
 			onclick="whyAllnone(),document.getElementById('whyHelloc01').style.display='block',
 				location.href='#whyHelloc01'">
 		SCORE
-		</div>	
+		</div>
 	</div>
 	<div style="width:150.1px;float:left;display:block;">음악/on</div>
 	<div style="width:150.1px;float:left;display:block;">음악/off</div>
 </nav>
+
+
 <div style="display:none;">5 over ray</div>
+
 <section style="width:100%;diplay:block;">
 <!-- hello home black// 온클릭-display, 마우스 기다림 표시 -->
 	<article style="width:100%;height:100vh;display:block;text-align:center;
 					background-color:#1f1f1f;color:white;
 					z-index:1;position:absolute;"
 			id="whyHello00"
-			onclick="whyAllnone(), document.getElementById('whyHello00').style.display='block',document.getElementById('whyHello01').style.display='block'">
-			
+			 	onclick="whyAllnone(),
+			 		document.getElementById('whyHello00').style.display='block',
+			 		document.getElementById('whyHello01').style.display='block'">
 		<div style="width:70%;margin-top:20vh;display:inline-block;">
 			<img id="mainBox" style="max-width:100%;display:inline-block;" alt="HelLoW" src="HELLO_00.png">
 		</div>
@@ -253,16 +258,48 @@ function whyLowing(){
 		</div>
  -->
  <!-- hell페이지 -->
- 	<article style="width:100%;height:100vh;text-align:center;
-					background-color:#fffcdb;color:#1f1f1f;display:none;">
-	
- 	</article>
- 	<article style="width:100%;height:100vh;text-align:center;
+	<article style="width:100%;height:100vh;text-align:center;
 					background-color:#fffcdb;color:#1f1f1f;display:none;
 					z-index:3;position:absolute;"
 			id="whyHelloa01">
 		<div style="margin-top:70px;display:inline-block;">
+			<embed src=""
+				style="width:85vw;height:80vh;">
+		</div>
+	</article>	
+	<article style="width:100%;height:100vh;text-align:center;
+					background-color:#fffcdb;color:#1f1f1f;display:none;
+					z-index:3;position:absolute;"
+			id="whyHelloa02">
+		<div style="margin-top:70px;display:inline-block;">
 			<embed src="https://www.w3schools.com/html/exercise.asp?filename=exercise_form_attributes4"
+				style="width:85vw;height:80vh;">
+		</div>
+	</article>
+	<article style="width:100%;height:100vh;text-align:center;
+					background-color:#fffcdb;color:#1f1f1f;display:none;
+					z-index:3;position:absolute;"
+			id="whyHelloa03">
+		<div style="margin-top:70px;display:inline-block;">
+			<embed src="https://www.w3schools.com/html/exercise.asp?filename=exercise_form_input_types3"
+				style="width:85vw;height:80vh;">
+		</div>
+	</article>	
+ 	<article style="width:100%;height:100vh;text-align:center;
+					background-color:#fffcdb;color:#1f1f1f;display:none;
+					z-index:3;position:absolute;"
+			id="whyHelloa04">
+		<div style="margin-top:70px;display:inline-block;">
+			<embed src="https://www.w3schools.com/css/exercise.asp?filename=exercise_css3_animations5"
+				style="width:85vw;height:80vh;">
+		</div>
+	</article>	
+	<article style="width:100%;height:100vh;text-align:center;
+					background-color:#fffcdb;color:#1f1f1f;display:none;
+					z-index:3;position:absolute;"
+			id="whyHelloa05">
+		<div style="margin-top:70px;display:inline-block;">
+			<embed src="https://www.w3schools.com/css/exercise.asp?filename=exercise_overflow2"
 				style="width:85vw;height:80vh;">
 		</div>
 	</article>	
@@ -271,81 +308,112 @@ function whyLowing(){
 					background-color:#fffcdb;color:#1f1f1f;display:none;
 					z-index:3;position:absolute;"
 			id="whyHellob01">
-		<div style="margin-top:70px;display:inline-block;">
-			<div class="question">HTML이란?</div>
+		<div style="width:80vw; margin-top:70px;display:inline-block;text-align:left;"
+			class="whyContainer">
+			<div style="width:100%"> low Quiz page 탑 100%</div>
+			<div class="whyCol3"> HTML </div>
+			<div class="whyCol3">
+				<div class="question">HTML이란?</div>
 				<input id="answer" type="radio" name="whyLowquiz1" value="wrong">
 				Hyperlinks and Text Markup Language<br>
 				<input id="answer" type="radio" name="whyLowquiz1" value="wrong">
 				Home Tool Markup Language<br>
 				<input id="answer" type="radio" name="whyLowquiz1" value="correct">
-				Hyper Text Markup Language<hr>
-			<div class="question">시멘틱태그의 설명으로 틀린것은?</div>
+				Hyper Text Markup Language
+			</div>
+			<div class="whyCol3">
+				<div class="question">시멘틱태그의 설명으로 틀린것은?</div>
 				<input id="answer" type="radio" name="whyLowquiz2" value="wrong">
 				header, nav, section, article, aside, footer로 구성되어있다.<br>
 				<input id="answer" type="radio" name="whyLowquiz2" value="wrong">
 				유지보수와 웹 접근성이 좋다.<br>
 				<input id="answer" type="radio" name="whyLowquiz2" value="correct">
-				header, nav, section, article, aside, footer 순으로 작성해야한다.<hr>
-			<div class="question">다음 중 가장 큰 글자는?</div>
+				header, nav, section, article, aside, footer 순으로 작성해야한다.
+			</div>
+			<div class="whyCol3">
+				<div class="question">다음 중 가장 큰 글자는?</div>
 				<input id="answer" type="radio" name="whyLowquiz3" value="wrong">
 				h6<br>
 				<input id="answer" type="radio" name="whyLowquiz3" value="wrong">
 				p<br>
 				<input id="answer" type="radio" name="whyLowquiz3" value="correct" >
-				h1<hr>
-			<div class="question">input 태그에서  여러항목을 선택하기 위한 type은?</div>
+				h1
+			</div>
+			<div class="whyCol3">
+				<div class="question">input 태그에서  여러항목을 선택하기 위한 type은?</div>
 				<input id="answer" type="radio" name="whyLowquiz4" value="wrong">
 				radio<br>
 				<input id="answer" type="radio" name="whyLowquiz4" value="wrong">
 				check<br>
 				<input id="answer" type="radio" name="whyLowquiz4" value="correct" >
-				checkbox<hr>
-				
-			<div>	</div>
-			<div class="question">아랫밑줄을 긋기 위해 쓰는 태그는?</div>
+				checkbox
+			</div>				
+			<div class="whyCol3">
+				<div class="question">아랫밑줄을 긋기 위해 쓰는 태그는?</div>
 				<input id="answer" type="radio" name="whyLowquiz5" value="wrong">
 				sub<br>
 				<input id="answer" type="radio" name="whyLowquiz5" value="wrong">
 				del<br>
 				<input id="answer" type="radio" name="whyLowquiz5" value="correct" >
-				sup<hr>
-			<div class="question">글자색을 나타내는</div>
+				sup
+			</div>
+			
+			<div class="whyCol3">CSS</div>
+			
+			<div class="whyCol3">	
+				<div class="question">글자색을 나타내는 속성은?</div>
 				<input id="answer" type="radio" name="whyLowquiz1" value="wrong">
-				Hyperlinks and Text Markup Language<br>
+				<br>
 				<input id="answer" type="radio" name="whyLowquiz1" value="wrong">
-				Home Tool Markup Language<br>
+				<br>
 				<input id="answer" type="radio" name="whyLowquiz1" value="correct">
-				Hyper Text Markup Language<hr>
-			<div class="question">시멘틱태그의 설명으로 틀린것은?</div>
+			</div>
+			<div class="whyCol3">	
+				<div class="question">여러 태그에 같은 속성값을 주기위한것은?</div>
 				<input id="answer" type="radio" name="whyLowquiz2" value="wrong">
-				header, nav, section, article, aside, footer로 구성되어있다.<br>
+				id<br>
 				<input id="answer" type="radio" name="whyLowquiz2" value="wrong">
-				유지보수와 웹 접근성이 좋다.<br>
+				[ ]<br>
 				<input id="answer" type="radio" name="whyLowquiz2" value="correct">
-				header, nav, section, article, aside, footer 순으로 작성해야한다.<hr>
-			<div class="question">다음 중 가장 큰 글자는?</div>
+				class
+			</div>
+			<div class="whyCol3">	
+				<div class="question">클릭할 동안 작용하는 선택자는?</div>
 				<input id="answer" type="radio" name="whyLowquiz3" value="wrong">
-				h6<br>
+				onclick<br>
 				<input id="answer" type="radio" name="whyLowquiz3" value="wrong">
-				p<br>
+				action<br>
 				<input id="answer" type="radio" name="whyLowquiz3" value="correct" >
-				h1<hr>
-			<div class="question">input 태그에서  여러항목을 선택하기 위한 type은?</div>
+				active
+			</div>
+			<div class="whyCol3">	
+				<div class="question">display의 속성값으로 사용할 수 없는것은?</div>
 				<input id="answer" type="radio" name="whyLowquiz4" value="wrong">
-				radio<br>
+				block<br>
 				<input id="answer" type="radio" name="whyLowquiz4" value="wrong">
-				check<br>
+				none<br>
 				<input id="answer" type="radio" name="whyLowquiz4" value="correct" >
-				checkbox<hr>
-			<div class="question">아랫밑줄을 긋기 위해 쓰는 태그는?</div>
+				hidden
+			</div>
+			<div class="whyCol3">	
+				<div class="question">border가 차지하는 크기와 상관없는 것은?</div>
 				<input id="answer" type="radio" name="whyLowquiz5" value="wrong">
-				sub<br>
+				margin<br>
 				<input id="answer" type="radio" name="whyLowquiz5" value="wrong">
-				del<br>
+				padding<br>
 				<input id="answer" type="radio" name="whyLowquiz5" value="correct" >
-				sup<hr>
-			<button class="submit" onclick="whyLowing();" type="submit">정답확인</button>
+				radius
+			</div>
+			<div style="width:80vw">	
+				<button class="submit" onclick="whyLowing();" type="submit">정답확인</button>
+			</div>
 		</div>
+		<div>결과보기</div>
+	</article>
+	<article style="width:100%;height:100vh;text-align:center;
+					background-color:#fffcdb;color:#1f1f1f;display:none;
+					z-index:3;position:absolute;"
+			id="whyHellob02">
 		<div>결과보기</div>
 	</article>
 <!-- 결과 페이지 -->

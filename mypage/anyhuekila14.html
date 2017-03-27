@@ -83,9 +83,11 @@ function whyLowing(){
 				whyCorrect++;
 			}
 		}
-	}                   
-  alert("점수는: " + whyCorrect*20);
+	}
+  alert("점수 :"+whyCorrect*10);
 }
+
+function whyScore:
 
 </script>
 </head>
@@ -154,8 +156,9 @@ function whyLowing(){
 					background-color:#1f1f1f;color:white;
 					z-index:1;position:absolute;"
 			id="whyHello00"
-			onclick="whyAllnone(), document.getElementById('whyHello00').style.display='block',document.getElementById('whyHello01').style.display='block'">
-			
+			 	onclick="whyAllnone(),
+			 		document.getElementById('whyHello00').style.display='block',
+			 		document.getElementById('whyHello01').style.display='block'">
 		<div style="width:70%;margin-top:20vh;display:inline-block;">
 			<img id="mainBox" style="max-width:100%;display:inline-block;" alt="HelLoW" src="HELLO_00.png">
 		</div>
@@ -253,11 +256,7 @@ function whyLowing(){
 		</div>
  -->
  <!-- hell페이지 -->
- 	<article style="width:100%;height:100vh;text-align:center;
-					background-color:#fffcdb;color:#1f1f1f;display:none;">
-	
- 	</article>
- 	<article style="width:100%;height:100vh;text-align:center;
+	<article style="width:100%;height:100vh;text-align:center;
 					background-color:#fffcdb;color:#1f1f1f;display:none;
 					z-index:3;position:absolute;"
 			id="whyHelloa01">
@@ -272,13 +271,15 @@ function whyLowing(){
 					z-index:3;position:absolute;"
 			id="whyHellob01">
 		<div style="margin-top:70px;display:inline-block;">
-			<div class="question">HTML이란?</div>
+			<div>
+				<div class="question">HTML이란?</div>
 				<input id="answer" type="radio" name="whyLowquiz1" value="wrong">
 				Hyperlinks and Text Markup Language<br>
 				<input id="answer" type="radio" name="whyLowquiz1" value="wrong">
 				Home Tool Markup Language<br>
 				<input id="answer" type="radio" name="whyLowquiz1" value="correct">
 				Hyper Text Markup Language<hr>
+			</div>
 			<div class="question">시멘틱태그의 설명으로 틀린것은?</div>
 				<input id="answer" type="radio" name="whyLowquiz2" value="wrong">
 				header, nav, section, article, aside, footer로 구성되어있다.<br>
@@ -346,6 +347,12 @@ function whyLowing(){
 				sup<hr>
 			<button class="submit" onclick="whyLowing();" type="submit">정답확인</button>
 		</div>
+		<div>결과보기</div>
+	</article>
+	<article style="width:100%;height:100vh;text-align:center;
+					background-color:#fffcdb;color:#1f1f1f;display:none;
+					z-index:3;position:absolute;"
+			id="whyHellob02">
 		<div>결과보기</div>
 	</article>
 <!-- 결과 페이지 -->

@@ -102,7 +102,7 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
 
 
 
-
+*{border: 1px dotted red;}
 
 
 
@@ -275,25 +275,25 @@ function showDivs(n) {
 		<div class="ctoContainer" style="float: left;">
 			<a class="ctoButton ctoWlargehide" onclick="ctoNavbtnopen()" id="navBtnmenu1">&#9776;1</a>
 		</div> 
-		<div class="ctoContainer" style="display:inline-block; float: left;">
+		<div class="ctoContainer" style="display:inline-block; float: left; margin-top:10px;">
 			<audio id="ctoMusic" src="Avrillavinge_Sk8erBoi.mp3" autoplay></audio>
 			<button onclick="document.getElementById('ctoMusic').play()" class="ctoButton">&#160;♪&#160;</button>
-			<button onclick="document.getElementById('ctoMusic').pause()" class="ctoButton">&#160;■&#160;</button>
+			<button onclick="document.getElementById('ctoMusic').pause()" class="ctoButton">&#160;♪&#160;</button>
 		</div>
-		<div class="ctoContainer" id="ctoMainTitle" style="display:none;">
-			<a href="#" class="ctoButton">메인화면</a>
+		<div class="ctoContainer" id="ctoMainTitle" style="display:none;margin-top:10px">
+			<a href="#" class="ctoButton">Project.COT</a>
 		</div>
 		<div class="ctoContainer" style="display:inline-block ; float:right;">
 			<div class="ctoContainer" style="float: right;">
 				<a class="ctoButton ctoWlargehide" onclick="ctoLoginmini()" id="topBtnlogin1">IN</a>
 			</div>
-			<div id="putlogin" style=" float:right; display:none;">
+			<div id="putlogin" style=" float:right; display:none; margin-top: 10px; margin-left:10px;">
 				<a>ID:<input type = "text" id = "loginId" placeholder = "아이디 입력" /></a>
 				<a>PASS:<input type = "password" id ="loginPswd" placeholder = "비밀번호 입력" /></a>
 				<a><input type = "submit" id = "loginBtn" value = login onclick = "loginButton()"/></a>
 				<br/>
-				<a href = "#" onclick = "signPopUp();" style="float: left; margin-left: 20px;"><b>회원가입!</b></a>
-				<a href = "#" onclick = "remindPswd();" style="float: right; margin-right: 20px;"><b>비밀번호 찾기</b></a>
+				<a href = "#" onclick = "signPopUp();" style="color:gold; float: left; margin-left: 30px;"><b>회원가입!</b></a>
+				<a href = "#" onclick = "remindPswd();" style="color:gold; float: right; margin-right: 30px;"><b>비밀번호 찾기</b></a>
 			</div>
 			<div id="loginOk" style="display:none;">
 	 			<p id = "welcome" style="color: white; font-size: 20px"></p> 	
@@ -303,7 +303,9 @@ function showDivs(n) {
 	<nav id="ctoSidemenu" class="ctoContainer" style="background-color:#cccccc;
 	 width: 180px; float: left; position:fixed; top:65px; z-index: 11; min-height: 95%">
 		<div class="ctoContainer" style="background-color: #cccccc;display:block; width: 100%">
-			<span>홈화면</span>
+			<div style="height:70px;width:70px;background-image:url('main.png');background-size:100%;"
+				onclick="local.href('#ctoMaintop')">
+			</div>
 			<a href="#" onclick="ctoMenuclose()" title="CloseMenu1" id="navBtnmenu1"
 				class="ctoButton ctoWlargehide">&#9776;2</a>
 		</div>	
@@ -320,7 +322,7 @@ function showDivs(n) {
 	</nav>
 <div class="ctoWlargehide" id="ctoNavoverlay" title="closeBtnmenu2" onclick="ctoMenuclose()">
 </div>
-	<section class="ctoContainer" style="background-color:#ffffff; margin-top: 65px; margin-left:180px; with:100%;">
+	<section class="ctoContainer" id="ctoMaintop" style="background-color:#ffffff; margin-top: 65px; margin-left:180px; with:100%;">
 		<article class="ctoContainer" style="background-color:#ffffff;">
 			<p> </p>
 			<div class="ctoContainer ctoDivsection" style="display: inline-block;">

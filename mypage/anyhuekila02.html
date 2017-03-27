@@ -75,7 +75,7 @@ function whyAllnone() {
 
 function whyLowing(){        
 	var whyCorrect = 0;          
-	for(var lowQnum = 1; lowQnum <= 10; lowQnum++){
+	for(var lowQnum = 1; lowQnum <= 5; lowQnum++){
 		var whyLowradios = document.getElementsByName('whyLowquiz'+lowQnum);
 		for(var j = 0; j < whyLowradios.length; j++) {
 			var radio = whyLowradios[j];
@@ -154,8 +154,7 @@ function whyLowing(){
 					background-color:#1f1f1f;color:white;
 					z-index:1;position:absolute;"
 			id="whyHello00"
-			onclick="whyAllnone(), document.getElementById('whyHello00').style.display='block',document.getElementById('whyHello01').style.display='block'">
-			
+			 	onclick="whyAllnone(),document.getElementById('whyHello01').style.display='block'">
 		<div style="width:70%;margin-top:20vh;display:inline-block;">
 			<img id="mainBox" style="max-width:100%;display:inline-block;" alt="HelLoW" src="HELLO_00.png">
 		</div>
@@ -253,11 +252,7 @@ function whyLowing(){
 		</div>
  -->
  <!-- hell페이지 -->
- 	<article style="width:100%;height:100vh;text-align:center;
-					background-color:#fffcdb;color:#1f1f1f;display:none;">
-	
- 	</article>
- 	<article style="width:100%;height:100vh;text-align:center;
+	<article style="width:100%;height:100vh;text-align:center;
 					background-color:#fffcdb;color:#1f1f1f;display:none;
 					z-index:3;position:absolute;"
 			id="whyHelloa01">
@@ -272,80 +267,34 @@ function whyLowing(){
 					z-index:3;position:absolute;"
 			id="whyHellob01">
 		<div style="margin-top:70px;display:inline-block;">
-			<div class="question">HTML이란?</div>
-				<input id="answer" type="radio" name="whyLowquiz1" value="wrong">
-				Hyperlinks and Text Markup Language<br>
-				<input id="answer" type="radio" name="whyLowquiz1" value="wrong">
-				Home Tool Markup Language<br>
-				<input id="answer" type="radio" name="whyLowquiz1" value="correct">
-				Hyper Text Markup Language<hr>
-			<div class="question">시멘틱태그의 설명으로 틀린것은?</div>
-				<input id="answer" type="radio" name="whyLowquiz2" value="wrong">
-				header, nav, section, article, aside, footer로 구성되어있다.<br>
-				<input id="answer" type="radio" name="whyLowquiz2" value="wrong">
-				유지보수와 웹 접근성이 좋다.<br>
-				<input id="answer" type="radio" name="whyLowquiz2" value="correct">
-				header, nav, section, article, aside, footer 순으로 작성해야한다.<hr>
-			<div class="question">다음 중 가장 큰 글자는?</div>
-				<input id="answer" type="radio" name="whyLowquiz3" value="wrong">
-				h6<br>
-				<input id="answer" type="radio" name="whyLowquiz3" value="wrong">
-				p<br>
-				<input id="answer" type="radio" name="whyLowquiz3" value="correct" >
-				h1<hr>
-			<div class="question">input 태그에서  여러항목을 선택하기 위한 type은?</div>
-				<input id="answer" type="radio" name="whyLowquiz4" value="wrong">
-				radio<br>
-				<input id="answer" type="radio" name="whyLowquiz4" value="wrong">
-				check<br>
-				<input id="answer" type="radio" name="whyLowquiz4" value="correct" >
-				checkbox<hr>
-				
-			<div>	</div>
-			<div class="question">아랫밑줄을 긋기 위해 쓰는 태그는?</div>
-				<input id="answer" type="radio" name="whyLowquiz5" value="wrong">
-				sub<br>
-				<input id="answer" type="radio" name="whyLowquiz5" value="wrong">
-				del<br>
-				<input id="answer" type="radio" name="whyLowquiz5" value="correct" >
-				sup<hr>
-			<div class="question">글자색을 나타내는</div>
-				<input id="answer" type="radio" name="whyLowquiz1" value="wrong">
-				Hyperlinks and Text Markup Language<br>
-				<input id="answer" type="radio" name="whyLowquiz1" value="wrong">
-				Home Tool Markup Language<br>
-				<input id="answer" type="radio" name="whyLowquiz1" value="correct">
-				Hyper Text Markup Language<hr>
-			<div class="question">시멘틱태그의 설명으로 틀린것은?</div>
-				<input id="answer" type="radio" name="whyLowquiz2" value="wrong">
-				header, nav, section, article, aside, footer로 구성되어있다.<br>
-				<input id="answer" type="radio" name="whyLowquiz2" value="wrong">
-				유지보수와 웹 접근성이 좋다.<br>
-				<input id="answer" type="radio" name="whyLowquiz2" value="correct">
-				header, nav, section, article, aside, footer 순으로 작성해야한다.<hr>
-			<div class="question">다음 중 가장 큰 글자는?</div>
-				<input id="answer" type="radio" name="whyLowquiz3" value="wrong">
-				h6<br>
-				<input id="answer" type="radio" name="whyLowquiz3" value="wrong">
-				p<br>
-				<input id="answer" type="radio" name="whyLowquiz3" value="correct" >
-				h1<hr>
-			<div class="question">input 태그에서  여러항목을 선택하기 위한 type은?</div>
-				<input id="answer" type="radio" name="whyLowquiz4" value="wrong">
-				radio<br>
-				<input id="answer" type="radio" name="whyLowquiz4" value="wrong">
-				check<br>
-				<input id="answer" type="radio" name="whyLowquiz4" value="correct" >
-				checkbox<hr>
-			<div class="question">아랫밑줄을 긋기 위해 쓰는 태그는?</div>
-				<input id="answer" type="radio" name="whyLowquiz5" value="wrong">
-				sub<br>
-				<input id="answer" type="radio" name="whyLowquiz5" value="wrong">
-				del<br>
-				<input id="answer" type="radio" name="whyLowquiz5" value="correct" >
-				sup<hr>
-			<button class="submit" onclick="whyLowing();" type="submit">정답확인</button>
+			<div class="question">문제1</div>
+				<input id="answer" type="radio" name="whyLowquiz1" value="wrong">답1<br>
+				<input id="answer" type="radio" name="whyLowquiz1" value="wrong">답2<br>
+				<input id="answer" type="radio" name="whyLowquiz1" value="correct">답3<hr>
+			<div class="question">문제2</div>
+				<input id="answer" type="radio" name="whyLowquiz2" value="wrong">답1<br>
+				<input id="answer" type="radio" name="whyLowquiz2" value="wrong">답2<br>
+				<input id="answer" type="radio" name="whyLowquiz2" value="correct">답3<hr>
+			<div class="question">문제3</div>
+				<input id="answer" type="radio" name="whyLowquiz3" value="wrong">답1<br>
+				<input id="answer" type="radio" name="whyLowquiz3" value="wrong">답2<br>
+				<input id="answer" type="radio" name="whyLowquiz3" value="correct" >답3<hr>
+			<div class="question">문제4</div>
+				<input id="answer" type="radio" name="whyLowquiz4" value="wrong">답1<br>
+				<input id="answer" type="radio" name="whyLowquiz4" value="wrong">답2<br>
+				<input id="answer" type="radio" name="whyLowquiz4" value="correct" >답3<hr>
+			<div class="question">문제5</div>
+				<input id="answer" type="radio" name="whyLowquiz5" value="wrong">답1<br>
+				<input id="answer" type="radio" name="whyLowquiz5" value="wrong">답2<br>
+				<input id="answer" type="radio" name="whyLowquiz5" value="correct" >답3<hr>
+			<button class="submit" onclick="whyLowing();" type="submit">다음문제(정답확인)</button>
 		</div>
+		<div>다음페이지</div>
+	</article>
+	<article style="width:100%;height:100vh;text-align:center;
+					background-color:#fffcdb;color:#1f1f1f;display:none;
+					z-index:3;position:absolute;"
+			id="whyHellob02">
 		<div>결과보기</div>
 	</article>
 <!-- 결과 페이지 -->
