@@ -46,10 +46,11 @@ html,body{margin:0;padding:0;min-height:100%;overflow:auto;}
 .whyCol3{float:left;display:inline-block;height:300px;}
 .whyCol2{float:left;display:inline-block;height:300px;}
 @media (max-width:601px){.whyCol3,.whyCol2{width:99.99999%}}
-@media (min-width:601px){.whyCol3,.whyCol2{width:49.99999%}}
+@media (min-width:601px){.whyCol3{width:49.99999%}}
+@media (min-width:993px){.whyCol2{width:49.99999%}}
 @media (min-width:993px){.whyCol3{width:33.33333%}}
 
-*{border:1px dotted red;}
+*{BORDER:1PX dotted red}
 
 </style>
 
@@ -267,15 +268,30 @@ function whyLowing(){
 			id="whyHelloa01"
 			class="whyContainer">
 		<div style="width:80vw;margin-top:70px;display:inline-block;">
-			<div class="whyCol2" style="display:inline-block;">
-			</div>
-			<div class="whyCol2" style="display:inline-block;">
-			</div>
-			<div class="whyCol2" style="display:inline-block;">
-			</div>
-			<div class="whyCol2" style="display:inline-block;">
-			</div>
+			<div class="whyCol2 whyContainer" style="width:100%;">html 1</div>
+			<div class="whyCol2 whyContainer" style="width:100%;">html 2</div>
+			<div class="whyCol2 whyContainer" style="">CSS 1</div>
+			<div class="whyCol2 whyContainer" style="">CSS 2</div>	
 		</div>
+		<!-- 	
+			<div style="display:inline-block;">
+				<embed src="https://www.w3schools.com/html/exercise.asp?filename=exercise_form_attributes4"
+					id="whyHellw3quiz1" style="width:100%;height:90vh;display:none">
+			</div>
+			<div style="display:inline-block;">
+				<embed src="https://www.w3schools.com/html/exercise.asp?filename=exercise_form_input_types3"
+					id="whyHellw3quiz2" style="width:100%;height:90vh;">
+			</div>
+			<div style="display:inline-block;">
+				<embed src="https://www.w3schools.com/css/exercise.asp?filename=exercise_css3_animations5"
+					id="whyHellw3quiz3" style="width:100%;height:90vh;">
+			</div>
+			<div style="display:inline-block;">
+				<embed src="https://www.w3schools.com/css/exercise.asp?filename=exercise_overflow2"
+					id="whyHellw3quiz4" style="width:100%;height:90vh;">
+			</div>
+		 -->
+		
 	</article>	
 <!-- low페이지 -->
  	<article style="width:100%;min-height:100vh;text-align:center;
@@ -286,7 +302,6 @@ function whyLowing(){
 			class="whyContainer">
 			<div style="width:100%"> low Quiz page 탑 100%</div>
 			<div class="whyCol3"> HTML </div>
-			<div class="whyCol3">
 				<div class="question">HTML이란?</div>
 				<input id="answer" type="radio" name="whyLowquiz1" value="wrong">
 				Hyperlinks and Text Markup Language<br>
