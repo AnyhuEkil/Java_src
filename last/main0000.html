@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>project_base_page</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style type="text/css">
+/*	기본 박싱	*/
+
+html{box-sizing:border-box}*,
+*:before,
+*:after{box-sizing:inherit}
+
+/* 일부 초기화	*/
+body{margin:0}
+header,nav,section,article,footer	
+	{display:block;margin:0;padding:0}
+a{background-color:transparent}
+a:active,a:hover{outline-width:0}
+img{border-style:none}
+hr{box-sizing:content-box;height:0;overflow:visible}
+textarea{font:inherit;margin:0} 
+button,input{overflow:visible}
+button,select{text-transform:none}
+/*	초기화 끝 */
+/*	기본 폰트 설정	*/
+
+body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
+
+
+
+
+
+.ctoContainer{padding:0px}
+.ctoContainer:after,
+.ctoContainer:before{content:"";display:table;clear:both;}
+.ctoTeamlink{float: left; padding:16px; width:100%;}
+.cotTeamscript{float: left;  color: black; top-padding:50px;
+	width:100%; height: 100%}
+
+
+.ctoTop,
+.ctoBottom{position:fixed;width:100%;z-index:1}
+.ctoTop{top:0}
+.ctoBottom{bottom:0}
+.ctoOverlay{position:fixed;display:none;width:100%;height:100%;
+	top:0;left:0;right:0;bottom:0;background-color:rgba(0,0,0,0.5);z-index:11;}
+.ctoLeft{float:left;}
+.ctoRight{float:right;}
+.ctoPadding{padding:8px 16px;}
+.ctoTextcenter{text-align:center;}
+
+.ctoButton{
+	font:normal;color:white;text-decoration:none;text-align:center;font-size:40px;
+	background-color:transparent;text-shadow:white; margin:0;padding:0;border:none;outline:0;
+	display:inline-block;overflow:hidden;vertical-align:middle;cursor:pointer;
+	user-select:none;white-space:nowrap;
+}
+.ctoButtonSet01{
+	padding-top:8px;
+}
+
+.ctoButton:hover{color:grey;text-shadow: }
+.ctoButton:disabled{cursor:not-allowed;opacity:0.3}
+div>p{
+	margin: 10px 0;
+}
+p>a{
+	font-size: 25px;
+	color: #27343f;
+}
+#navBtnmenu02{
+	color: #27343f;
+	font-size: 25px;
+}
+a>input{
+	width: 100px;
+}
+#loginBtn{
+	width: 50px;
+}
+
+.loginSmall{
+	background-color: #435a6e;margin:5px
+}
+
+.ctoDivsection{float:left;width:99.99999%;padding:0;margin-bottom:16px;}
+
+.ctoHoveropacity:hover{transform:scale(1.1);-webkit-backface-visibility:hidden; z-index: 2;}
+
+#ctoNavoverlay{
+	position:fixed;display:none;width:100%;top:0;left:0;right:0;bottom:0;background-color:rgba(0,0,0,0.5);
+	z-index:10;-webkit-animation:opac 0.8s;animation:opac 0.8s;}
+	
+
+
+
+
+@media (min-width:601px){
+	#ctoMainTitle{display:inline-block!important;}
+	.ctoDivsection{width:33%}
+}
+@media (min-width:993px){
+	#putlogin{display:inline-block!important;}
+	#ctoSidemenu{display:block!important;}
+	#ctoLoginmini{display:inline-block!important;}
+	.ctoWlargehide{display:none!important}
+	.ctoDivsection{width:33%}
+}
+@media (max-width:992px){
+	header,
+	section,
+	footer{margin-left:0!important;margin-right:0!important;}
+	#ctoSidemenu{display:none;}
+	#putlogin{display:none;}
+	#ctoLoginmini{display:none!;}
+}
+
+#loginId:focus,
+#loginPswd:FOCUS
+{background-color: rgb(111,111,200); font-weight: bold;}
+
+*:link{text-decoration: none;}
+
+#loginOk{align:center;display:inline-block;}         /*~~님 환영합니다 div 설정 어떻게 설정해야할지 미정*/
+#welcome{text-align: center;}
+
+
+	
+	#tableTitle{
+				text-align:center; 
+				color:aqua; 
+				text-shadow:2px 2px 2px rgb(100,100,186);
+				}
+	div.membDiv{ 
+				padding: 2%; 
+				width:100%; 
+				height: 100%; 
+				font-size: 12px; 
+				color: darkblue;
+				background-image: url('sample_MembershipBg.jpg'); 
+				background-size: 100% 100%;
+				min-width: 380px; 
+				}
+
+
+	 /*창을 줄엿을때 조정이 필요함!!!*/
+	legend { 
+			font-style: italic; font-weight:bold; 
+			}
+		
+
+
+/*
+*{border: 1px dashed red;}
+*/
+</style>
+
+
+
+
+<script type="text/javascript">
+ var loginAccess = 3;
+ var loginDB;
+ var inputArr;
+ window.onload = function(){  // 어떠한 function이나 변수들보다 먼저 load해서, 임의의 변수에 overwrite방지.
+	 loginDB = ["","","teamCTO","male","0227","none","m@naver.com","82","01287085",
+		 "future", "7777", "user" , "female","0312","bigPict", "goodNeighbors@acorn.com","82","1230423"];
+
+	
+}
+ function loginButton(){
+		for( arrInd in loginDB){   // loginDB 배열의 정보들을 찾아봄.
+			var parInt = parseInt(arrInd);  
+			if( parInt%9 == 0){  // 9배수 번쨰 원소들과 id를 일단 비교. 
+				if(loginDB[parInt] == document.getElementById("loginId").value   //id비교
+					&& loginDB[(parInt+1)] == document.getElementById("loginPswd").value){  //pswd비교
+/* 					alert(loginDB[parInt]+"님 환영합니다!"); */
+					loginAccess = 3;  //보안강화 초기화.
+					document.getElementById("loginOk").style.display="block";           // ~~~님 환영합니다 div에 id="loginOk"값 주고 display block으로 변경
+					document.getElementById("putlogin").style.display="none";			// 로그인창 div에 id="putlogin"값 주고 display none으로 변경
+					document.getElementById("welcome").innerHTML = document.getElementById("loginId").value+ "님 환영합니다.";
+					break; //정상 로그인. 루프끝.
+				}
+			}
+			else if(loginDB[(loginDB.length -9)] != document.getElementById("loginId").value   //id비교
+					|| loginDB[(loginDB.length -8)] != document.getElementById("loginPswd").value){
+																	// 배열의 마지막까지 일치하는 데이터가없을경우.
+				alert("로그인정보가 없습니다.");
+				loginAccess--;
+				alert("총 "+(3-loginAccess)+"번 틀리셨습니다. \n보안강화까지 "+loginAccess+"번 남으셨습니다.");
+				if(loginAccess ==0){
+					alert("3회 오류로인하여, \'비밀번호찾기\'를 해주세요.");   
+					document.getElementById("loginBtn").disabled = true;
+					document.getElementById("loginBtn").style.backgroundColor = "#ff5050";
+					
+						///// 모두 틀릴경우, 비밀번호찾기 버튼누르기전까지 disabled상태로(예정)
+					loginAccess = 3;
+				}
+				break;
+				}
+			} //for in loop END.
+}
+ 
+ function signPopUp(){
+	 window.open("proj1_signUpMembership.html", "signUp", "top=0 , left=0 , width=400 , height=550");
+	 	//#######혹시 창이 50% 50%로 css설정되지ㅣ않을지 수색.######### 
+}
+ 
+
+ /* ###########
+ 	remindPswd 취약점: 
+ 		1.보안- 아이디만 인지한다면 비밀번호를 따올수잇다
+ 		// 개선할점: 가능한 localstorage 이용 -> 구현완료.
+ 		
+ ############## */
+ function remindPswd(){  //비밀번호 찾기
+	document.getElementById("loginBtn").disabled = false;
+	document.getElementById("loginBtn").style.backgroundColor = "rgb(200,200,200)";
+			// 3회이상 로그인실패해서 제한걸은  disabled을 다시 false해서 login버튼 누를수잇게 조치	
+	var userSeekId = prompt("찾으실 패스워드의 아이디를 적어주세요: ", "");  //프롬프트로 아이디와 유저이름값을 입력받게됨.
+	var userSeekName = prompt("본인의 성함을 적어주세요: ","");
+
+	
+	for(var index = 0; index < loginDB.length; index++){  
+		if( (index % 9 == 0) && userSeekId == loginDB[index]){  // 배열을 훑으면서  9배수 원소들과 입력한 id와 비교
+			alert("??");
+			if(userSeekName == loginDB[(index + 2)]){   //// id에 맞는 유저이름값인지 확인.
+				alert("찾으시는 " +userSeekId+ "님의 패스워드는 \""+ loginDB[(index + 1)]+ "\" 입니다. \n 다음엔 까먹지마세요! :)" );
+				break;
+			}// Inner if END.
+			else if(userSeekName != loginDB[(loginDB.length -7)]){   //// 저장된 마지막아이디와 입력아이디와 비교. 없으면 alert..
+				alert("찾으시는 " +userSeekId+ "의 정보와, \n 본인 성함 "+userSeekName+ "이 맞지 않습니다." );
+			break;
+			} // inner elseif END.
+		} // Outer if END.
+		else if( (index % 9 == 0) && userSeekId != loginDB[(loginDB.length -9)]){
+			alert("찾으시는 " +userSeekId+ "의 정보가 없습니다." );
+			break;
+		}// outer elseif END.
+	}// Outer for loop END
+}//function END
+</script>
+
+<script>
+//Script to open and close sidebar
+	function ctoNavbtnopen() {
+		document.getElementById("ctoSidemenu").style.display = "block";
+		document.getElementById("ctoNavoverlay").style.display = "block";
+	}
+
+	function ctoMenuclose() {
+		document.getElementById("ctoSidemenu").style.display = "none";
+		document.getElementById("ctoNavoverlay").style.display = "none";
+	}
+//Script to open and close login
+	function ctoNavbtnopen() {
+		document.getElementById("ctoSidemenu").style.display = "block";
+		document.getElementById("ctoNavoverlay").style.display = "block";
+	}
+
+	function ctoMenuclose() {
+		document.getElementById("ctoSidemenu").style.display = "none";
+		document.getElementById("ctoNavoverlay").style.display = "none";
+	}
+	/*작은로그인버튼*/
+	function ctoLoginmini() {
+		if(document.getElementById("putlogin").style.display == "none"){
+			document.getElementById("putlogin").style.display = "inline";
+			document.getElementById("topBtnlogin1").innerHTML = "닫기";
+			}else if(document.getElementById("putlogin").style.display == "inline"){
+			document.getElementById("putlogin").style.display = "none";
+			document.getElementById("topBtnlogin1").innerHTML = "LOG IN";
+		}
+	}
+	
+		
+
+	/*
+
+	 */
+	 
+	 var parInt;
+	 var inputArr;
+	 window.onload = function(){  // 어떠한 function이나 변수들보다 먼저 load해서, 임의의 변수에 overwrite방지.
+		 inputArr = ["aaa","aaa","teamCTO","male","0227","none","m@naver.com","82","01287085",
+		 		"future", "7777", "user","female","0312","bigPict", "goodNeighbors@acorn.com","82","1230423"];
+
+		
+	}
+	 
+	 function userPswdComp(){ //1차 비번 2차비번 비교,  onclick위치는  개인정보_성함적는칸.
+			var passPoint = document.getElementsByName("pswdStatus");
+			if( passPoint[0].value == passPoint[2].value ){
+				passPoint[3].value = " 일치  ";
+				passPoint[3].style.backgroundColor = "green"; 
+				passPoint[3].style.color = "orange"; 
+			}
+			else{
+				passPoint[3].value = "불일치";
+				passPoint[3].style.backgroundColor = "red";
+				passPoint[3].style.color = "purple";
+				passPoint[2].value = "";
+			 }
+		}
+
+	 function pswdAvail(){      // 암호에 특수문자1, 대문자1이 포함되엇는지 체크.
+			var passwordArr = [];
+			var passPoint = document.getElementsByName("pswdStatus");
+			passwordArr = passPoint[0].value;
+		   
+			passPoint[1].value = "이용불가능!"	
+			passPoint[1].style.backgroundColor = "red"; 
+			passPoint[1].style.color = "purple";
+
+			for( var idx01 = 0; idx01 <passwordArr.length; idx01++ ){ //word안 대문자찾기.
+		/*		alert(passwordArr[idx01]);*/
+				if('A' <= passwordArr[idx01]  && passwordArr[idx01] <= 'Z'){  // 허용 대문자. ##맨 나중에 6글자이상으로만 추가.
+		/*			alert("outer loop "+passwordArr[idx01]); */
+					for( var idx02 = 0; idx02 <passwordArr.length; idx02++ ){ //word안 특수문자 찾기. 
+		/*			 	alert("inner loop "+passwordArr[idx02]); */
+						if(passwordArr[idx02] == "!" || passwordArr[idx02] == "~" || passwordArr[idx02] == "@" || 
+						   passwordArr[idx02] == "#" || passwordArr[idx02] == "$" || passwordArr[idx02] == "%" || 
+						   passwordArr[idx02] == "^" || passwordArr[idx02] == "&" || passwordArr[idx02] == "*" || 
+						   passwordArr[idx02] == "(" || passwordArr[idx02] == ")" || passwordArr[idx02] == "_" ||
+						   passwordArr[idx02] == "+" || passwordArr[idx02] == "=" || passwordArr[idx02] == "-")  { //허용 특수문자
+								passPoint[1].value = "이용가능!"
+								passPoint[1].style.backgroundColor = "green"; 
+								passPoint[1].style.color = "orange";
+								return;
+						} //허용 특수문자 END 
+					} // inner for loop END
+				} // if 대문자 체크 END
+				}// OUTER for loop END
+		 	} //function END.
+
+
+
+	function storeInfo(){
+		var passPoint = document.getElementsByName("pswdStatus");
+		 if(document.getElementsByName("userId")[0].value ==""){
+				alert("성의 있는 아이디를 보여주세요.");
+				document.getElementsByName("userId")[0].value ="";
+			 }
+			 else if(document.getElementsByName("userName")[0].value ==""){
+					alert("성함 입력칸이 비어있습니다.");
+			 }
+			 else if(document.getElementsByName("gender1")[0].value == ""){
+					alert("성별을 선택하지 않으셨습니다.");
+			 }
+			 else if(document.getElementsByName("personalNumber")[0].value =="" &&
+					 document.getElementsByName("otherAuthen")[0].value =="" ){
+					alert("개인정보 인증용으로 하나이상 기입해주셔야합니다..");
+			 }
+			 else if( passPoint[2].value == "" ){
+					alert("비밀번호를 일치시켜주셔야합니다.");
+			 }
+			 else{
+		
+		inputArr.push(document.getElementsByName("userId")[0].value);		/* %9 ==0 이면 id */
+		inputArr.push(document.getElementsByName("pswdStatus")[2].value);	// ==1 이면 pswd ...등등
+		inputArr.push(document.getElementsByName("userName")[0].value);
+	 	inputArr.push(document.getElementsByName("gender1")[0].value);
+		inputArr.push(document.getElementsByName("birthDay")[0].value);
+	 	inputArr.push(document.getElementsByName("profilePicture")[0].value);
+	 	inputArr.push(document.getElementsByName("otherAuthen")[0].value);
+		inputArr.push(document.getElementsByName("localNum")[0].value);
+		inputArr.push(document.getElementsByName("personalNumber")[0].value);  
+	/* alert(inputArr);
+	 */
+		alert(document.getElementsByName("userId")[0].value+ "님 회원가입 완료.");
+		window.close(); //회원가입 완료 클릭시 자동 닫기
+		}
+	} //storeInfo END	
+	
+	
+	
+</script>
+
+
+
+
+</head>
+<body class="ctoContainer" style=" width:100%; margin: auto;">
+	<header class="ctoContainer" style="float:left; background-color:#435a6e;  display:block; vertical-align:middle;
+		 			height: 70px; z-index: 12; top:-3px; position:fixed; width: 100%; text-align: center;">
+		<div class="ctoContainer" style="float: left;">
+			<a class="ctoButton ctoWlargehide" onclick="ctoNavbtnopen()" id="navBtnmenu01">&#9776;</a>
+		</div> 
+		<div class="ctoContainer" style=" display:inline-block; float: left;">
+			<audio id="ctoMusic" src="Avrillavinge_Sk8erBoi.mp3" autoplay></audio>
+			<button onclick="document.getElementById('ctoMusic').play()" class="ctoButton ctoButtonSet01">&#160;♪&#160;</button>
+			<button onclick="document.getElementById('ctoMusic').pause()" class="ctoButton ctoButtonSet02">&#160;■&#160;</button>
+		</div>
+		<div class="ctoContainer" id="ctoMainTitle" style="display:none;">
+			<a href="#" class="ctoButton">Team.CTO</a>
+		</div>
+		<div class="ctoContainer loginSmall" style="display:inline-block ; float:right;">
+			<div class="ctoContainer " style="float: right;">
+				<a class="ctoButton ctoWlargehide" onclick="ctoLoginmini()" id="topBtnlogin1">IN</a>
+			</div>
+			<div id="putlogin" style=" float:right; display:none;">
+				<a style="color:white;"><b>ID : </b><input type = "text" id = "loginId" placeholder = "아이디 입력" /></a>
+				<a style="color:white;"><b>PASS : </b><input type = "password" id ="loginPswd" placeholder = "비밀번호 입력" /></a>
+				<a><input type = "submit" id = "loginBtn" value = login onclick = "loginButton()" /></a>
+				<br/>
+				<a href = "#" onclick = "signPopUp();" style="color:white; float: left;"><b>회원가입!</b></a>
+				<a href = "#" onclick = "remindPswd();" style="color:white; float: left; padding-left:10px;"><b>비밀번호 찾기</b></a>
+				
+			</div>
+			<div id="loginOk" style="display:none;">
+	 			<p id = "welcome" style="color: white; font-size: 20px"></p> 	
+ 			</div>
+		</div>
+	</header>
+	<nav id="ctoSidemenu" class="ctoContainer" style="background-color:#ebdec6;
+	 width: 180px; float: left; position:fixed; top:65px; z-index: 11; min-height: 95%">
+		<div class="ctoContainer" style="background-color: #ebdec6;display:block; width: 100%; text-align: right;">
+			<a href="#" onclick="ctoMenuclose()" title="CloseMenu1" id="navBtnmenu02"
+				class="ctoButton ctoWlargehide">닫기</a>
+		</div>	
+		<div class="ctoContainer sideList" style="display:block; width:100%; text-align: center">
+			
+				<p><a href="#">박윤하</a></p>
+				<p><a href="#">배재현</a></p>
+				<p><a href="#">서정효</a></p>
+				<p><a href="#">서종원</a></p>
+				<p><a href="#">신관용</a></p>
+			
+		</div>
+	</nav>
+<div class="ctoWlargehide" id="ctoNavoverlay" title="closeBtnmenu2" onclick="ctoMenuclose()">
+
+</div>
+	<section class="ctoContainer" style=" margin-top: 65px; margin-left:180px; with:100%;">
+		<article class="ctoContainer" style="background-color:white;">
+			<p> </p>
+			<div class="ctoContainer ctoDivsection" style="display: inline-block;">
+				<div class="ctoContainer ctoTeamlink" >
+					<a href="https://github.com/llighter/html_mini_project" target="_blank">
+					<img src="img_git.jpg" alt="ABOUT TEAM" style="width:100%" class="ctoHoveropacity"></a>
+					<div class="ctoContain cotTeamscript">
+						<p><b>깃허브링크</b></p>
+						<p>깃허브를 이용한 팀원간의 코드와 정보공유</p>
+					</div>
+				</div>
+			</div>
+			<div class="ctoContainer ctoDivsection" style="display: inline-block;">
+				<div class="ctoContainer ctoTeamlink">
+					<a href="../yunha/main_park.html" target="_blank">
+					<img src="img_park.jpg" alt="ABOUT TEAM" style="width:100%" class="ctoHoveropacity"></a>
+					<div class="ctoContain cotTeamscript">
+						<p><b>박윤하</b></p>
+						<p>리그 오브 밥집 그리고 나는 누구인가?</p>
+					</div>
+				</div>
+			</div>
+			<div class="ctoContainer ctoDivsection" style="display: inline-block;">
+				<div class="ctoContainer ctoTeamlink">
+					<a href="#" target="_blank">
+					<img src="img_bea.jpg" alt="ABOUT TEAM" style="width:100%" class="ctoHoveropacity"></a>
+					<div class="ctoContain cotTeamscript">
+						<p><b>배재현</b></p>
+						<p>한끼를 먹어도 맛있게!!</p>
+					</div>
+				</div>
+			</div>
+			</article>
+		<article class="ctoContainer" style="background-color:white;">	
+			<div class="ctoContainer ctoDivsection" style="display: inline-block;">
+				<div class="ctoContainer ctoTeamlink">
+					<a href="#" target="_blank">
+					<img src="img_junghyo.jpg" alt="ABOUT TEAM" style="width:100%" class="ctoHoveropacity"></a>
+					<div class="ctoContain cotTeamscript">
+						<p><b>서정효</b></p>
+						<p>호~우주의보</p>
+					</div>
+				</div>
+			</div>
+			<div class="ctoContainer ctoDivsection" style="display: inline-block;">
+				<div class="ctoContainer ctoTeamlink">
+					<a href="#" target="_blank">
+					<img src="img_won.jpg" alt="ABOUT TEAM" style="width:100%" class="ctoHoveropacity"></a>
+					<div class="ctoContain cotTeamscript">
+						<p><b>서종원</b></p>
+						<p>HelloooooooooooW</p>
+					</div>
+				</div>
+			</div>
+			<div class="ctoContainer ctoDivsection" style="display: inline-block;">
+				<div class="ctoContainer ctoTeamlink">
+					<a href="../sin0328.html" target="_blank">
+					<img src="img_sin.jpg" alt="ABOUT TEAM" style="width:100%" class="ctoHoveropacity"></a>
+					<div class="ctoContain cotTeamscript">
+						<p><b>신관용</b></p>
+						<p>불면증 자가진단 테스트</p>
+					</div>
+				</div>
+			</div>
+		</article>	
+	</section>
+	<footer class="ctoContainer" style="background-color:#ddc8a1; margin-left: 180px; height:80px;">
+		<hr/>
+		<div ><h3 style="text-align: center; ">Copyright 2017. Team <img src="cto.gif" width=40px;> all rights reserved.</h3></div>
+	</footer>
+
+
+
+<div id="whyMembership" style="width:300px; height:500px;margin:auto;display:none">
+<div class = membDiv >
+	<form>
+		<h2 id = tableTitle>Acorn Project Beta</h2>
+	<fieldset><legend> Membership 만들기 </legend>
+	<table>
+		<tr>
+			<td>아이디: </td>
+			<td><input type = text name = userId placeholder = "아이디 입력!" /></td>
+			<td>@acornPrj.com</td>
+			
+		</tr>
+		<tr>
+			<td>비밀번호:</td>
+			<td><input type = password name= pswdStatus  placeholder = "대문자1글자, 특수문자1글자 포함!" /></td>
+			<td><input disabled type = button name= pswdStatus value = Status /></td>
+		</tr>
+		<tr>  
+			<td> 재입력:</td>
+			<td><input type = password name= pswdStatus  placeholder = "비밀번호 재입력!"  oninput = "pswdAvail();" /></td>
+			<td><input disabled type = button name= pswdStatus value = Status /></td>   
+		</tr>
+	</table></fieldset>
+	<br><fieldset>
+	<legend align= left> 개인정보 </legend>
+	<table>
+		<tr>
+			<td>성함: </td>
+			<td><input type = text name = userName placeholder = "이름"  oninput = "userPswdComp( ) ;"  /></td>
+		</tr>
+		<tr>
+			<td>성별:</td>
+			 	<td> 
+			 	<select  name = gender1 >
+			 			<option selected disabled type= radio value = "" >선택해주세요 </option> 
+			 			<option type= radio   value = male onclick = "genderFunc(this);">남성 </option> 
+						<option type= radio  value = female onclick = "genderFunc(this);">여성 </option>
+				</select>
+			 	</td>
+		</tr>
+		<tr>
+			<td>생년월일: </td>
+			<td><input type="date" name="birthDay" /></td>
+		</tr>
+		<tr>
+			<td>프로필사진 :</td>
+			<td><input type = "file" name = profilePicture value = "nullPict"/></td>
+		</tr>
+	</table></fieldset>
+	<br><fieldset>
+	<legend align= left> 개인정보 인증 </legend>
+	<table >
+		<tr>
+			<td>타사이트 계정</td>
+			<td><input type = text name= otherAuthen placeholder = "(선택사항: 본인인증용)"></td>
+		</tr>
+		<tr>
+			<td>집/개인 전화번호: </td>
+			<td><select name = localNum>
+				<option value = "82" >+82 </option>
+				<option value = "1" >+1 </option>
+				</select>
+				<input type = text name = personalNumber placeholder = "집/핸드폰 번호입력"/>
+			</td>
+		</tr>
+
+	</table>
+	</fieldset>
+	<h5 align = center> <input type = "reset" value = "다시하기."/> 
+						<input type = "button" value = "가입하기." onclick= "storeInfo();" > 
+	
+	</h5>
+	
+	
+	</form>
+</div>
+
+</div>
+
+
+
+
+
+
+
+<div class="w3-overlay w3-hide-large w3-animate-opacity" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>	
+	  
+			
+</body>
+</html>
+
+
+

@@ -5,6 +5,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="css/normalize.css">
+
 <title>♪</title>
 
 <style type="text/css">
@@ -45,6 +46,10 @@ html,body{margin:0;padding:0;min-height:100%;overflow:auto;}
 @webkit-keyframes Hello00click{0%{opacity:1}100%{opacity:0}}
 */
 
+@font-face{font-family:'nanum'; src:url('nanum.woff')}
+@font-face{font-family:'nanum'; src:url('nanum.eot')}
+html{font-family:nanum}
+
 #whyHello01,
 #whyHelloa00,
 #whyHellob00
@@ -65,13 +70,18 @@ html,body{margin:0;padding:0;min-height:100%;overflow:auto;}
 @media (min-width:601px){.whyCol4{width:24.99999%;font-size:35px}}
 
 
-.whyHellselect{display:inline-block;height:10vh;float:left;;font-weight:bold;text-align:center;line-height:10vh}
+.whyHellselect{display:inline-block;height:10vh;float:left;;font-weight:bold;text-align:center;line-height:10vh;text-decoration:none;}
 .whyHellhtml1{background-color:#fff710;color:#17049b;}
 .whyHellhtml2{background-color:#82febf;color:#02020c;}
 .whyHellcss1{background-color:#f19df2;color:#082302;}
 .whyHellcss2{background-color:#f4cc12;color:#810100;}
 
-.whyQuiz0{text-align:center;font-size:70px;line-height:43vh}
+
+
+
+
+
+.whyQuiz0{text-align:center;line-height:43vh;font-size:43px}
 .whyQuiz1{background-color:#fff710;color:#17049b;}
 .whyQuiz2{background-color:#82febf;color:#02020c;}
 .whyQuiz3{background-color:#f19df2;color:#082302;}
@@ -318,18 +328,22 @@ function whyLowing(){
 			id="whyHelloa01"
 			class="whyContainer">
 		<div style="width:80vw;margin-top:70px;display:inline-block;">
-			<div class="whyHellselect whyCol4 whyHellhtml1" onclick="openhtml1()">
-			HTML 1
-			</div>
-			<div class="whyHellselect whyCol4 whyHellhtml2">
-			HTML 2
-			</div>
-			<div class="whyHellselect whyCol4 whyHellcss1">
-			CSS 1
-			</div>
-			<div class="whyHellselect whyCol4 whyHellcss2">
-			CSS 2
-			</div>
+			<a href="https://www.w3schools.com/html/exercise.asp?filename=exercise_form_attributes4"
+				class="whyHellselect whyCol4 whyHellhtml1" target="whyHellwindow">
+				HTML 1
+			</a>
+			<a href="https://www.w3schools.com/html/exercise.asp?filename=exercise_form_input_types3"
+				class="whyHellselect whyCol4 whyHellhtml2" target="whyHellwindow">
+				HTML 2
+			</a>
+			<a href="https://www.w3schools.com/css/exercise.asp?filename=exercise_css3_animations5"
+				class="whyHellselect whyCol4 whyHellcss1" target="whyHellwindow">
+				CSS 1
+			</a>
+			<a href="https://www.w3schools.com/css/exercise.asp?filename=exercise_overflow2"
+				class="whyHellselect whyCol4 whyHellcss2" target="whyHellwindow">
+				CSS 2
+			</a>
 <!-- 시간남으면 수정
 			<div class="whyCol2" style="display:inline-block;">
 			</div>
@@ -341,7 +355,8 @@ function whyLowing(){
 			</div>
 -->
 		</div>
-		<div style="width:95vw;height:80vh;"></div>
+		<iframe name="whyHellwindow" style="width:95vw;height:80vh;margin:0 auto;">
+		</iframe>
 		<!-- 
 		<div>
 			<embed src="https://www.w3schools.com/html/exercise.asp?filename=exercise_form_attributes4"

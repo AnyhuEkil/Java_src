@@ -6,40 +6,6 @@
 
 <script type="text/javascript">
 
-
-//시작전에 점수 초기화 필요.
-
-function whyLowing(){        
-	var whyCorrect = 0;          
-	for(var lowQnum = 1; lowQnum <= 5; lowQnum++){
-		var whyLowradios = document.getElementsByName('whyLowquiz'+lowQnum);
-		for(var j = 0; j < whyLowradios.length; j++) {
-			var radio = whyLowradios[j];
-			if(radio.value == "correct" && radio.checked) {
-				whyCorrect++;
-			}
-		}
-	}                   
-  alert("점수는: " + whyCorrect*20);
-}
-/*
-function handleClick()
-{         
-	var amountCorrect = 0;          
-	for(var i = 1; i <= 3; i++) {
-	  var radios = document.getElementsByName('group'+i);
-	  for(var j = 0; j < radios.length; j++) {
-	    var radio = radios[j];
-	    if(radio.value == "correct" && radio.checked) {
-	      amountCorrect++;
-	    }
-	  }
-	 }                   
-	    alert("Correct Responses: " + amountCorrect);
-	  }
-
-*/
-
 </script>
 
 <style>
@@ -47,62 +13,10 @@ function handleClick()
 </style>
 </head>
 
+
 <body>
 
-
-<!-- 
-
-<form name="quiz" method="post" name="buttons" id="quiz" onsubmit="return false">
-
-<div class="question">¿Quién detestan la nueva casa?</div>
-<input id="answer" type="radio" name="group1" value="wrong"> Josh<br>
-<input id="answer" type="radio" name="group1" value="wrong"> Amanda<br>
-<input id="answer" type="radio" name="group1" value="correct"> Josh y Amanda<hr>
-
-<div class="question">¿Quién es señor Dawes?</div>
-<input id="answer" type="radio" name="group2" value="wrong">Un familia amigo<br>
-<input id="answer" type="radio" name="group2" value="wrong">Un gato<br>
-<input id="answer" type="radio" name="group2" value="correct">Un amable joven de la agencia de bienes raíces<hr>
-
-<div class="question">¿Quién qué sus buscan?</div>
-<input id="answer" type="radio" name="group3" value="wrong">Josh<br>
-<input id="answer" type="radio" name="group3" value="wrong"> Petey<br>
-<input id="answer" type="radio" name="group3" value="correct" >Josh y Petey<hr>
-
-<button class="submit" onclick="return handleClick();" type="submit">Submit</button>
-
-</form>
- -->
-
-
-	<div class="question">문제1</div>
-	<input id="answer" type="radio" name="whyLowquiz1" value="wrong">답1<br>
-	<input id="answer" type="radio" name="whyLowquiz1" value="wrong">답2<br>
-	<input id="answer" type="radio" name="whyLowquiz1" value="correct">답3<hr>
-
-	<div class="question">문제2</div>
-	<input id="answer" type="radio" name="whyLowquiz2" value="wrong">답1<br>
-	<input id="answer" type="radio" name="whyLowquiz2" value="wrong">답2<br>
-	<input id="answer" type="radio" name="whyLowquiz2" value="correct">답3<hr>
-
-	<div class="question">문제3</div>
-	<input id="answer" type="radio" name="whyLowquiz3" value="wrong">답1<br>
-	<input id="answer" type="radio" name="whyLowquiz3" value="wrong">답2<br>
-	<input id="answer" type="radio" name="whyLowquiz3" value="correct" >답3<hr>
-	
-	<div class="question">문제4</div>
-	<input id="answer" type="radio" name="whyLowquiz4" value="wrong">답1<br>
-	<input id="answer" type="radio" name="whyLowquiz4" value="wrong">답2<br>
-	<input id="answer" type="radio" name="whyLowquiz4" value="correct" >답3<hr>
-	
-	<div class="question">문제5</div>
-	<input id="answer" type="radio" name="whyLowquiz5" value="wrong">답1<br>
-	<input id="answer" type="radio" name="whyLowquiz5" value="wrong">답2<br>
-	<input id="answer" type="radio" name="whyLowquiz5" value="correct" >답3<hr>
-
-	<button class="submit" onclick="whyLowing();" type="submit">다음문제(정답확인)</button>
-
-
+<marquee id="whyMarquee" height="800px" direction=up >안♡<ul>녕♡<ul>하♡<ul>세♡<ul>요♡<ul>반♡<ul>가♡<ul>워~♡<ul>요♡</MARQUEE>
 
 
 
