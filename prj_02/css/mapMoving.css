@@ -1,0 +1,59 @@
+/* mapMoving_css */
+
+body{box-sizing:border-box;}
+*, *:after, *:before{box-sizing:inherit;}
+
+*{margin:0; padding:0;}
+
+.whyContain{padding:0;}
+.whyContain:after,
+.whyContain:before{content:"";display:table;clear:both;}
+
+
+
+#whyAllview{
+	width:1200px;
+	background:#f7f7f7;
+	margin:auto;
+	overflow:auto;
+}
+#whyMainmenu{
+	width:100%;
+	height:50px;
+	background:#292929;
+	color:gold;
+	display:inline-block;
+}
+#whyViewplay{
+	float:left;
+	display:inline-block;
+	width:74.99%;
+	height:90vh;
+}
+#whyViewscore{
+	float:left;
+	display:inline-block;
+	width:24.99%;
+	height:50vh;
+}
+#whyViewcontrol{
+	float:left;
+	display:inline-block;
+	width:24.99%;
+	height:40vh;
+}
+
+.whyPlaytable{
+	width:95%;
+	height:95%;
+	margin:auto;
+	display:inline-block;
+	border:10px dashed;
+	border-top-color:#356ADA;
+	border-right-color:#08AA37;
+	border-bottom-color:#F1AF22;
+	border-left-color:#D82220;
+}
+
+
+*{border: 1px dotted red;}
