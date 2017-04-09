@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>♪#00♪</title>
+<style type="text/css">
+*{border:1px dotted red;}
+
+</style>
+</head>
+<body>
+<h1 onclick="testBoxBtn()">테스트버튼</h1>
+<h1 onclick="testBoxBtn2()">테스트버튼2</h1>
+
+<script src="http://code.jquery.com/jquery-3.2.1.js"></script>
+<script type="text/javascript">
+
+var testDiv=document.createElement("div");//.setA[id='testDivId']");
+var testH1=document.createElement("h3");//[id='testH1Id']");
+var tsetTextdivId=document.createTextNode("테스트Div ID<hr/>");
+//var tsetTextdivClass=document.createTextNode("테스트Div Class<hr/>");
+var tsetTextId=document.createTextNode("테스트 ID<hr/>");
+//var tsetTextClass=document.createTextNode("테스트 Class<hr/>");
+function testBoxBtn(){
+	alert("box버튼작동");
+//	testH1.appendChild(tsetTextdivId);	alert("h3에 text넣음");
+	testDiv.appendChild(testH1);		alert("div에 h3을 넣음");
+	testH1.appendChild(tsetTextdivId);	alert("h3에 text넣음2");
+	document.body.appendChild(testDiv);	alert("div가 나타남");
+}
+function testBoxBtn2(){
+	alert("box버튼작동");
+//	testH1.appendChild(tsetTextdivId);	alert("h3에 text넣음");
+	testDiv.appendChild(testH1);		alert("div에 h3을 넣음");
+	testH1.appendChild(tsetTextdivId);	alert("h3에 text넣음2");
+	document.body.innerHTML += testDiv;	alert("div가 나타남");
+}
+
+
+</script>
+</body>
+</html>
