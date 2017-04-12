@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Insert title here</title>
+
+<style type="text/css">
+/*	기본 박싱	*/
+html,
+body{box-sizing:border-box;}
+*,*:before,*:after{box-sizing:inherit;}
+
+/* 일부 초기화	*/
+body{margin:0}
+header,nav,section,article,footer	
+	{display:block;margin:0;padding:0,16px;padding:0,}
+a{background-color:transparent}
+a:active,a:hover{outline-width:0}
+img{border-style:none}
+hr{box-sizing:content-box;height:0;overflow:visible}
+textarea{font:inherit;margin:0} 
+button,input{overflow:visible}
+button,select{text-transform:none}
+/*	초기화 끝 */
+
+/*	css	*/
+
+button{background: black; color: white}
+.ctoContainer{padding:0}
+.ctoContainer:after,
+.ctoContainer:before{content:"";display:table;clear:both}
+.ctoCollaspe
+
+.ctoDivsection{float:left;width:33.33333%;padding:0 5px;margin-bottom:16px;}
+
+@media (max-width:992px){
+	header,
+	section,
+	footer{margin-left:0!important;margin-right:0!important;}
+	#ctoSidemenu{display:none;}
+}
+
+
+</style>
+
+<script type="text/javascript">
+</script>
+
+</head>
+<body style="max-width:980px; background-color:grey; box-sizing:border-box;
+ border: 3px solid black;margin:0 auto!important;" class="ctoContainer" >
+	<!-- 헤더: 숨겨진 메뉴 아이콘,음악버튼,로고,로그인화면, 회원가입. -->
+	<header class="ctoContainer"
+		style="background-color:red; float:left; width:100%; height:50px; z-index:11; top:0;">
+				<div class="ctoContainer">
+		[ MENU ]
+		[&#32;&#32;&#32;♪&#32;&#32;&#32;]
+		[&#32;&#32;C T O&#32;&#32;]
+		[로그인ID:____________비밀번호:____________]
+		[회원가입]
+		</div>
+	</header>
+	<nav class="ctoContainer ctoSidebar"
+		style="background-color: blue; width: 200px; margin-top:50px;
+		float:left; position:fixed; z-index: 10;">
+		<!-- 메뉴 닫기 버튼,간단한 로고? -->
+		<div class="ctoContainer">
+		[CTO]  [close]
+		</div>
+		<!-- 기본 링크 -->
+		<div>
+			<ul>
+				<li>박윤하</li>
+				<li>구관용</li>
+				<li>서정효</li>
+				<li>배재현</li>
+				<li>서종원</li>
+			</ul>
+		</div>
+		<!-- 추가 링크 -->
+		<div>
+		</div>
+		<div>
+		</div>
+	</nav>
+	<section style="background-color: green; margin-left:200px; margin-top: 50px;">
+		<h1>구분이 안되는데?구분이 안되는데?구분이 안되는데?</h1>
+		<article>
+			<a>링크페이지(메인버튼으로 호출)</a>
+		</article>
+		<article>박윤하</article>
+		<article>구관용</article>
+		<article>서정효</article>
+		<article>배재현</article>
+		<article>서종원</article>
+	</section>
+	<footer style="background-color: lightgreen;">
+		<div>푸터</div>
+	</footer>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+

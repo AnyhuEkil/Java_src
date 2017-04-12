@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>project_base_page</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style type="text/css">
+/*	기본 박싱	*/
+html{box-sizing:border-box}*,
+*:before,
+*:after{box-sizing:inherit}
+
+/* 일부 초기화	*/
+body{margin:0}
+header,nav,section,article,footer	
+	{display:block;margin:0;padding:0}
+a{background-color:transparent}
+a:active,a:hover{outline-width:0}
+img{border-style:none}
+hr{box-sizing:content-box;height:0;overflow:visible}
+textarea{font:inherit;margin:0} 
+button,input{overflow:visible}
+button,select{text-transform:none}
+/*	초기화 끝 */
+/*	기본 폰트 설정	*/
+
+body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
+
+.ctoContainer{padding:0}
+.ctoContainer:after,
+.ctoContainer:before{content:"";display:table;clear:both;}
+
+.ctoD{float:left;width:33.33333%;padding:0 5px;}
+
+*{border: 1px solid black;color: grey; font-weight: bold;}
+
+</style>
+
+<script type="text/javascript">
+</script>
+
+</head>
+<body class="ctoContainer" style="background-color:lightgrey; max-width: 1600px;
+	 width:100%; background-color: grey; margin: auto;">
+	<header class="ctoContainer" style="float:left; background-color:darkred;  display:block;
+		 height: 50px; z-index: 10; top:0; position:fixed; width: 100%; max-width:1600px">
+		<div class="ctoContainer" style="background-color:red; display:inline-block; ">
+			<span>(숨김)사이드바메뉴</span>
+			<span>음악재생버튼</span>
+		</div>
+		<div class="ctoContainer" style="background-color:lightred;display:inline-block;">
+			<span>메인로고</span>
+		</div>
+		<div class="ctoContainer" style="background-color:white;display:inline-block;">
+			<span>로그인</span>
+			<span>(숨김)로그인화면버튼</span>
+			<span>회원가입</span>
+			<span>(숨김)회원가입화면버튼</span>
+		</div>
+	</header>
+	<nav class="ctoContainer" style="background-color:orange; width: 300px; float: left; position:fixed; top:50px; z-index: 11;">
+		<div class="ctoContainer" style="background-color: fuchsia;display:block; width: 100%">
+			<span>홈화면</span>
+			<span>숨긴닫기화면</span>
+		</div>	
+		<div class="ctoContainer" style="background-color:olive;display:block; width:100%;">
+			<p>팀원페이지</p>
+			<ul>
+				<li>1</li>
+				<li>2</li>
+				<li>3</li>
+				<li>4</li>
+				<li>5</li>
+			</ul>
+		</div>
+		<div>특수기능1</div>	
+		<div>특수기능2</div>	
+		<div>특수기능3</div>	
+	</nav>
+	<section class="ctoContainer" style="background-color:navy; top: 50px; left:300px; with:100%; margin:0 auto;" ">
+		<p>iframe걸기</p>
+		<article class="ctoContainer" style="background-color:blue;">
+			<p>기본 메인화면</p>
+			<div class="ctoContainer ctoD" style="display: inline-block;width: 33%">팀소개</div>
+			<div class="ctoContainer ctoD" style="display: inline-block;width: 33%">링크1</div>
+			<div class="ctoContainer ctoD" style="display: inline-block;width: 33%">링크2</div>
+			<div class="ctoContainer ctoD" style="display: inline-block;width: 33%">링크3</div>
+			<div class="ctoContainer ctoD" style="display: inline-block;width: 33%">링크4</div>
+			<div class="ctoContainer ctoD" style="display: inline-block;width: 33%">링크5</div>
+		</article>
+<!-- 이페이지는 숨김
+		<article>링크1</article>e
+		<article>링크2</article>
+		<article>링크3</article>
+		<article>링크4</article>
+		<article>링크5</article>
+ -->
+	</section>
+	<footer class="ctoContainer" style="background-color:green; margin-left: 300px">
+		<div>간단한 소개</div>
+		<hr/><hr/><hr/><hr/><hr/><hr/><hr/><hr/><hr/><hr/>
+		<hr/><hr/><hr/><hr/><hr/><hr/><hr/><hr/><hr/><hr/>
+		<hr/><hr/><hr/><hr/><hr/><hr/><hr/><hr/><hr/><hr/>
+	</footer>
+			<hr/><hr/><hr/><hr/><hr/><hr/><hr/><hr/><hr/><hr/>
+			
+</body>
+</html>
+
+
+

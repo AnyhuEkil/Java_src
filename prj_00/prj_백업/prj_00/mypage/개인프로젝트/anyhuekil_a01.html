@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial scale=1.0">
+<link rel="stylesheet" href="css/normalize.css">
+<title>♪</title>
+
+<style type="text/css">
+/* 패딩, 마진에 상관없이 초기 블럭크기 유지하기(하위 항목의 크기때문에 원래 지정햇던 상자의 크기가 변하는 것을 방지함.) */
+html{box-sizing:border-box}
+*,
+*:before,
+*:after{box-sizing:inherit}
+
+/* 블럭 위치 크기 확인  코드*/
+*{border: 1px dashed red;}
+
+html,body{margin:0;padding:0;min-height:100%;overflow:auto;}
+
+.whyContainer{padding:0.01px 10px}
+.whyContainer:AFTER,
+.whyContainer:BEFORE
+{content:"";display:table;clear:both}
+
+#whyHeader{width:100%;height:70px;background-color:#fff710;display:block;}
+
+
+/*
+.whySectionhello{position:relative;
+	animation:Sectionhello 3s ease-in;
+	-moz-animation:Sectionhello 3s ease-in;
+	-webkit-animation:Sectionhello 3s ease-in;
+}
+@keyframes Sectionhello{from{opacity:0} to{opacity:1}}
+*/
+
+.whyAniopac{position:relative;animation:Aniopac 3s;-moz-animation:Aniopac 3s;-webkit-animation:Aniopac 3s;}
+@keyframes Aniopac{0%{opacity:0}100%{opacity:1}}
+
+
+/* 온클릭 안됨.;;ㅠ
+#whyHello00:onclick{position:relative;animation:Hello00click 5s;-moz-animation:Hello00click 5s;
+	-webkit-animation:Hello00click 5s;}
+@keyframes Hello00click{0%{opacity:1}100%{opacity:0}}
+@webkit-keyframes Hello00click{0%{opacity:1}100%{opacity:0}}
+*/
+
+#whyHello01{animation:Hello01 2s;-moz-animation:Hello01 2s;
+	-webkit-animation:Hello01 2s;}
+@keyframes Hello01{0%{opacity:0}100%{opacity:1}}
+@webkit-keyframes Hello01{0%{opacity:0}100%{opacity:1}}
+
+
+/* 안됨.;ㅣ;
+#whyHello00:onclick{background-color: white;}
+*/
+
+
+/*
+-webkit-animation:Hello00click 4s;animation:Hello00click 4s}
+@-webkit-keyframes Hello00click{from{opacity:1} to{opacity:0}}
+@keyframes Hello00click{from{opacity:1} to{opacity:0}
+}
+*/
+
+</style>
+
+<script type="text/javascript">
+
+function whyLowing(){        
+	var whyCorrect = 0;          
+	for(var lowQnum = 1; lowQnum <= 5; lowQnum++){
+		var whyLowradios = document.getElementsByName('whyLowquiz'+lowQnum);
+		for(var j = 0; j < whyLowradios.length; j++) {
+			var radio = whyLowradios[j];
+			if(radio.value == "correct" && radio.checked) {
+				whyCorrect++;
+			}
+		}
+	}                   
+  alert("점수는: " + whyCorrect*20);
+}
+
+
+</script>
+</head>
+<body>
+<header id="whyHeader">
+	<div style="width:15%;float:left;text-align:left;display:inline-block;">
+		<a style="">메뉴</a>
+	</div>
+	<div style="width:55%;float:left;text-align:center;display:inline-block;">
+		<a style="">풀스크린</a>
+	</div>
+	<div style="width:30%;float:left;text-align:right;display:inline-block;">
+		<a style="">whyNot</a>
+	</div>
+</header>
+<nav style="width:150.1px;background-color:#82febf;display:inline-block;"
+	class="whyContainer">6 크기 풀?
+	<div style="width:150.1px;float:left;background-color:#5cffac;display:block;">메뉴닫기</div>
+	<div style="width:150.1px;float:left;background-color:#5cffac;display:block;">초기화면//hello black//display</div>
+	<div style="width:150.1px;float:left;background-color:#5cffac;display:block;">hello</div>
+	<div style="width:150.1px;float:left;background-color:#5cffac;display:block;">low</div>
+	<div style="width:150.1px;float:left;background-color:#5cffac;display:block;">scroe</div>
+	<div style="width:150.1px;float:left;background-color:#5cffac;display:block;">음악/on</div>
+	<div style="width:150.1px;float:left;background-color:#5cffac;display:block;">음악/off</div>
+</nav>
+<div style="display:none;">5 over ray</div>
+<section style="width:100%;diplay:block;">
+	<!-- hello home black// 온클릭-display, 마우스 기다림 표시 -->
+	<article style="width:100%;height:100vh;display:block;text-align:center;
+					background-color:#1f1f1f;color:white;
+					z-index:1;position:absolute;"
+			id="whyHello00"
+			 	onclick="document.getElementById('whyHello01').style.display='block'">
+			
+		<div style="width:70%;margin-top:20vh;display:inline-block;">
+			<img id="mainBox" style="max-width:100%;display:inline-block;" alt="HelLoW" src="HELLO_00.png">
+		</div>
+		<div></div>
+		<div style="margin-top:10vh; margin-bottom:10vh;hetght:30vh;display:block;text-align:center;">
+			<div style="max-width:70%; font-size:10vmin;display:inline-block;" class="whyAniopac">
+				<a style="color:#fffcdb;display:inline-block;">Welcome</a>
+				<a style="color:gold;display:inline-block;">"whyNot"</a>
+				<a style="color:#fffcdb;display:inline-block;">Page</a>
+			</div>		
+		</div>
+		<div></div>
+	</article>
+
+	<article style="width:100%;height:100vh;text-align:center;
+					background-color:#fffcdb;color:#1f1f1f;display:none;
+					z-index:2;position:absolute;"
+			id="whyHello01">
+		<div style="width:70%;margin-top:20vh;display:inline-block;">
+			<img style="max-width:100%;display:inline-block;" alt="HelLoW" src="HELLO_01.png">
+		</div>
+		<div>
+			<div>z1 hello home white//</div>
+			<div>z1 hell on</div>
+			<div>z1 low on</div>
+		</div>
+		<div>하단 40%차지(컨트롤)
+			<div onmouseover="document.getElementById('whyHelloa00').style.display='block'"
+				onmouseout="document.getElementById('whyHelloa00').style.display='none'"
+				onclick="document.getElementById('whyHelloa01').style.display='block',
+					document.getElementById('whyHello00').style.display='none'">
+				z1 hell //호버, 온클릭
+			<br><br><br><br>
+			</div>
+			<br><br><br><br>
+			<div onmouseover="document.getElementById('whyHellob00').style.display='block'"
+				onmouseout="document.getElementById('whyHellob00').style.display='none'"
+				onclick="document.getElementById('whyHellob01').style.display='block',
+					document.getElementById('whyHello00').style.display='none'">
+				z1 low on//호버, 온클릭
+			<br><br><br><br>
+			</div>
+		</div>
+	</article>
+
+	<article style="width:100%;height:100vh;text-align:center;
+					background-color:#fffcdb;color:#1f1f1f;display:none;
+					z-index:3;position:absolute;"
+			id="whyHelloa00">
+		<div style="width:70%;margin-top:20vh;display:inline-block;">
+			<img style="max-width:100%;display:inline-block;" alt="HelLoW" src="HELLO_a00.png">
+		</div>
+		<div>
+			<div>z1 hello home white//</div>
+			<div>z1 hell on</div>
+			<div>z1 low on</div>
+		</div>
+		<div>하단 40%차지(컨트롤)
+			<div onmouseover="document.getElementById('whyHelloa00').style.display='block'"
+				onmouseout="document.getElementById('whyHelloa00').style.display='none'"
+				onclick="document.getElementById('whyHelloa01').style.display='block',
+					document.getElementById('whyHello00').style.display='none'">
+				z1 hell //호버, 온클릭
+			<br><br><br><br>
+			</div>
+			<br><br><br><br>
+			<div onmouseover="document.getElementById('whyHellob00').style.display='block'"
+				onmouseout="document.getElementById('whyHellob00').style.display='none'"
+				onclick="document.getElementById('whyHellob01').style.display='block',
+					document.getElementById('whyHello00').style.display='none'">
+				z1 low on//호버, 온클릭
+			<br><br><br><br>
+			</div>
+		</div>
+	</article>
+	<article style="width:100%;height:100vh;text-align:center;
+					background-color:#fffcdb;color:#1f1f1f;display:none;
+					z-index:3;position:absolute;"
+			id="whyHellob00">
+		<div style="width:70%;margin-top:20vh;display:inline-block;">
+			<img style="max-width:100%;display:inline-block;" alt="HelLoW" src="HELLO_b00.png">
+		</div>
+		<div>
+			<div>z1 hello home white//</div>
+			<div>z1 hell on</div>
+			<div>z1 low on</div>
+		</div>
+		<div>하단 40%차지(컨트롤)
+			<div onmouseover="document.getElementById('whyHelloa00').style.display='block'"
+				onmouseout="document.getElementById('whyHelloa00').style.display='none'"
+				onclick="document.getElementById('whyHelloa01').style.display='block',
+					document.getElementById('whyHello00').style.display='none'">
+				z1 hell //호버, 온클릭
+			<br><br><br><br>
+			</div>
+			<br><br><br><br>
+			<div onmouseover="document.getElementById('whyHellob00').style.display='block'"
+				onmouseout="document.getElementById('whyHellob00').style.display='none'"
+				onclick="document.getElementById('whyHellob01').style.display='block',
+					document.getElementById('whyHello00').style.display='none'">
+				z1 low on//호버, 온클릭
+			<br><br><br><br>
+			</div>
+		</div>
+	</article>
+
+
+
+
+ <!-- 
+		<div style="ad 70%; margin-top:3vh;margin-bottom:2vh;display:inline-block;">
+			<img style="max-height:10vh;display:inline-block;" alt="HelLoW"
+			 src="HELLO_a01.png">
+		</div>
+ -->
+ 	<article style="width:100%;height:100vh;text-align:center;
+					background-color:#fffcdb;color:#1f1f1f;display:none;
+					z-index:4;position:absolute;"
+			id="whyHellob01">
+		<div>
+			<div class="question">문제1</div>
+				<input id="answer" type="radio" name="whyLowquiz1" value="wrong">답1<br>
+				<input id="answer" type="radio" name="whyLowquiz1" value="wrong">답2<br>
+				<input id="answer" type="radio" name="whyLowquiz1" value="correct">답3<hr>
+			<div class="question">문제2</div>
+				<input id="answer" type="radio" name="whyLowquiz2" value="wrong">답1<br>
+				<input id="answer" type="radio" name="whyLowquiz2" value="wrong">답2<br>
+				<input id="answer" type="radio" name="whyLowquiz2" value="correct">답3<hr>
+			<div class="question">문제3</div>
+				<input id="answer" type="radio" name="whyLowquiz3" value="wrong">답1<br>
+				<input id="answer" type="radio" name="whyLowquiz3" value="wrong">답2<br>
+				<input id="answer" type="radio" name="whyLowquiz3" value="correct" >답3<hr>
+			<div class="question">문제4</div>
+				<input id="answer" type="radio" name="whyLowquiz4" value="wrong">답1<br>
+				<input id="answer" type="radio" name="whyLowquiz4" value="wrong">답2<br>
+				<input id="answer" type="radio" name="whyLowquiz4" value="correct" >답3<hr>
+			<div class="question">문제5</div>
+				<input id="answer" type="radio" name="whyLowquiz5" value="wrong">답1<br>
+				<input id="answer" type="radio" name="whyLowquiz5" value="wrong">답2<br>
+				<input id="answer" type="radio" name="whyLowquiz5" value="correct" >답3<hr>
+			<button class="submit" onclick="whyLowing();" type="submit">다음문제(정답확인)</button>
+		</div>
+		<div>
+			<div>문제(카드형3)</div>
+			<div>답</div>
+		</div>
+		<div>
+			<div>문제(카드형3)</div>
+			<div>답</div>
+		</div>
+		<div>
+			<div>문제(카드형3)</div>
+			<div>답</div>
+		</div>
+		<div>
+			<div>문제(카드형3)</div>
+			<div>답</div>
+		</div>
+		<div>
+			<div>문제(카드형3)</div>
+			<div>답</div>
+		</div>
+		<div>다음페이지</div>
+	</article>
+	<article style="width:100%;height:100vh;text-align:center;
+					background-color:#fffcdb;color:#1f1f1f;display:none;
+					z-index:4;position:absolute;"
+			id="whyHellob01">
+		<div>
+			<div>문제(카드형3)</div>
+			<div>답</div>
+		</div>
+		<div>
+			<div>문제(카드형3)</div>
+			<div>답</div>
+		</div>
+		<div>
+			<div>문제(카드형3)</div>
+			<div>답</div>
+		</div>
+		<div>
+			<div>문제(카드형3)</div>
+			<div>답</div>
+		</div>
+		<div>
+			<div>문제(카드형3)</div>
+			<div>답</div>
+		</div>
+		<div>
+			<div>문제(카드형3)</div>
+			<div>답</div>
+		</div>
+		<div>결과보기</div>
+	</article>
+	<article style="width:100%;height:100vh;text-align:center;
+					background-color:#fffcdb;color:#1f1f1f;display:none;
+					z-index:4;position:absolute;"
+			id="whyHellob01">
+		<div>결과창
+			<div>""님의 점수는</div>
+			<div>##점입니다.</div>
+			<div>분발해주세요,등등</div>		
+		</div>
+	</article>
+ 	
+ 	
+	<article>
+		<div>z1 hell main
+			<div>z1 hell main 화면상단 이동과 크기 변화</div>
+			<div>
+				<div>4가지 링크 버튼// 누르면 사라지고 각 링크 나옴.</div>
+				<div>HTML
+					<embed src="">
+				</div>
+				<div>CSS
+					<embed src="">
+				</div>
+				<div>JavaScript
+					<embed src="">
+				</div>
+				<div>SQL
+					<embed src="">
+				</div>
+			</div>
+			<div>hell footer 다음 페이지 가기 버튼.</div>
+		</div>
+	</article>
+	<article>
+		<div>low main
+			
+		
+		</div>
+		
+	</article>
+	<article>점수확인 페이지
+		<div>BYE</div>
+		<div>hell 페이지 점수 확인 페이지//헬페이지 가기 클릭시에 오픈</div>
+		<div>low 페이지 점수확인 페이지</div>
+	</article>
+	
+
+</section>
+
+
+</body>
+</html>
