@@ -3,9 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <title>♪RocketDAN2♪</title>
-<link rel="stylesheet" type="text/css" href="css/rocket_ver1.1.css"/>
+<link rel="stylesheet" type="text/css" href="css/rocket_verz.0.css"/>
 <script src="js/jquery-3.2.1.js"></script>
-<script src="js/rocket_ver1.1.js"></script>
+<script src="js/rocket_verz.0.js"></script>
 </head>
 <body>
 	<!-- 메인 기본창전체 -->
@@ -26,6 +26,26 @@
 				</div>
 			</div>
 		</div>
+		<div class="whyTopAcomonbox">
+			<div class="whyTopAcomon">
+				포켓몬1
+			</div>
+			<div class="whyTopAcomon">
+				포켓몬2
+			</div>
+			<div class="whyTopAcomon">
+				포켓몬3
+			</div>
+			<div class="whyTopAcomon">
+				포켓몬4
+			</div>
+			<div class="whyTopAcomon">
+				포켓몬5
+			</div>
+			<div class="whyTopAcomon">
+				포켓몬6
+			</div>
+		</div>
 		<!-- 하단25% 창. 크게 2개로 나눔.
 			1. 대화창
 			2. 메뉴 선택(전투커맨드)
@@ -41,7 +61,7 @@
 			<div class="whyBtmCommand whyContain">
 				<!-- 전투 -->
 				<div class="whyBcListbox whyContain">
-					<div class="whyBcList">전투</div>
+					<div class="whyBcList">공격하기</div>
 					<div class="whyBcList">몬스터</div>
 					<div class="whyBcList">아이템</div>
 					<div class="whyBcList">도망치기</div>
@@ -60,19 +80,13 @@
 						기술4
 					</div>
 				</div>
-				<!-- 포켓몬 -->
-				<div class="whyBcAcomonbox">
-					function on AcomonChoiceView
-					function display:none
-					function innerText"몬스터를 선택하세요."
-				</div>
 				<!-- 아이템 -->
 				<div class="whyBcItembox">
 					<div class="whyBcItem">
 						아이템1(민트먹기)
 					</div>
 					<div class="whyBcItem">
-						아이템2(스킬공격)
+						아이템2(포켓볼)
 					</div>
 					<div class="whyBcItem">
 						아이템3
@@ -80,10 +94,6 @@
 					<div class="whyBcItem">
 						아이템4
 					</div>
-				
-					function on ItemChoiceView
-					function display:none
-					function innerText"아이템을 선택하세요."
 				</div>
 				<!-- 도망가기 -->
 				<div class="whyBcRun">
@@ -96,12 +106,12 @@
 		<!-- 전체 화면용 박스 100%100% -->
 		<div class="whyAllbox">
 			<div class="whyTopMap">여기는 지금 맵화면 입니다.
-				<div>메뉴(맵)
-					<div>메뉴(포켓몬-상단)</div>
-					<div>메뉴(아이템-상단)</div>
-					<div>메뉴(상태-맵)</div>
-					<div>메뉴(리포트:세이브,로드-맵)</div>
-					<div>메뉴(옵션-맵)</div>
+				<div class = "whyMenubox">메뉴(맵)
+					<div class = "whyMenu">메뉴(포켓몬-상단)</div>
+					<div class = "whyMenu">메뉴(아이템-상단)</div>
+					<div class = "whyMenu">메뉴(상태-맵)</div>
+					<div class = "whyMenu">메뉴(리포트:세이브,로드-맵)</div>
+					<div class = "whyMenu">메뉴(옵션-맵)</div>
 				</div>
 				<div>상태창
 					<div>주인공이름,돈,시간</div>
@@ -120,7 +130,7 @@
 				</div>
 			</div>
 		</div>
-		<div id="whyMouse">------------커서</div>
-	</div>	
+	</div>
+	<div id="whyMouse" onclick="yBcListbox()">전투 발생 클릭!</div>	
 </body>
 </html>
