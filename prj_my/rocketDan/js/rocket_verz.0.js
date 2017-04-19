@@ -138,22 +138,22 @@ function zPressed(){
 		//재현: 이자리 주석만 지우고 함수 넣으면됨.(포켓몬 6
 		turnEnd();
 		break;
-	case "whyBcItembox1":	//@
+	case "whyTopItembox1":	//@
 		//yBcItem1();
 		//재현: 이자리 주석만 지우고 함수 넣으면됨.(아이템 1
 		turnEnd();
 		break;
-	case "whyBcItembox2":	//@
+	case "whyTopItembox2":	//@
 		//yBcItem2();
 		//재현: 이자리 주석만 지우고 함수 넣으면됨.(아이템 2
 		turnEnd();
 		break;
-	case "whyBcItembox3":	//@
+	case "whyTopItembox3":	//@
 		//yBcItem3();
 		//재현: 이자리 주석만 지우고 함수 넣으면됨.(아이템 3
 		turnEnd();
 		break;
-	case "whyBcItembox4":	//@
+	case "whyTopItembox4":	//@
 		//yBcItem4();
 		//재현: 이자리 주석만 지우고 함수 넣으면됨.(아이템 4
 		turnEnd();

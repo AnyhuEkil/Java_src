@@ -14,17 +14,17 @@ body{box-sizing:border-box;}
 	보라 : #B19CD9
 	갈색 : #836953
 	노랑 : #FDFD96
-	회색: #CFCFC4
+	회색 : #CFCFC4
 */
 /* 16*16(한칸 40px) */
 /* 상단전체   */
 .whyMainBox{
-	width:645px;
-	height:645px;
-	border:5px solid black;
+	width:640px;
+	height:640px;
 	margin:30px auto;
 	background-image:url(../img/background01.jpg);
 	background-size:contain;
+	color:#30537a
 }
 .whyAllbox{
 	display:none;
@@ -40,7 +40,7 @@ body{box-sizing:border-box;}
 }
 
 
-/*	상단 화면 시작	*/
+/*	전체 화면 시작	*/
 .whyLodingbox{
 		display:none;
 	width:100%;
@@ -125,8 +125,7 @@ body{box-sizing:border-box;}
 }
 
 
-
-/* 상태 메뉴창 	*/
+/* 전체 상태 메뉴창 	*/
 .whyStatusbox{
 	display:none;
 	height:100%;
@@ -176,7 +175,7 @@ body{box-sizing:border-box;}
 }
 
 
-/* 리포트창 */
+/* 전체 리포트창 */
 .whyReportBox{
 	display:none;
 	height:99.999%;
@@ -224,7 +223,7 @@ body{box-sizing:border-box;}
 	padding:10px;
 }
 
-/*	전투화면 화면창 시작 */
+/*	상단 전투화면 화면창 시작 */
 .whyTopBattle{
 	display:none;
 	height:100%;
@@ -263,16 +262,66 @@ body{box-sizing:border-box;}
 
 
 
-/* 포켓몬 창 */
+/* 상단 포켓몬 창 */
 .whyTopAcomonbox{
+	display:none;
 	width:99.999%;
 	height:99.999%;
+	background:#A0D6B4;
+	color:white;
+	padding:15px;
 }
 .whyTopAcomon{
-	height:16.666%;
+	height:calc(16.666% - 5px);
+	margin:5px;
+	background:#2b6240;
+	font-size:20px;
+}
+.whyTopAcomonImg{
+	display:inline-block;
+	float:left;
+	height:99.999%;
+	width:calc(19.999% - 20px);
+	padding:5px;
+	background-color:#2b6240;
+}
+.whyTopAcomon:NTH-CHILD(1) .whyTopAcomonImg{
+	background:url("../img/pocketmon01.gif") no-repeat center;
+}
+.whyTopAcomon:NTH-CHILD(2) .whyTopAcomonImg{
+	background:url("../img/pocketmon02.gif") no-repeat center;
+}
+.whyTopAcomon:NTH-CHILD(3) .whyTopAcomonImg{
+	background:url("../img/pocketmon03.gif") no-repeat center;
+}
+.whyTopAcomon:NTH-CHILD(4) .whyTopAcomonImg{
+	background:url("../img/pocketmon04.gif") no-repeat center;
+}
+.whyTopAcomon:NTH-CHILD(5) .whyTopAcomonImg{
+	background:url("../img/pocketmon05.gif") no-repeat center;
+}
+.whyTopAcomon:NTH-CHILD(6) .whyTopAcomonImg{
+	background:url("../img/pocketmon06.gif") no-repeat center;
 }
 
-
+.whyTopAcomonTag{
+	display:inline-block;
+	float:left;
+	height:calc(49.999% - 5px);
+	width:79.999%;
+	background:#3c8858;
+	margin:5px 10px 0px 0px;
+	padding:0 0 0 20px;	 
+}
+.whyTopAcomonValue{
+	display:inline-block;
+	float:left;
+	height:calc(49.999% - 5px);
+	width:79.999%;
+	background-color:#68bd88;
+	margin:0px 10px 5px 0px;
+	padding:0 0 0 20px;	 
+}
 
 
 
@@ -296,58 +345,32 @@ body{box-sizing:border-box;}
 .whyBcSkill{
 	height:24.99%;
 }
-/*
-.whyBcSkill:NTH-CHILD(1){
-	background:darkred;
-}
-.whyBcSkill:NTH-CHILD(2){
-	background:darkblue;	
-}
-.whyBcSkill:NTH-CHILD(3){
-	background:darkgreen;
-}
-.whyBcSkill:NTH-CHILD(4){
-	background:darkorange;	
-}
-*/
+/* 전투화면 커멘드 끝*/
 
 
 
 
 
-.whyBcItembox{
-	display:none;
+.whyTopItembox{
+
+	float:right;
 	height:100%;
+	width:39.999%;
+	padding:20px;
+	margin-right:10px;
+	background-color:rgba(175, 149, 131, 0.7);
+	color:white;
+	font-size:20px;
+	font-weight:bold;
+}
+.whyTopItem{
+	height:60px;
+	width:calc(99.99% - 6px);
+	margin:3px;
+	background-color:#836953;
 }
 
-/*
-.whyBcAcomon:NTH-CHILD(3n+1){
-	background:darkred;
-}
-.whyBcAcomon:NTH-CHILD(3n+2){
-	background:darkblue;	
-}
-.whyBcAcomon:NTH-CHILD(3+0){
-	background:darkgreen;
-}
-*/
-.whyBcItem{
-	height:24.99%;
-}
-/*
-.whyBcItem:NTH-CHILD(1){
-	background:darkred;
-}
-.whyBcItem:NTH-CHILD(2){
-	background:darkblue;	
-}
-.whyBcItem:NTH-CHILD(3){
-	background:darkgreen;
-}
-.whyBcItem:NTH-CHILD(4){
-	background:darkorange;	
-}
-*/
+
 .whyBcRun{
 	display:none;
 	height:100%;
@@ -388,5 +411,6 @@ body{box-sizing:border-box;}
 	z-index:10;
 }
 
+/*
 *{border: 1px dotted red;}
-
+*/
