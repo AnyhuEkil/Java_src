@@ -31,18 +31,18 @@ body{box-sizing:border-box;}
 	height:100%;
 }
 .whyTopbox{
-
+	
 	height:74.999%;
 }
 .whyBtmbox{
-
+	
 	height:24.999%;
 }
 
 
 /*	전체 화면 시작	*/
 .whyLodingbox{
-		display:none;
+	display:none;
 	width:100%;
 	height:100%;
 	background-color:#5593c2;
@@ -96,6 +96,7 @@ body{box-sizing:border-box;}
 }
 
 .whyAllMap{
+	display:none;
 	height:100%;
 	background:rgba(30, 150, 30, 0.7);
 }
@@ -264,7 +265,7 @@ body{box-sizing:border-box;}
 
 /* 상단 포켓몬 창 */
 .whyTopAcomonbox{
-	display:none;
+
 	width:99.999%;
 	height:99.999%;
 	background:#A0D6B4;

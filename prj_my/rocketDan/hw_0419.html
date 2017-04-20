@@ -13,16 +13,29 @@ body{box-sizing:border-box;}
 .whyContain:after,
 .whyContain:before{content:"";display:table;clear:both;}
 
-
+.windowFull{
+	background:#84b09b;
+	width:99vw;
+	height:99vh;
+	overflow:auto;
+}
+#winHalf{
+	display:inline-block;
+	float:left;
+	width:calc(79.9% - 20px);
+	height:calc(99.9% - 20px);
+	margin:10px;
+	background:#d0e1d9;
+	border:1px solid red;
+}
 #welcome{
-	display:inline-table;
+	display:inline-block;
 	height:500px;
-	width:500px;
+	width:20%;
 	background:#779ECB;
 	color:white;
 	text-align:center;
 	font-size:25px;
-	margin:20px;
 	border:2px solid #30537a;
 }
 #title{
@@ -56,125 +69,141 @@ body{box-sizing:border-box;}
 }
 
 .table{
-	height:600px;
-	width:600px;
-}
-.tr{
-	height:24.999%
-}
-.td{
+	display:block;
+	width:100%;
+	height:100%;
 	font-size:30px;
 	font-weight:bold;
-	float:left;
-	display:inline-block;
-	width:24.999%;
-	height:99.999%;
+	
+}
+.tr{
+	height:24.999%;
+}
+.td{
+	
+	
+	
+	
+	
+	
 }
 
 *{border: 1px dotted red;}
-
 </style>
+
 <script src="http://code.jquery.com/jquery-3.2.1.js">
 </script>
 <script type="text/javascript">
 /**/
-$(function(){
+$(document).ready(function(){
 
 });
 
 // 키보드 조작.
 document.addEventListener("keydown",setBtn);
+
 function setBtn(e){
-	if(e.keyCode==49){ // 키코드 숫자 1 
-		shuffle();
-		console.log("시작");
-	}else if(e.keyCode==50){ // 키코드 숫자 2
-		start();
+	if(e.keyCode){
+		console.log( String.fromCharCode(event.keyCode) +" : "+event.keyCode);
 	}
+	if(e.keyCode==48){	//키코드 숫자 0
+		createTable();
+	}
+	if(e.keyCode==49){ // 키코드 숫자 1 
+		makeTempArray();
+	}
+	if(e.keyCode==50){ // 키코드 숫자 2
+		startGamePlay();
+	}
+	
 }
-
-
 
 /* 테이블 x,y값을 입력 받고 테이블을 만들자!!... 는 보류
 function creatTdnum(){
 }
 */
-var tableOn = true;	//테이블이 생성되있는지 확인함+ 초기값 셋팅;
-// 모든 td에 0값을 넣는다: 나중에 테이블이 생성 가능해질때 남는수가 생겼을때 무조건 폭탄자리로 만듬.
-function setTdzero(){
-	tdNum = $('.table .td')
-}
-
-
-
+var gameSet = 0; //게임 실행과정을 위한 변수
 var tdNum = 16; //테이블 안의 td총 갯수.
 var sameNum	= 8; // 같은 조각 갯수
 var level = 1; // 레벨 초기값 1
-var kindsNum = 2;
+var kindsNum = 2; // 같은 조각 종류 수
 var maxLevel = 8; // 게임 계속 진행시 갈수 있는 최고 레벨
 
 
-function startGame(){
-	if(table){
-		tdNum = $('.table .td').length; 	//td 총갯수 설정
-		level = 1;								//초기 level 설정
-		sameNum = Math.floor(tdNum/(level*2));	//초기 같은모양 조각 총 갯수 설정
-		kindsNum = Math.floor(tdNum/sameNum);	//초기 조각의 종류 수
-		maxLevel = Math.floor(tdNum/2);		//maxLevel 설정
-		setTdzero();						// 초기 td=0넣기
-	}else{
-		alert("오류코드:E20000bYe");
-	}
-}
-// 초기설정 끝!
 
-// 블럭에 조각 넣기
-var tempArray = [];
-
-//생성자?메서드?느낌인듯...
-
-function createArray(){
-	for(idx=0;idx<kindNum;idx++){
-		tempArray[idx] = 0;
-	}	
-}
-delete tempArray;
-var random
-//주어진 조각에 설정값 줄필요가 없네...
-function spreadNum(){
-	if(tempArray.length>0){
-		this.i = Math.floor(Math.random()*kindsNum)
-		if(tempArray[i]==sameNum){
-			tempArray = [];	
+var rowNum = 5	//가로 갯수
+var colNum = 7	//세로 갯수
+var textTable = "";
+function createTable(){
+	console.log("tr: "+rowNum+", td: "+colNum)
+	for(row=1;row<=rowNum;row++){
+		textTable += '<div class="tr">\n';
+		for(col=1;col<=colNum;col++){
+			textTable += '\t<div class="td"></div>\n';
 		}
-		
-여기서부터 해야됨!!!!@!@#!@#@!		tempArray[i].splice
+		textTable += '</div>\n';
 	}
-		
-	tempArray[] 
-		 Math.floor(Math.random()*kindsNum)
+	console.log(textTable)
+	$('.table').html(textTable);
+	$('.tr').css({'height':100/rowNum+'%'});
+	$('.td').css({'display':'inline-block','float':'left','height':'99.9%','width':100/colNum+'%'});
 }
 
-위에 보이지?
 
-
-/*
- 계임 계속 진행시 사용할 함수 일단 보류 
-function continueGame(){
-	sameNum = tdNum/(level*2)
+/* 게임 시작버튼 클릭시 초기 1레벨 부터 생성 */
+function startGameValue(){
+	if(table){
+		level = 1;							//초기 level 설정
+		tdNum = $('.table .td').length; 	//td 총갯수 설정 //테이블 생성기준
+		maxLevel = Math.floor(tdNum/2);		//maxLevel 설정//테이블 생성기준
+		setTdzero();						// 초기 td=0넣기 //테이블 생성기준
+		sameNum = Math.floor(tdNum/(level*2));	//초기 같은모양 조각 총 갯수 설정 //레벨 변경기준
+		kindsNum = Math.floor(tdNum/sameNum);	//초기 조각의 종류 수 //레벨 변경기준
+	}else{
+		alert("오류코드:E20000bYe_startGame()");
+	}
 }
-*/
 
-/*
-function shuffle(){
-	console.log('.table .td');
-	$('.table .td').each(function(idx){
-		ranNum = Math.floor(Math.random()*4);
-		console.log(ranNum);
-		$(this).text(ranNum);
+/* 초기설정 끝! */
+
+
+// 가상 배열 만들기 시작
+//	* 테스트용 숫자
+//		tdNum = 25; //테이블 안의 td총 갯수.
+//		sameNum	= 8; // 같은 조각 갯수
+//		kindsNum = 3; // 조각 종류 수
+
+// 가상배열
+var tempArray = [];
+function makeTempArray() {
+	console.log("같은 조각: "+sameNum+
+				"개\n조각 종류: "+kindsNum+
+				"종류\n폭탄: "+(tdNum-sameNum*kindsNum)+
+				"개");
+    for(var idx = 0; idx < tdNum; idx++) {
+        if(sameNum*kindsNum > idx){
+        	tempArray[idx] = parseInt(idx/sameNum)+1
+        }
+        else if(sameNum*kindsNum <= idx){
+            tempArray[idx] = 0;
+        }
+        else{
+			alert("오류코드:E20000bYe_makeTempArray() idx: "+idx);;
+		}
+    }
+    console.log(tempArray);
+}
+
+
+// 플레이 버튼 클릭
+var ranIdx;
+function startGamePlay(){
+	$('.table .td').each(function(){
+		ranIdx = Math.floor(Math.random()*tempArray.length); //배열중 랜덤 배열
+		$(this).text(tempArray[ranIdx]);		//랜덤한 배열값을 원래 테이블에 넣어줌
+		$(this).splice(ranIdx,1);			//넣은 배열을 삭제함.
 	});
 }
-*/
 
 
 
@@ -182,53 +211,37 @@ function shuffle(){
 
 
 
-/*	i개의 td를 만든다,
-	j의 짝의 갯수(i/level>=2n 기본 조건)
-	를 만족하는 최대수n개의 범위에서 level을 올린다.
-	
-	
-*/
+
 
 </script>
 </head>
 <body>
-
-<div id='welcome'>
-	<div id="title">짝맞추기 게임[아래 키조작 설명]</div>
-	<div id='manual'>
-		<pre>1.</pre>
+<div class="windowFull whyContain">
+	<div id="winHalf">
+		<div class="table whyContain">
+			테이블 생성전.
+		</div>
 	</div>
-	<div id='level'>LEVEL</div>
-	<div id='score'>SCORE</div>
-</div>
- 
-<div class="table whyContain">
-	<div class="tr">
-		<div class="td"></div>
-		<div class="td"></div>
-		<div class="td"></div>
-		<div class="td"></div>
-	</div>
-	<div class="tr">
-		<div class="td"></div>
-		<div class="td"></div>
-		<div class="td"></div>
-		<div class="td"></div>
-	</div>
-	<div class="tr">
-		<div class="td"></div>
-		<div class="td"></div>
-		<div class="td"></div>
-		<div class="td"></div>
-	</div>
-	<div class="tr">
-		<div class="td"></div>
-		<div class="td"></div>
-		<div class="td"></div>
-		<div class="td"></div>
+	<div id='welcome'>
+		<div id="title">짝맞추기 게임</div>
+		<div id='manual'>
+			<pre>1.</pre>
+		</div>
+		<div id='levelMax'>MAX Lv.
+			<input type="text" id=>
+		</div>
+		<div id='level'>LEVEL</div>
+			<input type="text" id=>
+		<div id='tableRow'>ROW
+			<input>
+		</div>
+		<div id='tableCol'>COL
+			<input>
+		</div>
+		<div id='score'>SCORE</div>
+		<div id='scoreVal'>???</div>
 	</div>
 </div>
-
 
 </body>
 </html>

@@ -78,7 +78,7 @@ body{box-sizing:border-box;}
 </script>
 <script type="text/javascript">
 /**/
-$(function(){
+$(document).ready(function(){
 
 });
 
@@ -116,41 +116,81 @@ var maxLevel = 8; // 게임 계속 진행시 갈수 있는 최고 레벨
 
 function startGame(){
 	if(table){
-		tdNum = $('.table .td').length; 	//td 총갯수 설정
-		level = 1;								//초기 level 설정
-		sameNum = Math.floor(tdNum/(level*2));	//초기 같은모양 조각 총 갯수 설정
-		kindsNum = Math.floor(tdNum/sameNum);	//초기 조각의 종류 수
-		maxLevel = Math.floor(tdNum/2);		//maxLevel 설정
-		setTdzero();						// 초기 td=0넣기
-	}else{
-		alert("오류코드:E20000bYe");
-	}
-}
-// 초기설정 끝!
+	
 
-// 블럭에 조각 넣기
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+for(idx)
+tempArray[i]=sameNum
+
+
+
+
+
+
+
+
+
+
+//조각을 뿌려주기위한 임시 배열생성 //생성자?메서드?느낌인듯...
 var tempArray = [];
 
-//생성자?메서드?느낌인듯...
-
-function createArray(){
-	for(idx=0;idx<kindNum;idx++){
-		tempArray[idx] = 0;
-	}	
+function tempArraymake(){
+	
 }
-delete tempArray;
-var random
-//주어진 조각에 설정값 줄필요가 없네...
+tempArray = [];	//배열 삭제(배열길이를 0으로 만듬.)
+
+
+
+
+
+
+
+
+
+//블럭에 조각 넣기
 function spreadNum(){
+	$('.table .td').each(function(){	//초기 테이블에 전부 0값을 준다.
+		$( this ).text(0);
+	});
+}
+	for(idx=0;idx<kindNum;idx++){		초기 테이블에 전부 0의 값을 준다.
+		$('.table .td')[idx].text(0);
+	}	
+	
+	
+/*
 	if(tempArray.length>0){
-		this.i = Math.floor(Math.random()*kindsNum)
-		if(tempArray[i]==sameNum){
-			tempArray = [];	
+		this.i = Math.floor(Math.random()*kindsNum) //i == 1~2
+		
+
+		if(tempArray[i]==sameNum){	
+			delete tempArray[i];	//같은 조각이 다 찼으니 삭제
+		}else if(tempArray[i]<==sameNum){
+			$('.table .td')[]
+			tempArray[i]++
 		}
 		
-여기서부터 해야됨!!!!@!@#!@#@!		tempArray[i].splice
+		tempArray[i].splice
 	}
-		
+*/		
 	tempArray[] 
 		 Math.floor(Math.random()*kindsNum)
 }
@@ -188,6 +228,61 @@ function shuffle(){
 	
 	
 */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+var tempArray = [];
+function makeTempArray() {
+    for(var i = 0; i < tdNum; i++) {
+        if(tdNum - i >= sameNum) {
+        	tempArray[i] = parseInt(i / sameNum)
+        } else {
+            tempArray[i] = 0;
+        }
+    }
+}
+
+
+for(var i = 0; i < tdNum; i++) {
+    if(tdNum - i >= sameNum) {
+    	tempArray[i] = parseInt(i / sameNum)
+    } else {
+        tempArray[i] = 0;
+    }
+}
+
+
+
+
+
+
+
 
 </script>
 </head>
