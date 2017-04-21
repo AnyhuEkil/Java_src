@@ -30,31 +30,8 @@
 
 
 
-.whyReportLog{
-	height:calc(74.999% - 20px);
-	width:calc(99.99% - 20px);
-	color:white;
-	margin:10px;
-	padding:20px 0px 0px 0px;
-	float:left;
-}
-.whyReportImg{
-	width: 420px;
-	height:calc(74.999% - 10px);
-	background:#FF6961;
-	border:5px solid #FF6961;
-	background:url("../img/saveimg.PNG") no-repeat center;
-	margin:0 auto;
-	padding:10px;
-}
-.whyReportText{
-	height:calc(24.9% - 10px);
-	width:99.999%;
-	background:#FF6961;
-	border:5px solid #bb0a00;
-	margin:20px 0px 0px 0px;
-	padding:10px;
-}
+
+
 
 /*	상단 전투화면 화면창 시작 */
 .whyTopBattle{

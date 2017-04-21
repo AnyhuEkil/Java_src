@@ -54,7 +54,7 @@ body{overflow:auto;background:#d2e0d1;}
 }
 
 /*	전체 화면 시작	*/
-/* 전레 - 로딩 */
+/* 전체 - 로딩 */
 .whyLodingbox{
 	z-index:20;
 	position:absolute;
@@ -150,7 +150,7 @@ body{overflow:auto;background:#d2e0d1;}
 
 /* 전체 - 상태창 */
 .whyStatusbox{
-	z-index:21;
+	z-index:20;
 	position:absolute;
 	width:100%;
 	height:100%;
@@ -159,75 +159,98 @@ body{overflow:auto;background:#d2e0d1;}
 	font-size: 40px;
 }
 	.whyStatus:NTH-CHILD(1){
-		height:65%;
+		height:60%;
 		background:#779ECB;
 	}
-	.whyStatus:NTH-CHILD(2){
-		height:35%;
-		background:#5593c2;
-	}
-	.whyStatusImgbox{
-		display:inline-block;
-		float:left;
-		height:calc(100% - 40px - 20px); /* 높이%, TOP.px, BOTTOM.px */
-		width:calc(40% - 10px - 10px); /* 너비%, LEFT.px, RIGHT.px */
-		margin:40px 10px 20px 10px;
-		background:#5593c2;
-	}
-		.whyStatusImg{
-			height:100%; 
-			width:100%; 
-			background:url("../img/naong01.png") no-repeat center;
-			background-size:100% 70%;
+		.whyStatusImgbox{
+			display:inline-block;
+			float:left;
+			height:calc(100% - 40px - 20px); /* 높이%, TOP.px, BOTTOM.px */
+			width:calc(40% - 10px - 10px); /* 너비%, LEFT.px, RIGHT.px */
+			margin:40px 10px 20px 10px;
+			background:#5593c2;
 		}
-	.whyStatusNamebox{
-		display:inline-block;
-		float:left;
-		height:calc(65% - 40px - 10px); /* 높이%,TOP>px, 바텀px */
-		width:calc(60% - 10px); /* 너비%, RIGHTpx*/
-		float:left;
-		margin:40px 10px 10px 0px;
+			.whyStatusImg{
+				height:100%; 
+				width:100%; 
+				background:url("../img/naong01.png") no-repeat center;
+				background-size:100% 70%;
+			}
+		.whyStatusNamebox{
+			display:inline-block;
+			float:left;
+			height:calc(65% - 40px - 10px); /* 높이%,TOP>px, 바텀px */
+			width:calc(60% - 10px); /* 너비%, RIGHTpx*/
+			margin:40px 10px 10px 0px;
+			background:#5593c2;
+		}
+		.whyStatusMoneybox{
+			display:inline-block;
+			float:left;
+			height:calc(35% - 20px); /* 높이%, BOTTOM.px*/
+			width:calc(60% - 10px);	 /* 너비%, RIGHT.px*/
+			margin:0px 10px 20px 0px;
+			background:#5593c2;
+		}
+	.whyStatus:NTH-CHILD(2){
+		height:40%;
 		background:#5593c2;
 	}
-	.whyStatusMoneybox{
-		height:34.999%;
-		width:calc(59.9% - 15px);
-		float:left;
-		margin:0px 5px 20px 0px;
-		background:#5593c2;
-	}
-	.whyStatusBadge{
-		height:calc(99.999% - 50px);
-		width:calc(99.999% - 50px);
-		float:left;
-		margin:20px;
-		border:5px solid #779ECB;
-	}
+		.whyStatusBadge{
+			height:calc(100% - 20px - 20px); /* 높이%, R,L.px*/
+			width:calc(100% - 20px - 20px); /* 높이%, T,B.px*/
+			float:left;
+			margin:20px;
+			background:#779ECB;
+		}
 
 /* 전체 - 리포트 */
 .whyReportBox{
-	z-index:20;
+	z-index:21;
 	position:absolute;
 	height:100%;
 	width:100%;
 	background:#ffd2d0;
 	color:white;
-	font-size: 30px;
-	font-weight: bold; 
+	font-size:30px;
+	font-weight:bold; 
 	padding:40px;
 }	
 	.whyReport{
 		display:inline-block;
-		height:calc(24.9% - 40px);
-		width:calc(32.999% - 20px);
+		float:left;
+		height:calc(25% - 40px);
+		width:calc(33% - 20px);
 		background:#FF6961;
 		border:5px solid #bb0a00;
 		margin:20px 10px;
 		padding:10px;
+	}
+	.whyReportLog{
+		height:calc(75% - 20px);
+		width:calc(100% - 20px);
+		color:white;
+		margin:10px;
+		padding:20px 0px 0px 0px;
 		float:left;
 	}
-	
-	
+	.whyReportImg{
+		width: 420px;
+		height:calc(74.999% - 10px);
+		background:#FF6961;
+		border:5px solid #FF6961;
+		background:url("../img/saveimg.PNG") no-repeat center;
+		margin:0 auto;
+		padding:10px;
+	}
+	.whyReportText{
+		height:calc(24.9% - 10px);
+		width:99.999%;
+		background:#FF6961;
+		border:5px solid #bb0a00;
+		margin:20px 0px 0px 0px;
+		padding:10px;
+	}
 	
 	
 	
