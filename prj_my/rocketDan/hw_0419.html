@@ -13,82 +13,114 @@ body{box-sizing:border-box;}
 .whyContain:after,
 .whyContain:before{content:"";display:table;clear:both;}
 
+html,body{height:100%;overflow:hidden;}
+
 .windowFull{
-	background:#84b09b;
-	width:99vw;
-	height:99vh;
 	overflow:auto;
+	background:#779ECB;
+	width:100%;
+	height:100%;
+	overflow:auto;
+	padding:10px;
 }
+
 #winHalf{
 	display:inline-block;
 	float:left;
-	width:calc(79.9% - 20px);
-	height:calc(99.9% - 20px);
-	margin:10px;
+	width:calc(100% - 350px);
+	height:100%;
 	background:#d0e1d9;
-	border:1px solid red;
 }
-#welcome{
-	display:inline-block;
-	height:500px;
-	width:20%;
-	background:#779ECB;
-	color:white;
-	text-align:center;
-	font-size:25px;
-	border:2px solid #30537a;
-}
-#title{
-	height:40px;
-	line-height:40px;
-}
-#manual{
-	background:#3f6fa3;
-	width:calc(99.999% - 20px);
-	height:calc(99.999% - 100px);
-	margin:10px;
-	text-align: left;
-}
-#level{
-	display:inline-block;
-	float:left;
-	width:49.999%;
-	height:40px;
-	line-height:40px;
-	color:gold;
-	background-color:black;
-}
-#score{
-	display:inline-block;
-	float:left;
-	width:49.999%;
-	height:40px;
-	line-height:40px;
-	color:gold;
-	background-color:black;
-}
-
 .table{
 	display:block;
 	width:100%;
 	height:100%;
+	margin:auto;
+	color:gold;
 	font-size:30px;
 	font-weight:bold;
-	
+	border-style:groove;
 }
-.tr{
-	height:24.999%;
-}
-.td{
-	
-	
-	
-	
-	
-	
+#manual{
+	background:#3f6fa3;
+	width:100%;
+	height:100%;
+	line-height:100%;
 }
 
+/* 조작부분 */
+.sideMenu{
+	display:inline-block;
+	float:left;
+	width:320px;
+	margin:0px 15px;
+	overflow:auto;
+}
+.welcome{
+	width:100%;
+	height:100%;
+	color:#d8e2ef;
+	font-size:25px;
+	font-weight:bold;
+	text-align:center;
+}
+.sideLine{
+	display:inline-block;
+	width:100%;
+	height:30px;
+	float:left;
+}
+.sideTitle{
+	float:left;
+	width:100%;
+	height:50px;
+	line-height:45px;
+	background:#24405e;
+	color:white;
+	margin:5px 0px;
+}
+.sideContents,
+#scoreVal,
+#levelMaxVal,
+input{
+	display:inline-block;
+	text-align:right;
+	float:left;
+	width:50%;
+	height:50px;
+	background:#3f70a5;
+	line-height:45px;
+	margin:5px 0px;
+	padding:0px 10px;
+}
+.sideBtn{
+	width:100%;
+	height:50px;
+	line-height:45px;
+	float:left;
+	margin:5px 0px;
+	background:#1f1f18;
+	color:gold;
+}
+#scoreVal,
+#levelMaxVal,
+input{
+	text-align:left;
+}
+#levelInVal{
+	text-align:left;
+	background:#3f70a5;
+}		
+input{
+	border:5px solid #3f70a5;
+	background:#779ECB;
+	font-size:25px;
+	color:#cad9ea;
+}
+
+/*
 *{border: 1px dotted red;}
+*/
 </style>
 
 <script src="http://code.jquery.com/jquery-3.2.1.js">
@@ -96,7 +128,10 @@ body{box-sizing:border-box;}
 <script type="text/javascript">
 /**/
 $(document).ready(function(){
-
+	//입력창 클리어하기.	
+	$("input").focus(function(){
+		this.value="";
+	});
 });
 
 // 키보드 조작.
@@ -118,6 +153,8 @@ function setBtn(e){
 	
 }
 
+
+
 /* 테이블 x,y값을 입력 받고 테이블을 만들자!!... 는 보류
 function creatTdnum(){
 }
@@ -130,11 +167,12 @@ var kindsNum = 2; // 같은 조각 종류 수
 var maxLevel = 8; // 게임 계속 진행시 갈수 있는 최고 레벨
 
 
-
 var rowNum = 5	//가로 갯수
 var colNum = 7	//세로 갯수
-var textTable = "";
+var textTable="";
+var trHeight=50;
 function createTable(){
+	textTable=""
 	console.log("tr: "+rowNum+", td: "+colNum)
 	for(row=1;row<=rowNum;row++){
 		textTable += '<div class="tr">\n';
@@ -145,16 +183,28 @@ function createTable(){
 	}
 	console.log(textTable)
 	$('.table').html(textTable);
-	$('.tr').css({'height':100/rowNum+'%'});
-	$('.td').css({'display':'inline-block','float':'left','height':'99.9%','width':100/colNum+'%'});
+	$('.tr').css({height:100/rowNum+'%'});
+	$('.td').css({display:'inline-block',
+		'border-style':'outset',
+		background:'#1f1f18',
+		'float':'left',
+		'text-align':'center',
+		height:'100%',
+		cursor: 'help',
+		width:100/colNum+'%'});
+	trHeight = $('.td').height();
+	$('.td').css({
+		'line-height':$('.td').height()+'px',
+		'font-size':$('.td').height()/3+'px',
+	});
 }
 
 
 /* 게임 시작버튼 클릭시 초기 1레벨 부터 생성 */
 function startGameValue(){
-	if(table){
+	if(gameSet==0){
 		level = 1;							//초기 level 설정
-		tdNum = $('.table .td').length; 	//td 총갯수 설정 //테이블 생성기준
+		tdNum = $('.td').length; 	//td 총갯수 설정 //테이블 생성기준
 		maxLevel = Math.floor(tdNum/2);		//maxLevel 설정//테이블 생성기준
 		setTdzero();						// 초기 td=0넣기 //테이블 생성기준
 		sameNum = Math.floor(tdNum/(level*2));	//초기 같은모양 조각 총 갯수 설정 //레벨 변경기준
@@ -198,7 +248,7 @@ function makeTempArray() {
 // 플레이 버튼 클릭
 var ranIdx;
 function startGamePlay(){
-	$('.table .td').each(function(){
+	$('.td').each(function(){
 		ranIdx = Math.floor(Math.random()*tempArray.length); //배열중 랜덤 배열
 		$(this).text(tempArray[ranIdx]);		//랜덤한 배열값을 원래 테이블에 넣어줌
 		$(this).splice(ranIdx,1);			//넣은 배열을 삭제함.
@@ -206,6 +256,16 @@ function startGamePlay(){
 }
 
 
+/* 배열 셔플(인터넷 아직 해보지 않음. 좋아보임.)
+ function shuffle(a) {
+    for (let i = a.length; i; i--) {
+        let j = Math.floor(Math.random() * i);
+        [a[i - 1], a[j]] = [a[j], a[i - 1]];
+    }
+}
+*/
+// 같은번호 나오면 정답
+var select
 
 
 
@@ -219,27 +279,45 @@ function startGamePlay(){
 <div class="windowFull whyContain">
 	<div id="winHalf">
 		<div class="table whyContain">
-			테이블 생성전.
+			<div id='manual'>
+				<pre>1.</pre>
+			</div>
 		</div>
 	</div>
-	<div id='welcome'>
-		<div id="title">짝맞추기 게임</div>
-		<div id='manual'>
-			<pre>1.</pre>
+	<div class="sideMenu whyContain">
+		<div class="welcome whyContain">
+			<div class="sideLine"></div>
+			<div class="sideTitle"> 짝맞추기 </div>
+			<div class="sideLine"></div>
+			<div class="sideTitle">- 기본 입력 -</div>
+			<div class="sideContents">가로 :</div>
+	
+			<input type="text" id="rowInVal" value="입력하세요.">
+			<div class="sideContents">세로 :</div>
+	
+			<input type="text" id="colInVal" value="입력하세요.">
+			
+			<div class="sideBtn" id="btnTable">[ 테이블 생성 ]</div>
+			<div class="sideLine"></div>
+			<div class="sideTitle">- 정보창 -</div>
+			<div class="sideContents">LEVEL :</div>
+	
+			<input type="text" id="levelInVal" value="입력가능.">
+			<div class="sideContents">Max Lv. :</div>
+	
+			<div class="sideContents" id="levelMaxVal">?</div>
+			<div class="sideContents">SCORE :</div>
+	
+			<div class="sideContents" id="scoreVal">?</div>
+			<div class="sideLine"></div>
+			<div class="sideLine"></div>
+			
+			<div class="sideBtn" id="btnStart">[ 시작하기 ]</div>
+	
+			<div class="sideBtn" id="btnHelp">[ 도움말 ]</div>
+			<div class="sideLine"></div>
+
 		</div>
-		<div id='levelMax'>MAX Lv.
-			<input type="text" id=>
-		</div>
-		<div id='level'>LEVEL</div>
-			<input type="text" id=>
-		<div id='tableRow'>ROW
-			<input>
-		</div>
-		<div id='tableCol'>COL
-			<input>
-		</div>
-		<div id='score'>SCORE</div>
-		<div id='scoreVal'>???</div>
 	</div>
 </div>
 
