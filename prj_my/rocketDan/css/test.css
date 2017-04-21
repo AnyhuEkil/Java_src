@@ -1,208 +1,35 @@
-body{display:block;}
-body{box-sizing:border-box;}
-*, *:after, *:before{box-sizing:inherit;}
-
-*{margin:0; padding:0;}
-
-.whyContain:after,
-.whyContain:before{content:"";display:table;clear:both;}
-
-/*	파랑 : #779ECB
-	빨강	: #FF6961
-	녹색 : #A0D6B4
-	주황 : #FFB347
-	보라 : #B19CD9
-	갈색 : #836953
-	노랑 : #FDFD96
-	회색 : #CFCFC4
-*/
-/* 16*16(한칸 40px) */
-/* 상단전체   */
-.whyMainBox{
-	z-index:0;
-	width:640px;
-	height:640px;
-	margin:30px auto;
-	background-image:url(../img/background01.jpg);
-	background-size:contain;
-	color:#30537a
-}
-.whyAllbox{
-	z-index:1;
-	height:100%;
-}
-.whyTopbox{
-	z-index:1;
-	height:74.999%;
-}
-.whyBtmbox{
-	z-index:1;
-	height:24.999%;
-}
 
 
-/*	전체 화면 시작	*/
-.whyLodingbox{
-	z-index:3;
-	position:relative;
-	width:100%;
-	height:100%;
-	background-color:#5593c2;
-	text-align: center;
-}
-.whyLoding1{
-	height:20%;
-}
-.whyLoding2{
-	width:370px;
-	height:250px;
-	margin:auto;
-	border:10px solid #779ECB;
-	background:url("../img/loading01.gif")
-}
-.whyLoding3{
-	height:30%;
-	font-weight:bold;
-	color: white;
-	font-size:100px;
-	text-shadow:
-		rgb(204, 204, 204) 0px 1px 0px,
-		rgb(201, 201, 201) 0px 2px 0px,
-		rgb(187, 187, 187) 0px 3px 0px,
-		rgb(185, 185, 185) 0px 4px 0px,
-		rgb(170, 170, 170) 0px 5px 0px,
-		rgba(0, 0, 0, 0.0980392) 0px 6px 1px,
-		rgba(0, 0, 0, 0.0980392) 0px 0px 5px,
-		rgba(0, 0, 0, 0.298039) 0px 1px 3px,
-		rgba(0, 0, 0, 0.14902) 0px 3px 5px,
-		rgba(0, 0, 0, 0.2) 0px 5px 10px,
-		rgba(0, 0, 0, 0.2) 0px 10px 10px,
-		rgba(0, 0, 0, 0.0980392) 0px 20px 20px;
-}
-.whyLoding4{
-	color: white;
-	font-size:30px;
-	text-shadow:
-		rgb(204, 204, 204) 0px 0.5px 0px,
-		rgb(201, 201, 201) 0px 1px 0px,
-		rgb(187, 187, 187) 0px 1.5px 0px,
-		rgb(185, 185, 185) 0px 2px 0px,
-		rgb(170, 170, 170) 0px 2.5px 0px,
-		rgba(0, 0, 0, 0.0980392) 0px 3px 0.5px,
-		rgba(0, 0, 0, 0.0980392) 0px 0px 2.5px,
-		rgba(0, 0, 0, 0.298039) 0px 0.5px 1.5px,
-		rgba(0, 0, 0, 0.14902) 0px 1.5px 2.5px,
-		rgba(0, 0, 0, 0.2) 0px 2.5px 5px,
-		rgba(0, 0, 0, 0.2) 0px 5px 5px,
-		rgba(0, 0, 0, 0.0980392) 0px 10px 10px;
-}
-
-.whyAllMap{
-	z-index:3;
-	position:relative;
-	height:100%;
-	background:rgba(30, 150, 30, 0.7);
-}
-.whyMenubox{
-	z-index:5;
-	position:relative;
-	height:440px;
-	width:250px;
-	float:right;
-	background:black;
-	background:rgb(160, 214, 180);
-	color:white;
-	text-align:center;
-	margin-top:20px;
-	margin-right:10px;
-	padding-top:30px;
-	
-}
-.whyMenu{
-	display:inline-block;
-	height:50px;
-	line-height:50px;
-	width:200px;
-	margin:5px;
-	font-size:25px;
-	font-weight:bold;
-	background:rgb(54, 125, 80);
-}
 
 
-/* 전체 상태 메뉴창 	*/
-.whyStatusbox{
-	z-index:5;
-	position:relative;
-	width:100%;
-	height:100%;
-	background:#CFCFC4;
-}
-.whyStatus:NTH-CHILD(1){
-	height:64.999%;
-	background:#779ECB;
-	color: white;
-	font-size: 40px;
-}
-.whyStatus:NTH-CHILD(2){
-	height:34.999%;
-	background:#5593c2;
-	color: white;
-	font-size: 40px;
-}
-.whyStatusImg{
-	height:calc(99.9% - 60px);
-	width:calc(40% - 30px);
-	float:left;
-	background:url("../img/naong01.png") no-repeat center;
-	background-size:100% 70%;
-	margin:40px 10px 20px 10px;
-	border:5px solid #5593c2;
-}
-.whyStatusName{
-	height:calc(64.999% - 70px);
-	width:calc(59.9% - 15px);
-	float:left;
-	margin:40px 5px 5px 0px;
-	border:5px solid #5593c2;
-}
-.whyStatusMoney{
-	height:34.999%;
-	width:calc(59.9% - 15px);
-	float:left;
-	margin:5px 5px 10px 0px;
-	border:5px solid #5593c2;
-}
-.whyStatusBadge{
-	height:calc(99.999% - 50px);
-	width:calc(99.999% - 50px);
-	float:left;
-	margin:20px;
-	border:5px solid #779ECB;
-}
 
 
-/* 전체 리포트창 */
-.whyReportBox{
-	height:99.999%;
-	width:99.99%;
-	background:rgba(0, 0, 0, 0.5);
-	color:white;
-	font-size: 30px;
-	font-weight: bold; 
-	padding:20px 10px;
-	
-}
-.whyReport{
-	display:inline-block;
-	height:calc(24.9% - 40px);
-	width:calc(32.999% - 20px);
-	background:#FF6961;
-	border:5px solid #bb0a00;
-	margin:20px 10px;
-	padding:10px;
-	float:left;
-}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 .whyReportLog{
 	height:calc(74.999% - 20px);
 	width:calc(99.99% - 20px);
@@ -431,4 +258,4 @@ body{box-sizing:border-box;}
 }
 
 
-*{border: 1px dotted red;}
+
