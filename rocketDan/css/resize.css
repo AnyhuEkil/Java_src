@@ -6,9 +6,22 @@
 
 
 
+div{
+	color: #FF6961;		/* 빨1 */
+	color: #779ECB;		/* 파5 */
+	color: #A0D6B4;		/* 초4 */
+	color: #FFB347;		/* 주2 */
+	color: #B19CD9;		/* 보7 */
+	color: #FDFD96;		/* 노3 */
+	color: #836953;		/* 갈6 */
+	color: #CFCFC4;		/* 회0 */
+	color: #1f1f18;
+}
 
 
 
 
-
-
+div{
+	color: aqua;
+	font-weight: normal;
+}
