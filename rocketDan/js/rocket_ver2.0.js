@@ -412,29 +412,31 @@ function yMyAcomonSelect(){
 function yMyItemSelect(){
 	switch (yListCount) {
 	case 1:
-		//재현 1번째 포켓몬
+		//재현 1번째 아이템
 		turnEnd();  //실행할 함수에 넣으면됨
 		break;
 	case 2:
-		//재현 2번째 포켓몬
+		//재현 2번째 아이템
 		turnEnd();	//실행할 함수에 넣으면됨
 		break;
 	case 3:
-		//재현 3번째 포켓몬
+		//재현 3번째 아이템
 		turnEnd();	//실행할 함수에 넣으면됨
 		break;
 	case 4:
-		//재현 4번째 포켓몬
+		//재현 4번째 아이템
 		turnEnd();	//실행할 함수에 넣으면됨
 		break;
 	case 5:
-		//재현 5번째 포켓몬
+		//재현 5번째 아이템
 		turnEnd();	//실행할 함수에 넣으면됨
 		break;
 	case 6:
-		//재현 6번째 포켓몬
+		//재현 6번째 아이템
 		turnEnd();	//실행할 함수에 넣으면됨
 		break;
+		
+	// 아이템 버그 및 수량 부족.. 방법 모색중.
 	default:
 		break;
 	}
@@ -443,19 +445,19 @@ function yMyItemSelect(){
 function yCmdSkillSelect(){
 	switch (yListCount) {
 	case 1:
-		//재현 1번째 포켓몬
+		//재현 1번째 스킬
 		turnEnd();  //실행할 함수에 넣으면됨
 		break;
 	case 2:
-		//재현 2번째 포켓몬
+		//재현 2번째 스킬
 		turnEnd();	//실행할 함수에 넣으면됨
 		break;
 	case 3:
-		//재현 3번째 포켓몬
+		//재현 3번째 스킬
 		turnEnd();	//실행할 함수에 넣으면됨
 		break;
 	case 4:
-		//재현 4번째 포켓몬
+		//재현 4번째 스킬
 		turnEnd();	//실행할 함수에 넣으면됨
 		break;
 	default:
@@ -478,17 +480,14 @@ function turnEnd(){
 		$('.whyBattle').css('z-index','20');
 		$('.whyCommand').css('z-index','20');
 		$('.whyCmdListbox').css('z-index','30');
+		$('.whyTextbox').css('z-index','10');
 		yLocClassFun("whyCmdList");
 	}
-	
-	$('.whyMenubox').css('z-index','10');
-	$('.whyBattle').css('z-index','10');
 	$('.whyMyAcomonbox').css('z-index','10');
 	$('.whyMyItembox').css('z-index','10');
 	$('.whyCmdSkillbox').css('z-index','10');
 	ySetCssFun();
 }
-
 
 
 
@@ -505,6 +504,3 @@ function JHF_Num_n(){
 	console.log("재현이꺼로 대체할 함수"+yListCount);
 }
 */
-
-
-
