@@ -24,6 +24,8 @@ html,body{height:100%;overflow:hidden;}
 	padding:10px;
 }
 #allTitle{
+	display:inline-block;
+	float:left;
 	width:100%;
 	height:70px;
 	font-size:45px;
@@ -37,9 +39,10 @@ html,body{height:100%;overflow:hidden;}
 #countBox{
 	display:inline-block;
 	float:left;
-	width:calc(100% - 350px);
-	height:100%;
-	background:#d0e1d9;
+	width:100%;
+	height:50px;
+	background:#1f1f18;
+	border-style:outset;
 }
 #countTime{
 	
@@ -51,13 +54,14 @@ html,body{height:100%;overflow:hidden;}
 	display:inline-block;
 	float:left;
 	width:calc(100% - 350px);
-	height:100%;
-	background:#d0e1d9;
+	height:calc(100% - 70px);
+	background:#24405e;
+	
 }
 .table{
-	display:block;
+	display:inline-block;
 	width:100%;
-	height:100%;
+	height:calc(100% - 50px);
 	margin:auto;
 	color:#1f1f18;
 	font-size:30px;
@@ -75,9 +79,10 @@ html,body{height:100%;overflow:hidden;}
 .sideMenu{
 	display:inline-block;
 	float:left;
-	width:320px;
-	margin:0px 15px;
+	width:350px;
+	padding:5px 15px;
 	overflow:auto;
+	border-style:groove;
 }
 .welcome{
 	width:100%;
@@ -170,10 +175,10 @@ function setBtn(e){
 		console.log( String.fromCharCode(event.keyCode) +" : "+event.keyCode);
 	}
 	if(e.keyCode==48){	//키코드 숫자 0
-		createTable();
+		//createTable();
 	}
 	if(e.keyCode==49){ // 키코드 숫자 1 
-		startGameValue();
+		//startGameValue();
 	}
 	if(e.keyCode==50){ // 키코드 숫자 2
 		makeTempArray();
@@ -204,8 +209,10 @@ var maxLevel; // 게임 계속 진행시 갈수 있는 최고 레벨
 
 var rowNum;	//가로 갯수
 var colNum;	//세로 갯수
+var pairNum;	//짝의 갯수 ... 아직 제대로 못넣음.
 var textTable;	// $('.table').html(textTable)을 위한 글자 테이블
 
+var whyNot;
 function createTable(){
 	rowNum = (parseInt($('#rowInVal').val())>0 ? parseInt($('#rowInVal').val()) : 4 )
 	colNum = (parseInt($('#colInVal').val())>0 ? parseInt($('#colInVal').val()) : 4 )
@@ -239,52 +246,49 @@ function createTable(){
 	$('#colInVal').val(colNum);		//세로 갯수 화면에 전송
 	// ~ 테이블 생성완료~
 
+	
 	tdNum = $('.td').length; 		//td 총갯수 설정 //테이블 생성기준
-	maxLevel = Math.floor(tdNum/2);	//maxLevel 설정//테이블 생성기준
-	$('#levelMaxVal').html(maxLevel);	//최고 가능 레벨 화면에 전송
-}
-
-
-/* 게임 시작버튼 클릭시 초기 1레벨 부터 생성 */
-function startGameValue(){
-	if(gameSet==0){
-		level = (parseInt($('#levelInVal').val())>0 ? parseInt($('#levelInVal').val()) : 1 )			//초기 level 설정
-		sameNum = Math.floor(tdNum/(level*2));	//초기 같은모양 조각 총 갯수 설정 //레벨 변경기준
-		kindsNum = Math.floor(tdNum/sameNum);	//초기 조각의 종류 수 //레벨 변경기준
-		$('#levelInVal').val(level);
-		$('#tdNumVal').html(tdNum);
-		$('#sameNumVal').html(sameNum);
-		$('#kindsNumVal').html(kindsNum);
-		$('#boombNumVal').html(tdNum-(sameNum*kindsNum));
-		
-	}else{
-		alert("오류코드:E20000bYe_startGame()");
-	}
-}
-
-/* 초기설정 끝! */
-
-
-
+	pairNum = 2;
+	
+	level = (parseInt($('#levelInVal').val())>0 && $('#levelInVal').val()<maxLevel ? parseInt($('#levelInVal').val()) : 4)//초기 level 설정
+	$('#levelInVal').val(level);
+	whyNot = Math.floor(tdNum/pairNum); // 가능한 칸수 // 나머지 폭탄
+	kindsNum = level+1;	//초기 조각의 종류 수 //레벨-1느낌
+	sameNum = Math.floor(whyNot/kindNum) // 같은 수 기본갯수. //
+	
+}	
+	
+	
 // 가상배열
 var tempArray = [];
-function makeTempArray() {
-    for(var idx = 0; idx < tdNum; idx++) {
-        if(sameNum*kindsNum > idx){
-        	tempArray[idx] = parseInt(idx/sameNum)+1
+function makeTempArray(){
+	for(var idx = 0; idx < tdNum; idx++){
+		if(sameNum*kindNum*pairNum > idx){
+			tempArray[idx] = parseInt(idx/sameNum)+1;
+		}
+		else if(whyNot*pairNum <= idx){
+			tempArray[idx] = 0;
+		}
+		else{
+			alert("오류코드:E20000bYe_makeTempArray() idx: "+idx);
+		}
+	}
+        if(sameNum*kindsNum*pairNum > idx){
+        	tempArray[idx] = parseInt(idx/sameNum)
         }
-        else if(sameNum*kindsNum <= idx){
+        else if(sameNum*kindsNum*pairNum <= idx){
             tempArray[idx] = 0;
         }
         else{
 			alert("오류코드:E20000bYe_makeTempArray() idx: "+idx);;
 		}
     }
-    console.log(tempArray);
+	console.log("array :"+tempArray);
+	console.log("kN :"+kindsNum);
+	console.log("y%k :"+whyNot%kindsNum);
 }
 
-
-// 배열 뿌려줌
+//배열 뿌려줌
 var ranIdx; 	//랜덤 배열 인덱스 뽑기용 : startGamePlay()
 function startGamePlay(){
 	// 각각의 배열에 랜덤하게 숫자 분배
@@ -296,6 +300,58 @@ function startGamePlay(){
 		tempArray.splice(ranIdx,1);				//넣은 배열을 삭제함.
 	});
 }
+
+
+/*
+
+//	sameNum = Math.floor(tdNum/(pairNum*kindsNum));	//초기 같은모양 조각 총 갯수 설정
+	maxLevel = Math.floor(tdNum/(kindsNum*pairNum))-1;	//maxLevel 설정//테이블 생성기준
+	
+	$('#tdNumVal').html(tdNum);
+	$('#levelMaxVal').html(maxLevel);	//최고 가능 레벨 화면에 전송
+	$('#sameNumVal').html(sameNum);
+	$('#kindsNumVal').html(kindsNum);
+	$('#boombNumVal').html(tdNum-(sameNum*kindsNum));
+	
+	
+	console.log("Lv"+level+",sN"+sameNum+",kN"+kindsNum+",pN"+pairNum+",tN"+tdNum+",ML"+maxLevel)
+}
+*/
+
+
+/* 게임 시작버튼 클릭시 초기 1레벨 부터 생성 */
+/*
+function startGameValue(){
+	if(gameSet==0){
+		
+	}else{
+		alert("오류코드:E20000bYe_startGame()");
+	}
+}
+*/
+/* 초기설정 끝! */
+
+
+/*
+// 가상배열
+var tempArray = [];
+function makeTempArray() {
+    for(var idx = 0; idx < tdNum; idx++) {
+        if(sameNum*kindsNum*pairNum > idx){
+        	tempArray[idx] = parseInt(idx/sameNum)
+        }
+        else if(sameNum*kindsNum*pairNum <= idx){
+            tempArray[idx] = 0;
+        }
+        else{
+			alert("오류코드:E20000bYe_makeTempArray() idx: "+idx);;
+		}
+    }
+    console.log(tempArray);
+}
+*/
+
+
 
 /* 배열 셔플(인터넷 아직 해보지 않음. 좋아보임.)
  function shuffle(a) {
@@ -412,7 +468,7 @@ function arrayValue(checkNum){
 		}
 	}
 	else if(checkNum==0){
-		valColor =  "#CFCFC4" //"#1f1f18";(배경이랑 같은색.)
+		valColor = "#CFCFC4"; //"#1f1f18";(배경이랑 같은색.)
 	}
 }
 
@@ -440,7 +496,9 @@ function arrayValue(checkNum){
 					<input type="text" id="rowInVal" value="입력하세요">
 				<div class="sideContents">세로 :</div>
 					<input type="text" id="colInVal" value="입력하세요">
-				<div class="sideBtn" id="btnTable">[ 테이블 생성 ]</div>
+				<div class="sideContents">묶음기준 :</div>
+					<input type="text" id="bundleInVal" value="2(기본값)">
+				<div class="sideBtn" id="btnTable" onclick="createTable()">[ 테이블 생성 ]</div>
 			</div>
 			<div class="sideTitle">- 스테이지 개요 -</div>
 			<div class="sideLine">	
@@ -462,7 +520,7 @@ function arrayValue(checkNum){
 			<div class="sideLine">
 				<div class="sideContents">COMBO :</div>
 					<div class="sideContents" id="comboVal">?</div>
-				<div class="sideContents">PAIR :</div>
+				<div class="sideContents">LEFT PAIR :</div>
 					<div class="sideContents" id="pairVal">?</div>
 				<div class="sideContents">SCORE :</div>
 					<div class="sideContents" id="scoreVal">?</div>
