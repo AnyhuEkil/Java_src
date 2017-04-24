@@ -553,11 +553,9 @@ function turnEnd(){
 		$('.whyBattle').css('z-index','20');
 		$('.whyCommand').css('z-index','20');
 		$('.whyCmdListbox').css('z-index','30');
+		$('.whyTextbox').css('z-index','10');
 		yLocClassFun("whyCmdList");
 	}
-	
-	$('.whyMenubox').css('z-index','10');
-	$('.whyBattle').css('z-index','10');
 	$('.whyMyAcomonbox').css('z-index','10');
 	$('.whyMyItembox').css('z-index','10');
 	$('.whyCmdSkillbox').css('z-index','10');
