@@ -250,11 +250,11 @@ function createTable(){
 	tdNum = $('.td').length; 		//td 총갯수 설정 //테이블 생성기준
 	pairNum = 2;
 	
-	level = (parseInt($('#levelInVal').val())>0 && $('#levelInVal').val()<maxLevel ? parseInt($('#levelInVal').val()) : 4)//초기 level 설정
+	level = (parseInt($('#levelInVal').val())>0 && $('#levelInVal').val()<maxLevel ? parseInt($('#levelInVal').val()) : 3)//초기 level 설정
 	$('#levelInVal').val(level);
 	whyNot = Math.floor(tdNum/pairNum); // 가능한 칸수 // 나머지 폭탄
 	kindsNum = level+1;	//초기 조각의 종류 수 //레벨-1느낌
-	sameNum = Math.floor(whyNot/kindNum) // 같은 수 기본갯수. //
+	sameNum = Math.floor(whyNot/kindsNum) // 같은 수 기본갯수. //
 	
 }	
 	
@@ -263,8 +263,12 @@ function createTable(){
 var tempArray = [];
 function makeTempArray(){
 	for(var idx = 0; idx < tdNum; idx++){
-		if(sameNum*kindNum*pairNum > idx){
-			tempArray[idx] = parseInt(idx/sameNum)+1;
+		//n개의 배열을 뽑아냄.
+		if(sameNum*kindsNum*pairNum > idx){
+			tempArray[idx] = parseInt(idx/(sameNum*pairNum))+1;
+		}
+		else if(sameNum*kindsNum*pairNum <= idx && whyNot*pairNum > idx ){
+			tempArray[idx] = parseInt((idx-(sameNum*kindsNum*pairNum))/ pairNum) +1;
 		}
 		else if(whyNot*pairNum <= idx){
 			tempArray[idx] = 0;
@@ -273,16 +277,6 @@ function makeTempArray(){
 			alert("오류코드:E20000bYe_makeTempArray() idx: "+idx);
 		}
 	}
-        if(sameNum*kindsNum*pairNum > idx){
-        	tempArray[idx] = parseInt(idx/sameNum)
-        }
-        else if(sameNum*kindsNum*pairNum <= idx){
-            tempArray[idx] = 0;
-        }
-        else{
-			alert("오류코드:E20000bYe_makeTempArray() idx: "+idx);;
-		}
-    }
 	console.log("array :"+tempArray);
 	console.log("kN :"+kindsNum);
 	console.log("y%k :"+whyNot%kindsNum);
