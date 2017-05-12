@@ -340,7 +340,6 @@ public class Study_empDB {
                   // TODO Auto-generated catch block
                   e.printStackTrace();
                }
-            
          }
          return list;
       }
@@ -359,7 +358,6 @@ public class Study_empDB {
          System.out.print(data.getJdeptno()+"\n");
       }
    }
-
 }
 /*
  # ArrayList<VO> 데이터 가져오기
