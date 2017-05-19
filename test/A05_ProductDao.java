@@ -14,18 +14,18 @@ public class A05_ProductDao {
    private PreparedStatement pstmt;
    private ResultSet rs;
    public Product getProduct(Product sch){
-      Product prod = null;
+      Product whyy = null;
       try {
          con = A00_DB.conn();
          String sql="select * from product "
-               + " where name = ? ";
+               + "where prod = ? ";
          pstmt=con.prepareStatement(sql);
          pstmt.setString(1, sch.getName());
          rs = pstmt.executeQuery();
          if(rs.next()){
-            prod = new Product();
-            prod.setName(rs.getString(1)); // <- PROD
-            prod.setCnt(rs.getInt(2));
+        	whyy = new Product();
+        	whyy.setName(rs.getString(1)); // <- PROD
+        	whyy.setCnt(rs.getInt(2));
          }
          
       } catch (ClassNotFoundException e) {
@@ -58,7 +58,7 @@ public class A05_ProductDao {
             }
       }
       
-      return prod;
+      return whyy;
    }
    
    
