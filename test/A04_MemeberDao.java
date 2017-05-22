@@ -6,6 +6,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 import test.Member;
+
 // jspexp.z01_database.A04_MemeberDao
 public class A04_MemeberDao {
 	private Connection con;
@@ -15,7 +16,6 @@ public class A04_MemeberDao {
 		Member mem = null;
 		
 		try {
-			
 			con = A00_DB.conn();
 			String sql="SELECT * FROM member "
 					+ "WHERE memid=? AND pass=? ";

@@ -7,7 +7,6 @@ import java.sql.SQLException;
 
 import test.Product;
 
-
 //jspexp.z01_database.A05_ProductDao
 public class A05_ProductDao {
    private Connection con;
