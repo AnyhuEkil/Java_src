@@ -4,17 +4,17 @@ import java.util.Date;
 
 public class Auction_Bid {
 	private int bidderID;
-	private int auctionID;
-	private Date timeStemp;
-	private double bidAmount;
+	private int auction_id;
+	private Date bidding_date;
+	private double bid_amount;
 	
 	public Auction_Bid() {
 	}
-	public Auction_Bid(int bidderID, int auctionID, Date timeStemp, double bidAmount) {
+	public Auction_Bid(int bidderID, int auction_id, Date bidding_date, double bid_amount) {
 		this.bidderID = bidderID;
-		this.auctionID = auctionID;
-		this.timeStemp = timeStemp;
-		this.bidAmount = bidAmount;
+		this.auction_id = auction_id;
+		this.bidding_date = bidding_date;
+		this.bid_amount = bid_amount;
 	}
 	public int getBidderID() {
 		return bidderID;
@@ -22,23 +22,23 @@ public class Auction_Bid {
 	public void setBidderID(int bidderID) {
 		this.bidderID = bidderID;
 	}
-	public int getAuctionID() {
-		return auctionID;
+	public int getAuction_id() {
+		return auction_id;
 	}
-	public void setAuctionID(int auctionID) {
-		this.auctionID = auctionID;
+	public void setAuction_id(int auction_id) {
+		this.auction_id = auction_id;
 	}
-	public Date getTimeStemp() {
-		return timeStemp;
+	public Date getBidding_date() {
+		return bidding_date;
 	}
-	public void setTimeStemp(Date timeStemp) {
-		this.timeStemp = timeStemp;
+	public void setBidding_date(Date bidding_date) {
+		this.bidding_date = bidding_date;
 	}
-	public double getBidAmount() {
-		return bidAmount;
+	public double getBid_amount() {
+		return bid_amount;
 	}
-	public void setBidAmount(double bidAmount) {
-		this.bidAmount = bidAmount;
+	public void setBid_amount(double bid_amount) {
+		this.bid_amount = bid_amount;
 	}
 
 }

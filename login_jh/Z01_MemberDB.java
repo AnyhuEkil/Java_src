@@ -19,30 +19,30 @@ import java.util.ArrayList;
 import login_jh.Member;
 import test.Product;
 
-
 public class Z01_MemberDB {
 	private Connection con;
 	private PreparedStatement pstmt;
 	private ResultSet rs;
 	private String driver = "oracle.jdbc.driver.OracleDriver";
-	private String url="jdbc:oracle:thin:@localhost:1521:xe";
-	private String sql=null;
-	private void setCon() throws ClassNotFoundException, SQLException{
+	private String url = "jdbc:oracle:thin:@localhost:1521:xe";
+	private String sql = null;
+
+	private void setCon() throws ClassNotFoundException, SQLException {
 		Class.forName(driver);
 		con = DriverManager.getConnection(url, "whyNot", "whywhy");
 	}
-	public int checkLogin(String jid, String jpwd){
+
+	public int checkLogin(String jid, String jpwd) {
 		int result = 0;
 		try {
 			setCon();
-			sql = "SELECT COUNT(*) FROM MEMBERJH "+"WHERE ID=? "+
-										  "AND PASSWORD=?";
+			sql = "SELECT COUNT(*) FROM MEMBERJH " + "WHERE ID=? " + "AND PASSWORD=?";
 			pstmt = con.prepareStatement(sql);
 			System.out.println(sql);
 			pstmt.setString(1, jid);
-			pstmt.setString(2, jpwd );
+			pstmt.setString(2, jpwd);
 			rs = pstmt.executeQuery();
-			while( rs.next() ){
+			while (rs.next()) {
 				result = rs.getInt(1);
 			}
 		} catch (ClassNotFoundException e) {
@@ -51,15 +51,15 @@ public class Z01_MemberDB {
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-		}finally{
+		} finally {
 			try {
-				if(rs!=null){
+				if (rs != null) {
 					rs.close();
 				}
-				if(pstmt!=null){
+				if (pstmt != null) {
 					pstmt.close();
 				}
-				if(con!=null){
+				if (con != null) {
 					con.close();
 				}
 			} catch (SQLException e) {
@@ -69,7 +69,8 @@ public class Z01_MemberDB {
 		}
 		return result;
 	}
-	public int confirmId(String jid){
+
+	public int confirmId(String jid) {
 		int result = 0;
 		try {
 			setCon();
@@ -78,7 +79,7 @@ public class Z01_MemberDB {
 			System.out.println(sql);
 			pstmt.setString(1, jid);
 			rs = pstmt.executeQuery();
-			while(rs.next()){
+			while (rs.next()) {
 				result = rs.getInt(1);
 			}
 		} catch (ClassNotFoundException e) {
@@ -87,15 +88,15 @@ public class Z01_MemberDB {
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-		}finally{
+		} finally {
 			try {
-				if(rs!=null){
+				if (rs != null) {
 					rs.close();
 				}
-				if(pstmt!=null){
+				if (pstmt != null) {
 					pstmt.close();
 				}
-				if(con!=null){
+				if (con != null) {
 					con.close();
 				}
 			} catch (SQLException e) {
@@ -105,7 +106,8 @@ public class Z01_MemberDB {
 		}
 		return result;
 	}
-	public void insertMem(Member ins){
+
+	public void insertMem(Member ins) {
 		try {
 			setCon();
 			con.setAutoCommit(false);
@@ -129,10 +131,10 @@ public class Z01_MemberDB {
 			}
 		} finally {
 			try {
-				if(pstmt!=null){
+				if (pstmt != null) {
 					pstmt.close();
 				}
-				if(con!=null){
+				if (con != null) {
 					con.close();
 				}
 			} catch (SQLException e) {
@@ -141,10 +143,11 @@ public class Z01_MemberDB {
 			}
 		}
 	}
+
 	public static void main(String[] args) {
-		Z01_MemberDB db = new Z01_MemberDB();		
+		Z01_MemberDB db = new Z01_MemberDB();
 		System.out.println(db.checkLogin("ADMIN", "ADMIN"));
 		System.out.println(db.confirmId("futuure"));
 	}
-	
+
 }
