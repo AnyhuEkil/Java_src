@@ -15,11 +15,13 @@ public class BoardPacDAO {
 
 	public BoardPacVO getBoardPacV0(BoardPacVO find){
 		BoardPacVO boarder = null;
-		
+		private String sql = null;
 		try {
 			con2 = ConnectionDB.con00();
-			String sql="SELECT * FROM member "
+			sql="SELECT * FROM member "
 					+ "WHERE memid=? AND pass=? ";
+			pstmt2 = con2.prepareStatement(sql);
+			
 		} catch (ClassNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
